@@ -1,0 +1,4 @@
+.content-holder {
+    display: flex;
+    flex-direction: column;
+}
