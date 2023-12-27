@@ -5,12 +5,14 @@
 
 nav {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
     color: white;
-    position: sticky;
+    position: absolute;
+    z-index: 999;
     top: 0;
+    left: 0;
     padding-right: 1rem;
 }
 
