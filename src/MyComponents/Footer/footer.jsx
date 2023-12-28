@@ -1,59 +1,68 @@
 import React from "react";
 import "./footer.css";
 
+import CII_logo from "../../assets/CII.png";
+
 const Footer = () => {
   const footerColsData = [
     {
-      title: "About us",
+      title: "CII Logo",
+      image: CII_logo, 
+    },
+    {
+      title: "Contact us",
       links: [
-        { label: "somehting", href: "#" },
-        { label: "our services", href: "#" },
+        { label: "hod_cii@nitw.ac.in", href: "mailto:hod_cii@nitw.ac.in" },
+        { label: "ig-nitw@student.nitw.ac.in", href: "mailto:ig-nitw@student.nitw.ac.in"},
+        { label: "+91 70321 60133", href: "tel:+91 70321 60133" },
+        { label: "+91 93955 33228", href: "tel:+91 93955 33228" },
+        { label: "CII, National Institute of Technology Campus, Hanamkonda, Telangana 506004",
+         href: "https://maps.app.goo.gl/5KsnUfRfcAgw4uSr5" },      //link to google maps
       ],
     },
     {
       title: "Help",
       links: [
-        { label: "FAQ", href: "#" },
+        // { label: "FAQ", href: "#" },
         { label: "Registration", href: "#" },
       ],
     },
     {
-      title: "Something",
-      links: [
-        { label: "aaaa", href: "#" },
-        { label: "bbbb", href: "#" },
-      ],
-    },
-    {
-      title: "follow us",
+      title: "Follow us",
       socialLinks: [
-        { icon: "fab fa-facebook-f", href: "#" },
-        { icon: "fab fa-twitter", href: "#" },
-        { icon: "fab fa-instagram", href: "#" },
-        { icon: "fab fa-linkedin-in", href: "#" },
+        { icon: "fab fa-facebook-f", href: "https://www.facebook.com/TheInnovationGarage/" },
+        { icon: "fab fa-instagram", href: "https://www.instagram.com/ig.nitw/" },
+        { icon: "fab fa-linkedin-in", href: "https://www.linkedin.com/company/ignitw/mycompany/" },
       ],
     },
   ];
 
   const footerCols = footerColsData.map((col, index) => (
     <div className="footer-col" key={index}>
-      <h4>{col.title}</h4>
-      <ul>
-        {col.links &&
-          col.links.map((link, linkIndex) => (
-            <li key={linkIndex}>
-              <a href={link.href}>{link.label}</a>
-            </li>
-          ))}
-      </ul>
-      {col.socialLinks && (
-        <div className="social-links">
-          {col.socialLinks.map((socialLink, socialIndex) => (
-            <a href={socialLink.href} key={socialIndex}>
-              <i className={socialLink.icon}></i>
-            </a>
-          ))}
-        </div>
+      {col.image ? (
+        <img src={col.image} alt={col.title} />
+      ) : (
+        <>
+          <h4>{col.title}</h4>
+          {col.links && (
+            <ul>
+              {col.links.map((link, linkIndex) => (
+                <li key={linkIndex}>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+          {col.socialLinks && (
+            <div className="social-links">
+              {col.socialLinks.map((socialLink, socialIndex) => (
+                <a href={socialLink.href} key={socialIndex}>
+                  <i className={socialLink.icon}></i>
+                </a>
+              ))}
+            </div>
+          )}
+        </>
       )}
     </div>
   ));

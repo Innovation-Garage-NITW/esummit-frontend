@@ -4,6 +4,7 @@ import "./header.css";
 import { NavLink, Link } from "react-router-dom";
 
 import ECell from "../../assets/ecell_logo.png";
+import IG_logo from "../../assets/IG logo.png";
 
 const menuItemsData = [
   { label: "Events", link: "/Events" },
@@ -25,7 +26,7 @@ const Header = () => {
   return (
     <nav>
       <Link to="./" className="title">
-        <img src={ECell} alt="logo1" />
+        <img src={IG_logo} alt="logo1" />
       </Link>
       <div
         className="menu"
