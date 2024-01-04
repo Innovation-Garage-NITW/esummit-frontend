@@ -8,7 +8,7 @@
     background-color: #000;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
     z-index: 1; 
   }
 
@@ -17,13 +17,53 @@
     transition: 0.45s cubic-bezier(0.2, 0.49, 0.32, 0.99);
 }
 
+.fade{
+    z-index: 13;
+}
+
+.tree{
+    position: absolute;
+    z-index: 16;
+    margin-top: 500px;
+    margin-top: 2000px;
+
+}
+.overview{
+    position: absolute;
+    z-index:16;
+    margin-left: 200px;
+    margin-top: 900px;
+}
+.text{
+    position: absolute;
+    z-index: 17;
+    scale: 60%;
+    top: 900px;
+    left: 660px;
+}
+.mountain-5-right{
+    position: absolute;
+    z-index:15;
+    top: calc(50% + 2.188%);
+    left: calc(-4% - 0px);
+    scale: 80%;
+}
+
+.mountain-7-left{
+    position: absolute;
+    top: calc(50% + 7.188%);
+    scale: 80%;
+    left: calc(-13% - 0px);
+    z-index:14;
+}
+
 .img-bg {
     position: absolute;
     width: 215.385%;
     top: calc(50% - 0px);
     left: calc(50% - 0px);
     transform: translate(-50%, -50%);
-    z-index: 0;
+    z-index: -2;
 }
 
 .stars {
@@ -68,7 +108,7 @@
     top: calc(50% + 23.438%);
     left: calc(50% + 29.462%);
     transform: translate(-50%, -50%);
-    z-index: 5;
+    z-index: 4;
 }
 
 .mountain-1-left {
