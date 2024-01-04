@@ -109,6 +109,9 @@ export const Home = () => {
       <img src={mountain4Right} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.15" data-distance="800" className="parallax mountain-4-right"/>
       <img src={mountain5Left} alt="" data-speedx="0.01" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-5-left"/>
       <img src={mountain6Left} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-6-left"/>
+      <div className="overview">
+        <p>Overview Section</p>
+      </div>
     </div>
   );
 };
