@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "react-scripts start",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
@@ -13,7 +14,11 @@
     "gsap": "^3.12.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.1"
+    "react-rotating-text": "^1.4.1",
+    "react-router-dom": "^6.21.1",
+    "react-scripts": "^5.0.1",
+    "react-spring": "^9.7.3",
+    "react-typing-effect": "^2.0.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
