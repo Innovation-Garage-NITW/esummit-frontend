@@ -13,6 +13,7 @@ import mountain5Left from "../Images/mountain-5-left.png"
 import mountain6Left from "../Images/mountain-6-left.png"
 import waveLeft from "../Images/wave-left.png"
 import logo from "../Images/logo.png"
+import OverviewSection from "./OverviewSection";
 
 export const Home = () => {
   let flag = 0;
@@ -96,6 +97,7 @@ export const Home = () => {
   }, [])
   
   return (
+    <>
     <div className="main">
       <img src={bgImg} alt="" data-speedx="0.3" data-speedy="0.3" data-speedz="0" data-distance="-200" className="parallax img-bg"/>
       <img src={stars} alt="" data-speedx="0.27" data-speedy="0.27" data-speedz="0" data-distance="-200" className="parallax stars"/>
@@ -109,9 +111,8 @@ export const Home = () => {
       <img src={mountain4Right} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.15" data-distance="800" className="parallax mountain-4-right"/>
       <img src={mountain5Left} alt="" data-speedx="0.01" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-5-left"/>
       <img src={mountain6Left} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-6-left"/>
-      <div className="overview">
-        <p>Overview Section</p>
-      </div>
     </div>
+    <OverviewSection />
+    </>
   );
 };
