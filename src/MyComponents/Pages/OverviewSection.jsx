@@ -19,7 +19,8 @@ const CountingAnimation = ({ targetNumber }) => {
     const textStyle = {
         color: "#363537",
         fontFamily: 'Roboto',
-        fontSize: '66px' 
+        fontSize: '86px',
+        fontWeight: 'bold',
       };
 
     return <animated.span style={textStyle}>{count.interpolate((val) => Math.floor(val))}</animated.span>;
@@ -31,7 +32,7 @@ const OverviewSection = () => {
       {/* Description Part */}
       <div className="description custom-typing">
         <TypingEffect
-          text={["Welcome to the E-Summit!", "Discover innovation and collaboration.", "Join us for an exciting event."]}
+          text={["Welcome to the E-Summit-24 NITW", "Discover innovation and collaboration.", "Join us for an exciting event."]}
           speed={70}
           eraseDelay={700}
         />

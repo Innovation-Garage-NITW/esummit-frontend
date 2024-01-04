@@ -1,7 +1,7 @@
 .overview-section {
     z-index: 100; 
     padding: 50px;
-    background-color: #19052b;
+    background-color: #0d1d24;
     text-align: center;
     overflow: hidden;
     
@@ -10,8 +10,9 @@
   
   .custom-typing {
     /* Add styles for the description part */
-    color: white; /* Change font color to white */
-    font-size: 5em; /* Set a larger font size (adjust as needed) */
+    color: rgb(239, 255, 248); /* Change font color to white */
+    font-size: 4em; /* Set a larger font size (adjust as needed) */
+    font-weight: 700;
     font-family: 'Blinker', sans-serif;
     margin: 10px;
   }
@@ -23,10 +24,10 @@
   }
   
   .rounded-container1 {
-    border-radius: 15px;
+    border-radius: 25px;
     width: 200px;
     height: 200px;
-    background-color: #5547be; /* Adjust the background color as needed */
+    background-color: #d5fa6f; /* Adjust the background color as needed */
     padding: 20px;
     margin: 10px;
     text-align: center;
@@ -36,10 +37,10 @@
     font-family: 'Blinker', sans-serif;
   }
   .rounded-container2 {
-    border-radius: 15px;
+    border-radius: 25px;
     width: 200px;
     height: 200px;
-    background-color: #ec92d4; /* Adjust the background color as needed */
+    background-color: #7cd49c; /* Adjust the background color as needed */
     padding: 20px;
     margin: 10px;
     text-align: center;
@@ -49,7 +50,7 @@
     font-family: 'Blinker', sans-serif;
   }
   .rounded-container3 {
-    border-radius: 15px;
+    border-radius: 25px;
     width: 200px;
     height: 200px;
     background-color: #f5ac53; /* Adjust the background color as needed */
