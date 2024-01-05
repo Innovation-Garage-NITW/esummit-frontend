@@ -17,6 +17,17 @@
     transition: 0.45s cubic-bezier(0.2, 0.49, 0.32, 0.99);
 }
 
+.para{
+    color: rgb(205, 199, 249);
+    font-size: 1.4em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    margin-top: 960px;
+    margin-left: 818px;
+    z-index: 29;
+    position: absolute;
+}
+
+
 .fade{
     z-index: 13;
 }
@@ -24,8 +35,7 @@
 .tree{
     position: absolute;
     z-index: 16;
-    margin-top: 500px;
-    margin-top: 2000px;
+    margin-top: 1150px;
 
 }
 .overview{
@@ -40,6 +50,7 @@
     scale: 60%;
     top: 900px;
     left: 660px;
+    opacity: 0;
 }
 .mountain-5-right{
     position: absolute;

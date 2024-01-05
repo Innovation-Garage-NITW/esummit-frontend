@@ -122,6 +122,7 @@ export const Home = () => {
       <img src={mountain7Left} alr="" className="mountain-7-left"/>
       <img src={text} alt="" className="text" />
       <img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree"/>
+      <p className="para">Crafted for the seekers of inspiration:<br></br> ESummit beckons. Dive into a realm where<br></br> sparks of innovation meet the whispers of <br></br> change. Join us in shaping a future beyond <br></br> boundaries at NITW premeier event. <br></br> ESummit--where creativity takes flight in the uncharted</p>
     </div>
     
     </>
