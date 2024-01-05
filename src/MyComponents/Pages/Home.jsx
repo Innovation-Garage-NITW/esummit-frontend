@@ -18,6 +18,8 @@ import fade from "../Images/groupmountain.png"
 import mountain5Right from "../Images/Vector70.png"
 import mountain7Left from "../Images/Vector74.png"
 import overview from "../Images/overview.png"
+import overviewtext from "../Images/overviewtext.png"
+import overviewbox from "../Images/overviewbox.png"
 import text from "../Images/text.png"
 //import OverviewSection from "./OverviewSection";
 
@@ -118,6 +120,8 @@ export const Home = () => {
       <img src={mountain5Left} alt="" data-speedx="0.01" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-5-left"/>
       <img src={mountain6Left} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-6-left"/>
       <img src={overview} alt="" className="overview"/>
+      <img src={overviewbox} alt="" className="overviewbox" />
+      <img src={overviewtext} alt="" className="overviewtext" />
       <img src={mountain5Right} alr="" className="mountain-5-right"/>
       <img src={mountain7Left} alr="" className="mountain-7-left"/>
       <img src={text} alt="" className="text" />

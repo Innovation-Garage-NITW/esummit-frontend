@@ -22,7 +22,7 @@
     color: rgb(205, 199, 249);
     font-size: 1.4em;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-    margin-top: 960px;
+    margin-top: 560px;
     margin-left: 818px;
     z-index: 29;
     position: absolute;
@@ -46,22 +46,44 @@
         transform: translateX(0);
     }
     100% {
-        transform: translateX(50vw); 
+        transform: translateX(40vw); 
     }
+}
+.overview{
+    opacity: 0;
 }
 
 .tree1{
     position: absolute;
     z-index: 16;
     margin-top: 1150px;
-    margin-left: -1000px;
+    margin-left: -1500px;
     animation: moveLeftToRight 20s linear infinite;
     white-space: nowrap;
 }
-.overview{
+
+.overviewbox{
     position: absolute;
-    z-index:16;
-    margin-left: 200px;
+    z-index:30;
+    margin-left: -600px;
+    margin-top: 850px;
+    animation: shake 0.5s ease-in-out infinite;
+}
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-5px); /* Adjust the distance to shake */
+    }
+    50% {
+        transform: translateX(5px); /* Adjust the distance to shake */
+    }
+}
+.overviewtext{
+    position: absolute;
+    z-index:31;
+    margin-left: -550px;
     margin-top: 850px;
 }
 .text{
