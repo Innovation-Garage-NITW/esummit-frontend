@@ -9,6 +9,7 @@
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
+    overflow-y:scroll;
     z-index: 1; 
   }
 
@@ -36,13 +37,32 @@
     position: absolute;
     z-index: 16;
     margin-top: 1150px;
+    animation: moveLeftToRight 10s linear infinite;
+    white-space: nowrap;
+    background-repeat: repeat-x;
+}
+@keyframes moveLeftToRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50vw); 
+    }
+}
 
+.tree1{
+    position: absolute;
+    z-index: 16;
+    margin-top: 1150px;
+    margin-left: -1000px;
+    animation: moveLeftToRight 20s linear infinite;
+    white-space: nowrap;
 }
 .overview{
     position: absolute;
     z-index:16;
     margin-left: 200px;
-    margin-top: 900px;
+    margin-top: 850px;
 }
 .text{
     position: absolute;
@@ -75,6 +95,7 @@
     left: calc(50% - 0px);
     transform: translate(-50%, -50%);
     z-index: -2;
+    
 }
 
 .stars {
