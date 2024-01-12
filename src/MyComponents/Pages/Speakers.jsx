@@ -1,14 +1,12 @@
 import React from 'react'
-import Background from '../Images/img-bg-2.png';
-import { Teams } from './SpeakerComponents/Teams';
+import { Teams } from './SpeakerComp/Teams'
+
 
 export const Speakers = () => {
   return (
-    <>
-      <div style={{backgroundImage: `url(${Background})`,width:"100vw",height:"100%"}}>
+    <div>
       <Teams/>
-      </div>
-    </>
+    </div>
   )
 }
 

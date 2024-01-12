@@ -1,10 +1,8 @@
 import React from "react";
 import { Col } from "react-bootstrap";
-// import "animate.css";
+import "animate.css";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from '@mui/icons-material/Email';
-import "animate.css";
-
 
 const MemberCard = (props) => {
   const linkedin=props.props.linkedin
