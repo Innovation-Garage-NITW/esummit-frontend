@@ -13,6 +13,15 @@ import mountain5Left from "../Images/mountain-5-left.png"
 import mountain6Left from "../Images/mountain-6-left.png"
 import waveLeft from "../Images/wave-left.png"
 import logo from "../Images/logo.png"
+import tree from "../Images/Trees.png"
+import fade from "../Images/groupmountain.png"
+import mountain5Right from "../Images/Vector70.png"
+import mountain7Left from "../Images/Vector74.png"
+import overview from "../Images/overview.png"
+import overviewtext from "../Images/overviewtext.png"
+import overviewbox from "../Images/overviewbox.png"
+import text from "../Images/text.png"
+//import OverviewSection from "./OverviewSection";
 
 export const Home = () => {
   let flag = 0;
@@ -96,6 +105,7 @@ export const Home = () => {
   }, [])
   
   return (
+    <>
     <div className="main">
       <img src={bgImg} alt="" data-speedx="0.3" data-speedy="0.3" data-speedz="0" data-distance="-200" className="parallax img-bg"/>
       <img src={stars} alt="" data-speedx="0.27" data-speedy="0.27" data-speedz="0" data-distance="-200" className="parallax stars"/>
@@ -109,6 +119,21 @@ export const Home = () => {
       <img src={mountain4Right} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.15" data-distance="800" className="parallax mountain-4-right"/>
       <img src={mountain5Left} alt="" data-speedx="0.01" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-5-left"/>
       <img src={mountain6Left} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-6-left"/>
+      <img src={overview} alt="" className="overview"/>
+      <img src={overviewbox} alt="" className="overviewbox" />
+      <img src={overviewtext} alt="" className="overviewtext" />
+      <img src={mountain5Right} alr="" className="mountain-5-right"/>
+      <img src={mountain7Left} alr="" className="mountain-7-left"/>
+      <img src={text} alt="" className="text" />
+
+      {/* Trees  */}
+      
+      <img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree"/>
+      <img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree1"/>
+
+      <p className="para">Crafted for the seekers of inspiration:<br></br> ESummit beckons. Dive into a realm where<br></br> sparks of innovation meet the whispers of <br></br> change. Join us in shaping a future beyond <br></br> boundaries at NITW premeier event. <br></br> ESummit--where creativity takes flight <br></br> in the uncharted</p>
     </div>
+    
+    </>
   );
 };
