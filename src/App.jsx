@@ -12,6 +12,7 @@ import {
   RegisterLogin,
   ContactUs,
 } from "./MyComponents/Pages";
+import { UserAuthContextProvider } from "./context/userAuthContext";
 
 const menuItemsData = [
   { label: "Events", link: "/Events", component: <Events /> },
@@ -26,18 +27,20 @@ function App() {
     <div className="App">
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <UserAuthContextProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        {/*mapping all the routes*/}
-        {menuItemsData.map((menuItem) => (
-          <Route
-            key={menuItem.link}
-            path={menuItem.link}
-            element={menuItem.component}
-          />
-        ))}
-      </Routes>
+          {/*mapping all the routes*/}
+          {menuItemsData.map((menuItem) => (
+            <Route
+              key={menuItem.link}
+              path={menuItem.link}
+              element={menuItem.component}
+            />
+          ))}
+        </Routes>
+      </UserAuthContextProvider>
 
       {/* <Footer /> */}
     </div>

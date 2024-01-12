@@ -11,14 +11,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^10.7.1",
     "gsap": "^3.12.4",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
+
+    "react-phone-number-input": "^3.3.8",
+    "react-router-dom": "^6.21.1"
+
     "react-rotating-text": "^1.4.1",
     "react-router-dom": "^6.21.1",
     "react-scripts": "^5.0.1",
     "react-spring": "^9.7.3",
     "react-typing-effect": "^2.0.5"
+
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
