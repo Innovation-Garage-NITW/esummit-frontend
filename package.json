@@ -11,8 +11,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.4",
+    "@mui/material": "^5.15.4",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.3.2",
     "gsap": "^3.12.4",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
     "react-rotating-text": "^1.4.1",
     "react-router-dom": "^6.21.1",
