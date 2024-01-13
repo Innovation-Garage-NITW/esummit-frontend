@@ -9,7 +9,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     color: white;
-    position: absolute;
+    position: fixed;
     /* Change for testing */
     /* position: sticky; */
     /* background-color: #000000; */

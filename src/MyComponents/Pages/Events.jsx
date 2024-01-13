@@ -1,5 +1,5 @@
 import React from 'react'
-import imgUrl from '../Images/Events.jpg'
+import imgUrl from '../Images/Event3.jpg'
 import Banner from './Banner'
 
 
