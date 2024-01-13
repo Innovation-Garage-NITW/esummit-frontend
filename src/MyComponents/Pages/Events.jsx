@@ -1,10 +1,16 @@
 import React from 'react'
+import imgUrl from '../Images/Events.jpg'
+import Banner from './Banner'
+
 
 export const Events = () => {
   return (
-    <div>
-      Events
+    <>
+    <Banner heading="EVENTS" imgUrl={imgUrl}/>
+    <div className='Content'>
+      SPEAKERS
     </div>
+    </>
   )
 }
 

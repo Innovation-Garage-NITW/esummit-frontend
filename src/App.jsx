@@ -23,8 +23,14 @@ const menuItemsData = [
 ];
 
 function App() {
+  const parallax = () => {
+    var scrolled = window.scrollY || document.documentElement.scrollTop;
+    var hero = document.querySelector('.banner-body');
+    hero.style.top = -(scrolled * 0.0315) + 'rem';
+  }
+  
   return (
-    <div className="App">
+    <div className="App" onScroll={parallax} >
       <Header />
 
       <UserAuthContextProvider>

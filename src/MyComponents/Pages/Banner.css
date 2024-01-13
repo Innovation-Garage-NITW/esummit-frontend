@@ -1,0 +1,61 @@
+
+.banner-body{
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    background-color: black;
+    background-attachment: fixed;
+}
+
+.banner-heading{
+    font-size: 50px;
+    position: absolute;
+    bottom: 35%;
+    left:20%;
+}
+
+.content{
+    height: 100%;
+    width: 30%;
+    color: white;
+    row-gap: 10px;
+    bottom: 50px;
+    left:50px
+}
+
+.circle{
+    height: 100%;
+    width: 70%;
+    /* background:radial-gradient(farthest-side circle at right center , rgba(245, 243, 243, 0),10%,rgba(0,0,0,1)),url("../Images/Sp_temp.jpeg"); */
+    background-size: cover;
+}
+
+circle{
+    display: none;
+}
+
+@media  screen and (max-width:900px) {
+    .content{
+        display: none;
+    }
+
+    .circle h1{
+        display: block;
+        color: white;
+        position: relative;
+        text-align: center;
+        top:50%;
+        font-size: 50px;
+    }
+
+    .circle{
+        width: 100%;
+    }
+
+}
+
