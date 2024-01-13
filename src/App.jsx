@@ -12,6 +12,7 @@ import {
   RegisterLogin,
   ContactUs,
 } from "./MyComponents/Pages";
+import { UserAuthContextProvider } from "./context/userAuthContext";
 
 const menuItemsData = [
   { label: "Events", link: "/Events", component: <Events /> },
@@ -22,22 +23,30 @@ const menuItemsData = [
 ];
 
 function App() {
+  const parallax = () => {
+    var scrolled = window.scrollY || document.documentElement.scrollTop;
+    var hero = document.querySelector('.banner-body');
+    hero.style.top = -(scrolled * 0.0315) + 'rem';
+  }
+  
   return (
-    <div className="App">
+    <div className="App" onScroll={parallax} >
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <UserAuthContextProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        {/*mapping all the routes*/}
-        {menuItemsData.map((menuItem) => (
-          <Route
-            key={menuItem.link}
-            path={menuItem.link}
-            element={menuItem.component}
-          />
-        ))}
-      </Routes>
+          {/*mapping all the routes*/}
+          {menuItemsData.map((menuItem) => (
+            <Route
+              key={menuItem.link}
+              path={menuItem.link}
+              element={menuItem.component}
+            />
+          ))}
+        </Routes>
+      </UserAuthContextProvider>
 
       {/* <Footer /> */}
     </div>

@@ -3,3 +3,14 @@
   height: 100%;
   width: 100%;
 }
+
+.Content{
+  position: absolute;
+  z-index: 20;
+  top:70vh;
+  background-color:black;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0 -2px 1px rgba(0,0,0,.15);
+  border-top: 1px solid rgba(255,255,255,.2);
+}

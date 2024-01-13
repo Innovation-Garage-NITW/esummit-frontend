@@ -9,84 +9,112 @@
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-    overflow-y:scroll;
-    z-index: 1; 
-  }
+    overflow-y: scroll;
+    z-index: 1;
+}
 
 .parallax {
     pointer-events: none;
     transition: 0.45s cubic-bezier(0.2, 0.49, 0.32, 0.99);
 }
 
-.para{
+.para {
     color: rgb(205, 199, 249);
     font-size: 1.4em;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 560px;
     margin-left: 818px;
     z-index: 29;
     position: absolute;
 }
 
-
-.fade{
+.fade {
     z-index: 13;
 }
 
-.tree{
+
+/* ------------------NEW--------------------- */
+
+.tree {
     position: absolute;
     z-index: 16;
     margin-top: 1150px;
+    margin-left: -110rem;
     animation: moveLeftToRight 10s linear infinite;
-    white-space: nowrap;
     background-repeat: repeat-x;
 }
+
 @keyframes moveLeftToRight {
-    0% {
-        transform: translateX(0);
+    from {
+        transform: translateX(-50%);
     }
-    100% {
-        transform: translateX(40vw); 
+
+    to {
+        transform: translateX(47.5%);
     }
 }
-.overview{
+
+.tree1 {
+    position: absolute;
+    z-index: 16;
+    margin-top: 1150px;
+    /* margin-left: -1500px; */
+    transform: scaleX(-1);
+    /* Adjust the starting position based on the first animation */
+    animation: moveLeftToRight2 10s linear infinite;
+}
+
+@keyframes moveLeftToRight2 {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(47.5%);
+    }
+}
+
+/* ---------------------------------------------- */
+
+.overview {
     opacity: 0;
 }
 
-.tree1{
+.overviewbox {
     position: absolute;
-    z-index: 16;
-    margin-top: 1150px;
-    margin-left: -1500px;
-    animation: moveLeftToRight 20s linear infinite;
-    white-space: nowrap;
-}
-
-.overviewbox{
-    position: absolute;
-    z-index:30;
+    z-index: 30;
     margin-left: -600px;
     margin-top: 850px;
     animation: shake 0.5s ease-in-out infinite;
 }
+
 @keyframes shake {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
-    25%, 75% {
-        transform: translateX(-5px); /* Adjust the distance to shake */
+
+    25%,
+    75% {
+        transform: translateX(-5px);
+        /* Adjust the distance to shake */
     }
+
     50% {
-        transform: translateX(5px); /* Adjust the distance to shake */
+        transform: translateX(5px);
+        /* Adjust the distance to shake */
     }
 }
-.overviewtext{
+
+.overviewtext {
     position: absolute;
-    z-index:31;
+    z-index: 31;
     margin-left: -550px;
     margin-top: 850px;
 }
-.text{
+
+.text {
     position: absolute;
     z-index: 17;
     scale: 60%;
@@ -94,20 +122,21 @@
     left: 660px;
     opacity: 0;
 }
-.mountain-5-right{
+
+.mountain-5-right {
     position: absolute;
-    z-index:15;
+    z-index: 15;
     top: calc(50% + 2.188%);
     left: calc(-4% - 0px);
     scale: 80%;
 }
 
-.mountain-7-left{
+.mountain-7-left {
     position: absolute;
     top: calc(50% + 7.188%);
     scale: 80%;
     left: calc(-13% - 0px);
-    z-index:14;
+    z-index: 14;
 }
 
 .img-bg {
@@ -117,7 +146,7 @@
     left: calc(50% - 0px);
     transform: translate(-50%, -50%);
     z-index: -2;
-    
+
 }
 
 .stars {
