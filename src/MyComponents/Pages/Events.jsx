@@ -4,13 +4,13 @@ import Banner from './Banner'
 
 
 export const Events = () => {
-  return (
-    <>
-    <Banner heading="EVENTS" imgUrl={imgUrl}/>
-    <div className='Content'>
-      SPEAKERS
-    </div>
-    </>
-  )
+	return (
+		<>
+			<Banner heading="EVENTS" imgUrl={imgUrl} />
+			<div className='Content'>
+				SPEAKERS
+			</div>
+		</>
+	)
 }
 

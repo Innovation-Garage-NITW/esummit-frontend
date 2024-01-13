@@ -1,3 +1,8 @@
+:root {
+    --img-width: 5vw;
+}
+
+
 .active {
     background-color: #ffffff;
     color: #000000;
@@ -50,11 +55,8 @@ nav ul li a {
 }
 
 nav img {
-    /* position: absolute; */
-    max-width: 10%;
-    min-width: 10%;
-    /* height: auto; */
-    margin: 0.5rem 0 0 0.5rem
+    width: var(--img-width);
+    margin: 0.5rem 0 0 0.5rem;
 }
 
 /* prevents active link to be clicked again */
@@ -83,16 +85,36 @@ nav .menu span {
 }
 
 
+/* To stop logo from shrinking  */
+@media (max-width: 1150px) {
+    nav img {
+        width: calc(var(--img-width) + 1vw);
+    }
+}
+
+@media (max-width: 900px) {
+    nav img {
+        width: calc(var(--img-width) + 2vw);
+    }
+}
+
+/* ------------------------------ */
+
+
 /* making it responsive */
 @media (max-width: 725px) {
     nav .menu {
         display: flex;
     }
 
+    nav img {
+        width: calc(var(--img-width) + 3vw);
+    }
+
     nav {
         flex-direction: column;
         align-items: flex-start;
-        position: sticky;
+        /* position: sticky; */
         background-color: #000000;
     }
 
