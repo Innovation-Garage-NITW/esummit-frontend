@@ -1,6 +1,6 @@
 import React from 'react'
 import Banner from './Banner.jsx'
-import imgUrl from '../Images/Sp_temp.jpeg'
+import imgUrl from '../Images/sp.jpg'
 
 import { Teams } from './SpeakerComp/Teams'
 
@@ -14,4 +14,3 @@ export const Speakers = () => {
 		</div>
 	)
 }
-
