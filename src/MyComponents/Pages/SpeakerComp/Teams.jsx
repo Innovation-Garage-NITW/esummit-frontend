@@ -6,7 +6,7 @@ import MemberCard from "./MemberCard";
 import img from '../../Images/Trees.png'
 import { eccTeamMembers } from "./SpeakerID";
 import "animate.css";
-
+import SpeakerCard from "./SpeakerCard";
 
 export const Teams = () => {
 	return (
@@ -28,34 +28,7 @@ export const Teams = () => {
 									>
 										{eccTeamMembers.map((members, index) => {
 											return (
-												<div
-													className="proj-imgbx animate__animated animate__zoomInUp animate__delay-1s"
-													style={{ width: "330px", borderRadius: "70px" }}
-												>
-													<img
-														src={members.imgUrl}
-														style={{ height: "350px", width: "350px" }}
-														alt=""
-													/>
-													<div className="proj-txtx">
-														<h4>{members.name}</h4>
-														<span>{members.description}</span>
-														<div
-															style={{
-																display: "flex",
-																justifyContent: "center",
-																alignItems: "center",
-															}}
-														>
-															<a href={members.url}>
-																<LaunchIcon
-																	fontSize="large"
-																	sx={{ color: " #FFEA00" }}
-																/>
-															</a>
-														</div>
-													</div>
-												</div>
+												<SpeakerCard members={members} imgUrl={members.imgUrl} sizing={330} key={index}/>
 											);
 										})}
 									</Row>

@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import './OverViewSection2.css'
 import overviewtext from "../Images/overviewtext2.png"
 import overviewbox from "../Images/overviewbox2.png"
-import Count from './Count'
 import { TypeAnimation } from 'react-type-animation'
 // import { wrap } from 'gsap'
 
