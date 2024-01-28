@@ -1,11 +1,14 @@
-import { useState } from "react";
+import React,{ useState } from "react";
 import { Link } from "react-router-dom";
 import { Form, Alert } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useUserAuth } from "../../context/userAuthContext";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 import "./RegisterLogin.css";
+
 export const RegisterLogin = () => {
   const [error, setError] = useState("");
   const [number, setNumber] = useState("");
@@ -13,10 +16,26 @@ export const RegisterLogin = () => {
   const [mail, setmail] = useState("");
   const [college,setcollege]=useState("")
   const [flag, setFlag] = useState(false);
-  const [showVerified, setShowVerified] = useState(false);
+  const [showVerified, setShowVerified] = useState(true);
   const [otp, setOtp] = useState("");
   const [result, setResult] = useState("");
   const { setUpRecaptha } = useUserAuth();
+
+  const [open, setOpen] = React.useState(false);
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const getOtp = async (e) => {
     e.preventDefault();
@@ -40,6 +59,7 @@ export const RegisterLogin = () => {
     try {
       await result.confirm(otp);
       setShowVerified(true);
+      setOpen(true)
     } catch (err) {
       setError(err.message);
     }
@@ -67,11 +87,14 @@ export const RegisterLogin = () => {
 </div>
         <Form onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <PhoneInput
+          
+         <PhoneInput
+              className="input-box"
               defaultCountry="IN"
               value={number}
               onChange={setNumber}
               placeholder="Enter Phone Number"
+              required
             />
             <div id="recaptcha-container"></div>
           </Form.Group>
@@ -86,15 +109,25 @@ export const RegisterLogin = () => {
           </div>
         </Form>
 
-        <Form  onSubmit={verifyOtp} style={{ display: flag ? "block" : "none" }}>
+        <Form  onSubmit={verifyOtp} style={{ display: flag ? "block" : "none" }}>{/**yahan change krne ka hai  */}
           <Form.Group className="mb-3" controlId="formBasicOtp">
-            <Form.Control
+            <Form.Control className="otp_box"
               type="otp"
               placeholder="Enter OTP"
               onChange={(e) => setOtp(e.target.value)}
-            />
+            />{
+              
+            }
           </Form.Group>
-          {showVerified && <div>Verified!</div>}
+          <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+         Congrats! Now Sit back and Relax
+        </Alert>
+          </Snackbar>
+          {showVerified && <div className="toast">cool
+          
+
+          </div>}
           <div className="button-right">
             <Link to="/">
               <Button variant="secondary">Cancel</Button>
