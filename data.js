@@ -1,4 +1,5 @@
-import React from 'react'
+import posterUrl from "./src/assets/poster_innovate_sphere.jpeg";
+
 
 export const eccTeamMembers = [
     {
@@ -82,3 +83,37 @@ export const eccTeamMembers = [
         linkedin: "https://www.linkedin.com/in/samrat-gupta-1b1227232/",
       },
   ];  
+
+
+export const EventsData = [
+    {
+      image: posterUrl,
+      title: "Innovate Sphere",
+      details: "lot of details",
+    },
+    {
+      image: posterUrl,
+      title: "Innovate Sphere",
+      details: "lot of details",
+    },
+    {
+      image: posterUrl,
+      title: "Innovate Sphere",
+      details: "lot of details",
+    },
+    {
+      image: posterUrl,
+      title: "Innovate Sphere",
+      details: "lot of details",
+    },
+    {
+      image: posterUrl,
+      title: "Innovate Sphere",
+      details: "lot of details",
+    },
+    {
+      image: posterUrl,
+      title: "Innovate Sphere",
+      details: "lot of details",
+    },
+  ]

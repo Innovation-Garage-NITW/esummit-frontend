@@ -18,35 +18,12 @@ import mountain5Right from "../Images/ovmountainr.png"
 import mountain7Left from "../Images/ovmountainl.png"
 import OverViewSection2 from "./OverViewSection2";
 import ovstar from '../Images/s.png'
-import { eccTeamMembers } from "./SpeakerComp/SpeakerID";
+import { eccTeamMembers,EventsData } from "../../../data";
 import SpeakerCard from "./SpeakerComp/SpeakerCard";
+import ImageCard from "./EventsComp/ImageCard";
 
 
 export const Home = () => {
-
-  // const [speak,setSpeak] = useState(eccTeamMembers);
-
-  // useEffect(()=>{
-  //   slideSlider();
-  // },[])
-
-  // const slideSlider= ()=>{
-  //   // document.getElementsByClassName("speaker-slider-scroller")[0].style.left = "0px";
-  //   // document.getElementsByClassName("speaker-slider-scroller")[0].style.transition = "all 1s";
-  //   // document.getElementsByClassName("speaker-slider-scroller")[0].style.left =  String(parseInt(- 150)) + "px";
-  //   // document.getElementsByClassName("speaker-slider-scroller")[0].style.transition =  "all 1s";
-  //   setTimeout(function(){moveSliderItem()}, 10000);
-  // }
-  
-  // function moveSliderItem(){
-  //   const first = speak[0];
-  //   const sizofarray = speak.length;
-  //   setSpeak([...speak.slice(1,sizofarray),first]);
-  //   slideSlider();
-  // }
-
-
-
 
   let flag = 0;
   useEffect(() => {
@@ -147,12 +124,14 @@ export const Home = () => {
         {/* <img src={overview} alt="" className="overview"/> */}
         <img src={mountain5Right} alr="" className="mountain-5-right" />
         <img src={mountain7Left} alr="" className="mountain-7-left" />
-        <img src={ovstar} alr="" className="ovstar" />
+        <div className="ovstardiv">
+              <img src={ovstar} alr="" className="ovstar" />
+              <img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree" />
+        <img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree1" />
+        </div>
 
         <OverViewSection2 />
 
-
-        {/* Speaker Sections  */}
         <div className="speakerSection">
           <div className="speakerHeading ">
             <h1>SPEAKERS</h1>
@@ -169,10 +148,25 @@ export const Home = () => {
           </div>
         </div>
 
+        <div className="EventSection">
+          <div className="EventHeading ">
+            <h1>EVENTS</h1>
+          </div>
+          <div className="Event-slider-container">
+            <div className="Event-slider-scroller">
+              {EventsData.map((event, index) => {
+                return (
+                  <ImageCard image={event.image} key={index} title={event.title} details={event.details} sizing={(window.innerWidth>725)?(300):(250)}/>
+                )
+              })
+              }
+            </div>
+          </div>
+        </div>
+
         {/* Trees  */}
 
-        <img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree" />
-        <img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree1" />
+
 
         {/* <OverviewSection/> */}
       </div>

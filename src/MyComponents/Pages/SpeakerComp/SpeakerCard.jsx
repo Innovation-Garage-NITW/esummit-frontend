@@ -2,7 +2,7 @@ import React from 'react'
 import "animate.css";
 import LaunchIcon from "@mui/icons-material/Launch";
 
-function SpeakerCard({members,imgUrl,key,sizing}) {
+function SpeakerCard({members,imgUrl,sizing}) {
     console.log(members);
     return (
         <div

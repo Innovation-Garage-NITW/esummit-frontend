@@ -2,9 +2,7 @@ import React from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import LaunchIcon from "@mui/icons-material/Launch";
 import './Teams.css'
-import MemberCard from "./MemberCard";
-import img from '../../Images/Trees.png'
-import { eccTeamMembers } from "./SpeakerID";
+import { eccTeamMembers } from "../../../../data.js";
 import "animate.css";
 import SpeakerCard from "./SpeakerCard";
 
