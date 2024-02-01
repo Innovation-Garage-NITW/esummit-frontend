@@ -3,11 +3,10 @@ import "animate.css";
 import LaunchIcon from "@mui/icons-material/Launch";
 
 function SpeakerCard({members,imgUrl,sizing}) {
-    console.log(members);
     return (
         <div
             className="proj-imgbx animate__animated animate__zoomInUp animate__delay-1s"
-            style={{ width: `${sizing}px`, borderRadius: "20%", flexShrink:'0'}}
+            style={{ width: `${sizing}px`,/* borderRadius: "20%" ,*/ borderRadius:'0px', flexShrink:'0'}}
         >
             <img
                 src={imgUrl}
