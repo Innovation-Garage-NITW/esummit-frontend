@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import "./Home.css";
 import bgImg from "../Images/new-bg.png"
@@ -14,16 +14,17 @@ import mountain6Left from "../Images/mountain-6-left.png"
 import waveLeft from "../Images/wave-left.png"
 import logo from "../Images/logo.png"
 import tree from "../Images/Trees.png"
-import fade from "../Images/groupmountain.png"
-import mountain5Right from "../Images/Vector70.png"
-import mountain7Left from "../Images/Vector74.png"
-import overview from "../Images/overview.png"
-import overviewtext from "../Images/overviewtext.png"
-import overviewbox from "../Images/overviewbox.png"
-import text from "../Images/text.png"
-//import OverviewSection from "./OverviewSection";
+import mountain5Right from "../Images/ovmountainr.png"
+import mountain7Left from "../Images/ovmountainl.png"
+import OverViewSection2 from "./OverViewSection2";
+import ovstar from '../Images/s.png'
+import { eccTeamMembers,EventsData } from "../../../data";
+import SpeakerCard from "./SpeakerComp/SpeakerCard";
+import ImageCard from "./EventsComp/ImageCard";
+
 
 export const Home = () => {
+
   let flag = 0;
   useEffect(() => {
     const parallax_el = document.querySelectorAll(".parallax")
@@ -63,29 +64,29 @@ export const Home = () => {
     }
 
     function bgAnimationFunction() {
-      if(flag === 1) return;
-      
+      if (flag === 1) return;
+
       let timeline = gsap.timeline();
-      
-      timeline.from(".img-bg", 
-      {
-        top: `${document.querySelector(".img-bg").offsetHeight / 2 + 90}px`,
-        duration: 3.5,
-        ease: "power1.in"
-      }
+
+      timeline.from(".img-bg",
+        {
+          top: `${document.querySelector(".img-bg").offsetHeight / 2 + 90}px`,
+          duration: 3.5,
+          ease: "power1.in"
+        }
       );
-      
+
       moonAnimationFunction();
-      
+
       flag = 1;
     }
 
     bgAnimationFunction();
 
     window.addEventListener("mousemove", (e) => {
-      if(document.timeline.currentTime < 4000) return;
+      if (document.timeline.currentTime < 4000) return;
       xValue = e.clientX - window.innerWidth / 2;
-      yValue = e.clientY- window.innerWidth / 2;
+      yValue = e.clientY - window.innerWidth / 2;
 
       parallax_el.forEach((el) => {
         let speedx = el.dataset.speedx;
@@ -97,43 +98,78 @@ export const Home = () => {
 
         el.style.transform = `translateX(calc(-50% + ${-xValue * speedx}px)) translateY(calc(-50% + ${yValue * speedy}px)) perspective(2300px) translateZ(calc(${zValue * speedz}px))`;
       });
+      document.getElementsByClassName('ovstar')[0].style.transform = `translateX(${-xValue * 0.1}px) translateY(${yValue * 0.1}px) perspective(2300px)`;
     });
-  
+
     return () => {
-      
+
     }
   }, [])
-  
+
   return (
     <>
-    <div className="main">
-      <img src={bgImg} alt="" data-speedx="0.3" data-speedy="0.3" data-speedz="0" data-distance="-200" className="parallax img-bg"/>
-      <img src={stars} alt="" data-speedx="0.27" data-speedy="0.27" data-speedz="0" data-distance="-200" className="parallax stars"/>
-      <img src={sun} alt="" data-speedx="0.01" data-speedy="0.01" data-speedz="0" data-distance="-200" className="parallax sun"/>
-      <img src={logo} alt="" data-speedx="0.01" data-speedy="0.01" data-speedz="0.3" data-distance="-200" className="parallax logo"/>
-      <img src={waveLeft} alt="" data-speedx="0.01" data-speedy="0.01" data-speedz="0" data-distance="200" className="parallax wave-left"/>
-      <img src={mountain0Right} alt="" data-speedx="0.05" data-speedy="0.05" data-speedz="0" data-distance="800" className="parallax mountain-0-right"/>
-      <img src={mountain1Left} alt="" data-speedx="0.05" data-speedy="0.05" data-speedz="0" data-distance="800" className="parallax mountain-1-left"/>
-      <img src={mountain2Right} alt="" data-speedx="0.035" data-speedy="0.05" data-speedz="0.1" data-distance="800" className="parallax mountain-2-right"/>
-      <img src={mountain3Left} alt="" data-speedx="0.035" data-speedy="0.05" data-speedz="0.1" data-distance="800" className="parallax mountain-3-left"/>
-      <img src={mountain4Right} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.15" data-distance="800" className="parallax mountain-4-right"/>
-      <img src={mountain5Left} alt="" data-speedx="0.01" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-5-left"/>
-      <img src={mountain6Left} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-6-left"/>
-      <img src={overview} alt="" className="overview"/>
-      <img src={overviewbox} alt="" className="overviewbox" />
-      <img src={overviewtext} alt="" className="overviewtext" />
-      <img src={mountain5Right} alr="" className="mountain-5-right"/>
-      <img src={mountain7Left} alr="" className="mountain-7-left"/>
-      <img src={text} alt="" className="text" />
+      <div className="main">
+        <img src={bgImg} alt="" data-speedx="0.3" data-speedy="0.3" data-speedz="0" data-distance="-200" className="parallax img-bg" />
+        <img src={stars} alt="" data-speedx="0.27" data-speedy="0.27" data-speedz="0" data-distance="-200" className="parallax stars" />
+        <img src={sun} alt="" data-speedx="0.01" data-speedy="0.01" data-speedz="0" data-distance="-200" className="parallax sun" />
+        <img src={logo} alt="" data-speedx="0.01" data-speedy="0.01" data-speedz="0.3" data-distance="-200" className="parallax logo" />
+        <img src={waveLeft} alt="" data-speedx="0.01" data-speedy="0.01" data-speedz="0" data-distance="200" className="parallax wave-left" />
+        <img src={mountain0Right} alt="" data-speedx="0.05" data-speedy="0.05" data-speedz="0" data-distance="800" className="parallax mountain-0-right" />
+        <img src={mountain1Left} alt="" data-speedx="0.05" data-speedy="0.05" data-speedz="0" data-distance="800" className="parallax mountain-1-left" />
+        <img src={mountain2Right} alt="" data-speedx="0.035" data-speedy="0.05" data-speedz="0.1" data-distance="800" className="parallax mountain-2-right" />
+        <img src={mountain3Left} alt="" data-speedx="0.035" data-speedy="0.05" data-speedz="0.1" data-distance="800" className="parallax mountain-3-left" />
+        <img src={mountain4Right} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.15" data-distance="800" className="parallax mountain-4-right" />
+        <img src={mountain5Left} alt="" data-speedx="0.01" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-5-left" />
+        <img src={mountain6Left} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-6-left" />
+        {/* <img src={overview} alt="" className="overview"/> */}
+        <img src={mountain5Right} alr="" className="mountain-5-right" />
+        <img src={mountain7Left} alr="" className="mountain-7-left" />
+        <div className="ovstardiv">
+              <img src={ovstar} alr="" className="ovstar" />
+              <img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree" />
+        <img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree1" />
+        </div>
 
-      {/* Trees  */}
-      
-      <img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree"/>
-      <img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree1"/>
+        <OverViewSection2 />
 
-      <p className="para">Crafted for the seekers of inspiration:<br></br> ESummit beckons. Dive into a realm where<br></br> sparks of innovation meet the whispers of <br></br> change. Join us in shaping a future beyond <br></br> boundaries at NITW premeier event. <br></br> ESummit--where creativity takes flight <br></br> in the uncharted</p>
-    </div>
-    
+        <div className="speakerSection">
+          <div className="speakerHeading ">
+            <h1>SPEAKERS</h1>
+          </div>
+          <div className="speaker-slider-container">
+            <div className="speaker-slider-scroller">
+              {eccTeamMembers.map((speaker, index) => {
+                return (
+                  <SpeakerCard members={speaker} key={index} imgUrl={speaker.imgUrl} sizing={(window.innerWidth>725)?(200):(175)}/>
+                )
+              })
+              }
+            </div>
+          </div>
+        </div>
+
+        <div className="EventSection">
+          <div className="EventHeading ">
+            <h1>EVENTS</h1>
+          </div>
+          <div className="Event-slider-container">
+            <div className="Event-slider-scroller">
+              {EventsData.map((event, index) => {
+                return (
+                  <ImageCard image={event.image} key={index} title={event.title} details={event.details} sizing={(window.innerWidth>725)?(300):(250)}/>
+                )
+              })
+              }
+            </div>
+          </div>
+        </div>
+
+        {/* Trees  */}
+
+
+
+        {/* <OverviewSection/> */}
+      </div>
     </>
   );
 };

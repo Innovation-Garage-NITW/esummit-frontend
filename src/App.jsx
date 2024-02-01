@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-
+import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
 import Header from "./MyComponents/Header/header";
 import Footer from "./MyComponents/Footer/footer";
 
@@ -23,14 +23,10 @@ const menuItemsData = [
 ];
 
 function App() {
-  const parallax = () => {
-    var scrolled = window.scrollY || document.documentElement.scrollTop;
-    var hero = document.querySelector('.banner-body');
-    hero.style.top = -(scrolled * 0.0315) + 'rem';
-  }
   
   return (
-    <div className="App" onScroll={parallax} >
+    <ScrollContainer>
+    <div className="App" >
       <Header />
 
       <UserAuthContextProvider>
@@ -50,6 +46,7 @@ function App() {
 
       {/* <Footer /> */}
     </div>
+    </ScrollContainer>
   );
 }
 
