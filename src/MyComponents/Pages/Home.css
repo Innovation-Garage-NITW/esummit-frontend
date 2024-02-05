@@ -24,15 +24,15 @@
 }
 
 
-/* ------------------NEW--------------------- */
+/* ------------------TREE--------------------- */
 
 .tree {
     position: absolute;
     z-index: 21;
-    bottom:0px;
+    bottom: 0px;
     /* margin-top: 1150px; */
-    margin-left: -110rem;
-    animation: moveLeftToRight 10s linear infinite;
+    margin-left: -113rem;
+    animation: moveLeftToRight 9s linear infinite;
     background-repeat: repeat-x;
 }
 
@@ -42,7 +42,7 @@
     }
 
     to {
-        transform: translateX(47.5%);
+        transform: translateX(50%);
     }
 }
 
@@ -50,11 +50,9 @@
     position: absolute;
     z-index: 22;
     bottom: 0px;
-    /* margin-top: 1150px; */
-    /* margin-left: -1500px; */
-    transform: scaleX(-1);
+
     /* Adjust the starting position based on the first animation */
-    animation: moveLeftToRight2 10s linear infinite;
+    animation: moveLeftToRight2 9s linear infinite;
 }
 
 @keyframes moveLeftToRight2 {
@@ -63,7 +61,7 @@
     }
 
     to {
-        transform: translateX(47.5%);
+        transform: translateX(50%);
     }
 }
 
@@ -264,16 +262,16 @@
 
 /* .overview */
 
-.ovstardiv{
+.ovstardiv {
     position: absolute;
     z-index: 19;
     width: 100%;
-    top:150%;
+    top: 150%;
     height: 2000px;
     overflow: hidden;
 }
 
-.ovstar{
+.ovstar {
     z-index: 19;
     width: 100%;
     height: 100%;
@@ -281,20 +279,20 @@
 
 /* Speaker Section  */
 
-.speakerSection{
-    padding-top:7%;
+.speakerSection {
+    padding-top: 7%;
     z-index: 20;
     position: relative;
     height: 500px;
     width: 70%;
-    margin : auto ;
+    margin: auto;
 }
 
-.speakerHeading{
-   text-align: center;
+.speakerHeading {
+    text-align: center;
 }
 
-.speakerHeading h1{
+.speakerHeading h1 {
     font-size: 50px;
     color: white;
     font-family: 'Work Sans', sans-serif;
@@ -303,7 +301,7 @@
     animation: glow 1s ease-in-out infinite alternate;
 }
 
-.speaker-slider-container{
+.speaker-slider-container {
     position: relative;
     height: 300px;
     padding-top: 2%;
@@ -311,7 +309,7 @@
     overflow: hidden;
 }
 
-.speaker-slider-scroller{
+.speaker-slider-scroller {
     position: relative;
     height: 300px;
     padding-top: 2%;
@@ -324,14 +322,15 @@
 
 @keyframes scroll {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
+
     100% {
-      transform: translateX(calc(-250px * 6));
+        transform: translateX(calc(-250px * 6));
     }
-  }
-  
-  @-webkit-keyframes glow {
+}
+
+@-webkit-keyframes glow {
     from {
         text-shadow: 0 0 7px #fff, 0 0 10px #ffffff;
     }
@@ -342,17 +341,17 @@
 }
 
 @media (max-width:725px) {
-    .speakerSection{
+    .speakerSection {
         padding-top: 0px;
         height: 350px;
     }
 
-    .speakerHeading h1{
+    .speakerHeading h1 {
         font-size: 30px;
         padding-bottom: 20px;
     }
 
-    .speaker-slider-scroller{
+    .speaker-slider-scroller {
         height: 250px;
     }
 }
@@ -362,20 +361,20 @@
 
 
 
-.EventSection{
-    padding-top:7%;
+.EventSection {
+    padding-top: 7%;
     z-index: 20;
     position: relative;
     height: 500px;
     width: 70%;
-    margin : auto ;
+    margin: auto;
 }
 
-.EventHeading{
-   text-align: center;
+.EventHeading {
+    text-align: center;
 }
 
-.EventHeading h1{
+.EventHeading h1 {
     font-size: 50px;
     color: white;
     font-family: 'Work Sans', sans-serif;
@@ -384,7 +383,7 @@
     animation: glow 1s ease-in-out infinite alternate;
 }
 
-.Event-slider-container{
+.Event-slider-container {
     position: relative;
     height: 370px;
     padding-top: 2%;
@@ -392,7 +391,7 @@
     overflow: hidden;
 }
 
-.Event-slider-scroller{
+.Event-slider-scroller {
     position: absolute;
     height: 370px;
     padding-top: 2%;
@@ -406,14 +405,15 @@
 
 @keyframes scroll2 {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
+
     100% {
-      transform: translateX(calc(250px * 6));
+        transform: translateX(calc(250px * 6));
     }
-  }
-  
-  @-webkit-keyframes glow {
+}
+
+@-webkit-keyframes glow {
     from {
         text-shadow: 0 0 7px #fff, 0 0 10px #ffffff;
     }
@@ -424,28 +424,28 @@
 }
 
 @media (max-width:725px) {
-    .EventSection{
+    .EventSection {
         padding-top: 0px;
     }
 
-    .EventHeading h1{
+    .EventHeading h1 {
         font-size: 30px;
         padding-bottom: 20px;
     }
 
-    .Event-slider-scroller{
+    .Event-slider-scroller {
         height: 300px;
         width: calc(250px*9);
     }
 
-    .ovstardiv{
+    .ovstardiv {
         height: 1200px;
     }
 
     .mountain-5-right {
-        height: 180% ;
+        height: 180%;
     }
-    
+
     .mountain-7-left {
         height: 180%;
     }
