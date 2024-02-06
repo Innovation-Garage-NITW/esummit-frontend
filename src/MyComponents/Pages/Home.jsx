@@ -169,9 +169,6 @@ export const Home = () => {
 					</div>
 				</div>
 
-				{/* Trees  */}
-
-
 
 				{/* <OverviewSection/> */}
 			</div>
