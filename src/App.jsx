@@ -10,7 +10,7 @@ import {
   Sponsors,
   Speakers,
   RegisterLogin,
-  ContactUs,
+  Teams,
 } from "./MyComponents/Pages";
 import { UserAuthContextProvider } from "./context/userAuthContext";
 
@@ -18,7 +18,7 @@ const menuItemsData = [
   { label: "Events", link: "/Events", component: <Events /> },
   { label: "Sponsors", link: "/Sponsors", component: <Sponsors /> },
   { label: "Speakers", link: "/Speakers", component: <Speakers /> },
-  { label: "ContactUs", link: "/Contact-Us", component: <ContactUs /> },
+  { label: "ContactUs", link: "/Contact-Us", component: <Teams /> },
   { label: "RegisterLogin", link: "/Register-Login", component: <RegisterLogin />, },
 ];
 

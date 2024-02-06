@@ -1,0 +1,19 @@
+.member-card {
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0);
+  }
+  
+  .member-card:hover {
+    transform: scale(1.09) rotate(-3deg); 
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.9); 
+  }
+  

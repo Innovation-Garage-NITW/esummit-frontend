@@ -1,0 +1,17 @@
+.navbar {
+    background-color: yellow;
+
+    height: 50px; 
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10%;
+    
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }

@@ -10,7 +10,7 @@ const menuItemsData = [
 	{ label: "Events", link: "/Events" },
 	{ label: "Sponsors", link: "/Sponsors" },
 	{ label: "Speakers", link: "/Speakers" },
-	{ label: "Contact Us", link: "/Contact-Us" },
+	{ label: "Teams", link: "/Contact-Us" },
 	{ label: "Register/Login", link: "/Register-Login" },
 ];
 

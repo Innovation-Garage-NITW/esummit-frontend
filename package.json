@@ -22,6 +22,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
+    "react-particles-js": "^3.6.0",
     "react-phone-number-input": "^3.3.8",
     "react-rotating-text": "^1.4.1",
     "react-router-dom": "^6.21.1",

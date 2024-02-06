@@ -3,5 +3,5 @@ export * from "./Home";
 export * from "./Events";
 export * from "./Sponsors";
 export * from "./Speakers";
-export * from "./ContactUs";
+export * from "./Teams/Teams";
 export * from "./RegisterLogin";
