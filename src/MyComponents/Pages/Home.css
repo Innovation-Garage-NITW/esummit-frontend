@@ -303,30 +303,36 @@
 
 .speaker-slider-container {
     position: relative;
-    height: 300px;
+    height: 370px;
     padding-top: 2%;
     padding-bottom: 2%;
     overflow: hidden;
 }
 
 .speaker-slider-scroller {
-    position: relative;
-    height: 300px;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    position: absolute;
+    top:10%;
+    left: 0px;
+    overflow: hidden;
     display: flex;
-    gap: 80px;
-    width: calc(250px*14);
-    animation: scroll 40s linear infinite;
+    gap:80px;
+    white-space: nowrap;
+    animation: scroll 50s linear infinite;
 }
 
+.speaker-slider-scroller:hover{
+    animation-play-state : paused;
+}
+
+
 @keyframes scroll {
+
     0% {
         transform: translateX(0);
     }
 
     100% {
-        transform: translateX(calc(-250px * 6));
+        transform: translateX(-51.2%);
     }
 }
 
