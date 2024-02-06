@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@emotion/styled": "^11.0.0",
+    "@fortawesome/fontawesome-free": "^6.5.1",
     "@mui/icons-material": "^5.0.0",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
@@ -22,7 +23,6 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
-    "react-particles-js": "^3.6.0",
     "react-phone-number-input": "^3.3.8",
     "react-rotating-text": "^1.4.1",
     "react-router-dom": "^6.21.1",
@@ -36,10 +36,12 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
+    "css-loader": "^6.10.0",
     "eslint": "^8.55.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "style-loader": "^3.3.4",
     "vite": "^5.0.8"
   },
   "browserslist": {
