@@ -27,8 +27,8 @@ const Footer = () => {
 		{
 			title: "Help",
 			links: [
-				// { label: "FAQ", href: "#" },
 				{ label: "Registration", href: "#" },
+				{ label: "Hostel Accommodation", href: "#" },
 			],
 		},
 		{
