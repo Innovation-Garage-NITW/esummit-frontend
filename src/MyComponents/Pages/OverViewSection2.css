@@ -47,7 +47,7 @@
 }
 
 .overviewbox {
-    height: 60%;
+    /* height: 60%; */
     animation: shake 0.5s ease-in-out infinite;
 }
 
@@ -87,12 +87,14 @@
 .overview-container {
     height: 400px;
     width: 95%;
-    padding: 2%;
+    padding: 5%;
+    margin-top: 4%;
 }
 
 .overviewheading {
     width: 100%;
     text-align: center;
+
 }
 
 .overviewheading h1 {
@@ -101,6 +103,7 @@
     font-family: 'Work Sans', sans-serif;
     font-size: 60px;
     font-weight: 900;
+    margin-top: -5%;
     animation: glow 1s ease-in-out infinite alternate;
 }
 
@@ -240,7 +243,7 @@ p {
     /* transform: translateX(-100px); */
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
 
     p {
         display: inline-flex;
@@ -277,38 +280,39 @@ p {
     }
 }
 
-@media (max-width: 725px){
-    .overpara{
+@media (max-width: 725px) {
+    .overpara {
         font-size: 15px;
     }
-    .overview-body{
+
+    .overview-body {
         padding-left: 0;
         padding-right: 0;
         height: 600px;
     }
 
-    .overviewheading h1{
+    .overviewheading h1 {
         font-size: 40px;
     }
 
-    .overexplain{
+    .overexplain {
         width: 100%;
         height: 350px;
     }
 
-    .statscontainer{
+    .statscontainer {
         height: 50%;
         justify-content: center;
-        transform :translate(14%);
+        transform: translate(14%);
     }
 
-    .countcontainer{
+    .countcontainer {
         font-size: 80px;
         height: 100px;
     }
 
-    .countfoot{
+    .countfoot {
         height: 100px;
-        font-size:40px;
+        font-size: 40px;
     }
 }
