@@ -1,8 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
+import { ScrollContainer } from "react-scroll-motion";
 import Header from "./MyComponents/Header/header";
-import Footer from "./MyComponents/Footer/footer";
 
 import {
   Home,
@@ -11,6 +10,7 @@ import {
   Speakers,
   RegisterLogin,
   ContactUs,
+  Admin,
 } from "./MyComponents/Pages";
 import { UserAuthContextProvider } from "./context/userAuthContext";
 
@@ -20,6 +20,7 @@ const menuItemsData = [
   { label: "Speakers", link: "/Speakers", component: <Speakers /> },
   { label: "ContactUs", link: "/Contact-Us", component: <ContactUs /> },
   { label: "RegisterLogin", link: "/Register-Login", component: <RegisterLogin />, },
+  { label: "admin", link: "/admin", component: <Admin />, },
 ];
 
 function App() {

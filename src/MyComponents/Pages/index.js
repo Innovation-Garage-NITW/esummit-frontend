@@ -5,3 +5,5 @@ export * from "./Sponsors";
 export * from "./Speakers";
 export * from "./ContactUs";
 export * from "./RegisterLogin";
+export * from "./Admin";
+

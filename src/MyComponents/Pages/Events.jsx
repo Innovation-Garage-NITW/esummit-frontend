@@ -1,7 +1,6 @@
 import imgUrl from '../Images/Event3.jpg'
 import Banner from './Banner'
 import ImageCard from './EventsComp/ImageCard'
-import posterUrl from "../../assets/poster_innovate_sphere.jpeg";
 import { Container } from 'react-bootstrap';
 import { EventsData } from '../../../data';
 

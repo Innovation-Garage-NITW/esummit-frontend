@@ -13,6 +13,8 @@
   "dependencies": {
     "@emotion/styled": "^11.0.0",
     "@mui/icons-material": "^5.0.0",
+    "@mui/lab": "5.0.0-alpha.163",
+    "@mui/material": "^5.15.7",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "firebase": "^10.7.1",
