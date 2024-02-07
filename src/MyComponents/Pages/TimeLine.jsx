@@ -149,7 +149,7 @@ function TimeLine() {
     return (
         <>
             <div className="timeline-container">
-                <h1>NITW's E-SUMMIT TIMELINE</h1>
+                <h1 style={{position:'static'}}>NITW's E-SUMMIT TIMELINE</h1>
                 <div className='btn-container'>
                     <button className={`timeLine-btn ${(day == 1) ? 'active-btn' : ''} `} onClick={() => { setDay(1) }}>DAY 1</button>
                     <button className={`timeLine-btn ${(day == 2) ? 'active-btn' : ''} `} onClick={() => { setDay(2) }}>DAY 2</button>
