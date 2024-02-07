@@ -50,7 +50,6 @@ a {
 	font-family: 'poppins';
 }
 
-
 .input-box .icon {
 	position: absolute;
 	right: 20px;
@@ -78,7 +77,6 @@ a {
 	font-size: 16px;
 	color: #fff;
 	font-style: 'poppins';
-
 }
 
 .button-right button {
@@ -101,17 +99,16 @@ a {
 	border-color: #1a61ad;
 }
 
-.p-4_box .react-phone-number-input .form-control::placeholder {
-	color: #a3a3a3;
-	/* Light gray color for the placeholder text */
-
-}
-
 .PhoneInputCountry {
 	margin-right: 4%;
 	left: 3%;
 }
 
+.p-4_box .react-phone-number-input .form-control::placeholder {
+	color: #a3a3a3;
+	/* Light gray color for the placeholder text */
+
+}
 
 
 
@@ -155,7 +152,7 @@ a {
 .otp_box {
 	display: flex;
 	font-family: 'poppins';
-	translate: 35%;
+	/* //translate: 35%; */
 	margin-bottom: 5%;
 	border-radius: 50px;
 	height: 3rem;
@@ -163,4 +160,47 @@ a {
 	text-align: center;
 	font-weight: 400;
 	font-size: 16px;
+}
+
+.p {
+	text-align: center;
+}
+
+.p5-box {
+	width: 420px;
+	margin-top: 6rem;
+	background-color: rgba(136, 176, 208, 0.717);
+	border: 2px solid rgba(225, 225, 255, .2);
+	padding: 30px 40px;
+	border-radius: 10px;
+	z-index: 2;
+}
+
+.p5-box h2 {
+	color: white;
+	margin-bottom: 10px;
+	font-size: 36px;
+	text-align: center;
+	font-family: 'Poppins';
+}
+
+.otp_box2 {
+	display: flex;
+	font-family: 'poppins';
+	/* //translate: 35%; */
+	/* margin-top: 5%; */
+	margin-bottom: 5%;
+	border-radius: 50px;
+	height: 3rem;
+	border: none;
+	text-align: center;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.recaptcha-container {
+	margin-top: 5%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

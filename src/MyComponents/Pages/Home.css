@@ -9,7 +9,7 @@
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     z-index: 1;
 }
 
@@ -280,7 +280,7 @@
 /* Speaker Section  */
 
 .speakerSection {
-    padding-top: 7%;
+    /* padding-top: 7%; */
     z-index: 20;
     position: relative;
     height: 500px;
@@ -290,6 +290,8 @@
 
 .speakerHeading {
     text-align: center;
+    margin-bottom: 7%;
+    padding-bottom: 5%;
 }
 
 .speakerHeading h1 {
@@ -307,6 +309,7 @@
     padding-top: 2%;
     padding-bottom: 2%;
     overflow: hidden;
+    /* margin-top: 8rem; */
 }
 
 .speaker-slider-scroller {
@@ -368,7 +371,7 @@
 
 
 .EventSection {
-    padding-top: 7%;
+    /* padding-top: 7%; */
     z-index: 20;
     position: relative;
     height: 500px;
@@ -378,6 +381,8 @@
 
 .EventHeading {
     text-align: center;
+    margin-bottom: 7%;
+    padding-bottom: 2%;
 }
 
 .EventHeading h1 {
@@ -395,6 +400,7 @@
     padding-top: 2%;
     padding-bottom: 2%;
     overflow: hidden;
+    margin-top: 7rem;
 }
 
 

@@ -27,9 +27,12 @@ const Header = () => {
 	return (
 		<>
 			<nav>
-				<Link to="./" className="title">
-					<img src={IG_logo} alt="logo1" />
-				</Link>
+				<div className="title">
+					<Link to="./">
+						<img src={IG_logo} alt="logo1" />
+					</Link>
+				</div>
+
 				<div
 					className="menu"
 					onClick={() => {

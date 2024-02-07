@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
+import { ScrollContainer } from "react-scroll-motion";
 import Header from "./MyComponents/Header/header";
 import Footer from "./MyComponents/Footer/footer";
 
@@ -11,16 +11,20 @@ import {
 	Speakers,
 	RegisterLogin,
 	Teams,
+	Admin,
 } from "./MyComponents/Pages";
 import { UserAuthContextProvider } from "./context/userAuthContext";
 import TimeLine from "./MyComponents/Pages/TimeLine";
 
 const menuItemsData = [
+
 	{ label: "Events", link: "/Events", component: <Events /> },
 	{ label: "Sponsors", link: "/Sponsors", component: <Sponsors /> },
 	{ label: "Speakers", link: "/Speakers", component: <Speakers /> },
 	{ label: "Teams", link: "/Contact-Us", component: <Teams /> },
 	{ label: "RegisterLogin", link: "/Register-Login", component: <RegisterLogin />, },
+	{ label: "admin", link: "/admin", component: <Admin />, },
+
 	{label:"TimeLine" , link:'/TimeLine',component:<TimeLine/>}
 ];
 
