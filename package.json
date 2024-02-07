@@ -1,54 +1,106 @@
 {
 
 	"name": "learn",
+
 	"private": true,
+
 	"version": "0.0.0",
+
 	"type": "module",
+
 	"scripts": {
+
 		"start": "react-scripts start",
+
 		"dev": "vite",
+
 		"build": "vite build",
+
 		"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+
 		"preview": "vite preview"
+
 	},
+
 	"dependencies": {
+
 		"@emotion/styled": "^11.0.0",
+
 		"@fortawesome/fontawesome-free": "^6.5.1",
+
 		"@mui/icons-material": "^5.0.0",
+
+		"@mui/lab": "^5.0.0-alpha.164",
+
 		"animate.css": "^4.1.1",
+
 		"firebase": "^10.7.1",
+
 		"framer-motion": "^11.0.3",
+
 		"gsap": "^3.12.4",
+
 		"react": "^18.2.0",
+
 		"react-bootstrap": "^2.9.2",
+
 		"react-dom": "^18.2.0",
+
 		"react-fast-marquee": "^1.6.3",
+
 		"react-phone-number-input": "^3.3.8",
+
 		"react-router-dom": "^6.21.1",
+
 		"react-scripts": "^5.0.1",
+
 		"react-scroll-motion": "^0.3.3",
+
 		"react-type-animation": "^3.2.0"
+
 	},
+
 	"devDependencies": {
+
 		"@types/react": "^18.2.43",
+
 		"@vitejs/plugin-react": "^4.2.1",
+
 		"eslint": "^8.55.0",
+
 		"eslint-plugin-react": "^7.33.2",
+
 		"eslint-plugin-react-hooks": "^4.6.0",
+
 		"eslint-plugin-react-refresh": "^0.4.5",
+
 		"vite": "^5.0.8"
+
 	},
+
 	"browserslist": {
+
 		"production": [
+
 			">0.2%",
+
 			"not dead",
+
 			"not op_mini all"
+
 		],
+
 		"development": [
+
 			"last 1 chrome version",
+
 			"last 1 firefox version",
+
 			"last 1 safari version"
+
 		]
+
 	}
+
 }
 
