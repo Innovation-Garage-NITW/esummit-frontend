@@ -397,17 +397,25 @@
     overflow: hidden;
 }
 
+
 .Event-slider-scroller {
     position: absolute;
-    height: 370px;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    display: flex;
-    gap: 80px;
-    width: calc(250px*11);
-    animation: scroll2 40s linear infinite;
+    top:10%;
     right: 0px;
+    overflow: hidden;
+    display: flex;
+    gap:80px;
+    white-space: nowrap;
+    animation: scroll2 50s linear infinite;
 }
+
+
+
+.Event-slider-scroller:hover{
+    animation-play-state : paused;
+}
+
+
 
 @keyframes scroll2 {
     0% {
@@ -415,7 +423,7 @@
     }
 
     100% {
-        transform: translateX(calc(250px * 6));
+        transform: translateX(51.2%);
     }
 }
 

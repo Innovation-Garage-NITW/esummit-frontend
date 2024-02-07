@@ -24,8 +24,8 @@ import ImageCard from "./EventsComp/ImageCard";
 
 
 export const Home = () => {
-	const temp = eccTeamMembers.concat(eccTeamMembers);
-
+	const speakerData = eccTeamMembers.concat(eccTeamMembers);
+	const eventData = EventsData.concat(EventsData); 
 	let flag = 0;
 	let flag2 = false;
 	setTimeout(() => {
@@ -143,9 +143,9 @@ export const Home = () => {
 					</div>
 					<div className="speaker-slider-container">
 						<div className="speaker-slider-scroller">
-							{temp.map((speaker, index) => {
+							{speakerData.map((speaker, index) => {
 								return (
-									<SpeakerCard members={speaker} key={index} imgUrl={speaker.imgUrl} sizing={(window.innerWidth > 725) ? (300) : (175)} />
+									<SpeakerCard members={speaker} key={index} imgUrl={speaker.imgUrl} sizing={(window.innerWidth > 725) ? (300) : (250)} />
 								)
 							})
 							}
@@ -159,7 +159,7 @@ export const Home = () => {
 					</div>
 					<div className="Event-slider-container">
 						<div className="Event-slider-scroller">
-							{EventsData.map((event, index) => {
+							{eventData.map((event, index) => {
 								return (
 									<ImageCard image={event.image} key={index} title={event.title} details={event.details} sizing={(window.innerWidth > 725) ? (300) : (250)} />
 								)

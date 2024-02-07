@@ -13,6 +13,7 @@ import {
 	Teams,
 } from "./MyComponents/Pages";
 import { UserAuthContextProvider } from "./context/userAuthContext";
+import TimeLine from "./MyComponents/Pages/TimeLine";
 
 const menuItemsData = [
 	{ label: "Events", link: "/Events", component: <Events /> },
@@ -20,6 +21,7 @@ const menuItemsData = [
 	{ label: "Speakers", link: "/Speakers", component: <Speakers /> },
 	{ label: "Teams", link: "/Contact-Us", component: <Teams /> },
 	{ label: "RegisterLogin", link: "/Register-Login", component: <RegisterLogin />, },
+	{label:"TimeLine" , link:'/TimeLine',component:<TimeLine/>}
 ];
 
 function App() {

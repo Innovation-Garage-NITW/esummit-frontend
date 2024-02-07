@@ -21,6 +21,7 @@
     "mdb-react-ui-kit": "^7.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.2",
+    "react-chrono": "^2.4.2",
     "react-dom": "^18.2.0",
     "react-phone-number-input": "^3.3.8",
     "react-rotating-text": "^1.4.1",
