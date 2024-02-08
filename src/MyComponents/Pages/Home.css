@@ -31,7 +31,7 @@
     z-index: 21;
     bottom: 0px;
     /* margin-top: 1150px; */
-    margin-left: -113rem;
+    margin-left: -130rem;
     animation: moveLeftToRight 9s linear infinite;
     background-repeat: repeat-x;
 }
@@ -50,7 +50,7 @@
     position: absolute;
     z-index: 22;
     bottom: 0px;
-
+    left: 50%;
     /* Adjust the starting position based on the first animation */
     animation: moveLeftToRight2 9s linear infinite;
 }
@@ -70,14 +70,14 @@
 .mountain-5-right {
     position: absolute;
     z-index: 15;
-    top: calc(75% + 2.776%);
+    top: calc(67% + 2.776%);
     left: calc(-4% - 0px);
     scale: 100%;
 }
 
 .mountain-7-left {
     position: absolute;
-    top: calc(70% + 7.188%);
+    top: calc(60% + 7.188%);
     scale: 100%;
     left: calc(-13% - 0px);
     z-index: 14;
@@ -306,7 +306,6 @@
 .speaker-slider-container {
     position: relative;
     height: 370px;
-    padding-top: 2%;
     padding-bottom: 2%;
     overflow: hidden;
     /* margin-top: 8rem; */
@@ -320,7 +319,7 @@
     display: flex;
     gap:80px;
     white-space: nowrap;
-    animation: scroll 90s linear infinite;
+    animation: scroll3 90s linear infinite;
 }
 
 .speaker-slider-scroller:hover{
@@ -328,14 +327,14 @@
 }
 
 
-@keyframes scroll {
+@keyframes scroll3 {
 
     0% {
         transform: translateX(0);
     }
 
     100% {
-        transform: translateX(-47.2%);
+        transform: translateX(-51.2%);
     }
 }
 
@@ -397,7 +396,6 @@
 .Event-slider-container {
     position: relative;
     height: 370px;
-    padding-top: 2%;
     padding-bottom: 2%;
     overflow: hidden;
     margin-top: 7rem;
@@ -406,7 +404,6 @@
 
 .Event-slider-scroller {
     position: absolute;
-    top:10%;
     right: 0px;
     overflow: hidden;
     display: flex;
@@ -455,7 +452,6 @@
 
     .Event-slider-scroller {
         height: 300px;
-        width: calc(250px*9);
     }
 
     .ovstardiv {

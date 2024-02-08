@@ -145,7 +145,7 @@ export const Home = () => {
 						<div className="speaker-slider-scroller">
 							{speakerData.map((speaker, index) => {
 								return (
-									<SpeakerCard members={speaker} key={index} imgUrl={speaker.imgUrl} sizing={(window.innerWidth > 725) ? (300) : (250)} />
+									<SpeakerCard members={speaker} key={index} imgUrl={speaker.imgUrl} sizing={(window.innerWidth > 900) ? (300) : (250)} />
 								)
 							})
 							}

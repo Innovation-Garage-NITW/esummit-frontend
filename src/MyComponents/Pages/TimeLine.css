@@ -80,12 +80,6 @@ body {
 		background-color var(--trans-dur),
 		color var(--trans-dur);
 }
-h1 {
-	font-size: 2em;
-	margin: 0 0 3rem;
-	padding-top: 1.5rem;
-	text-align: center;
-}
 .btn {
 	background-color: var(--fg);
 	border-radius: 0.25em;

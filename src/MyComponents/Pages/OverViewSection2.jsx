@@ -114,7 +114,7 @@ function OverViewSection2() {
         <div className='overviewheading'>
           <TypeAnimation
             sequence={[
-              "E-SUMMIT Presenting ...",
+              "NITW E-SUMMIT Presenting ...",
               () => {
                 console.log('Sequence completed');
               },
