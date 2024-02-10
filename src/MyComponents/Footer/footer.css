@@ -12,8 +12,9 @@ body {
 }
 
 .container {
-	margin: auto;
+	/* margin: 0 4rem 0 4rem; */
 	width: 100%;
+	overflow: hidden;
 }
 
 .row {
@@ -21,8 +22,9 @@ body {
 	flex-wrap: wrap;
 }
 
-ul {
+.footer ul {
 	list-style: none;
+	padding-left: 0.7rem;
 }
 
 .footer {
@@ -32,12 +34,15 @@ ul {
 	position: relative;
 	/*  change to absolute if you want to stick it to the bottom               */
 	bottom: 0;
-	width: 100%;
+	z-index: 100;
+	/* width: 100%; */
+	overflow: hidden;
 }
 
 .footer-col {
 	width: 25%;
-	padding: 0 2rem;
+	padding: 0 1rem;
+	/* margin: 0 0.5rem; */
 }
 
 .footer-col img {
