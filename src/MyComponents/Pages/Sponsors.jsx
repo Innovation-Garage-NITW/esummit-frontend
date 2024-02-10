@@ -1,9 +1,19 @@
+
+import { useEffect } from 'react'
+import { getSponsors } from '../../../backend_functions'
+
 import React from 'react';
 import Marquee from "react-fast-marquee";
 import './Sponsors.css';
 import bigTechSVG from './big_tech.svg'; 
 
+
 export const Sponsors = () => {
+
+  useEffect(() => {
+    getSponsors();
+  })
+
   return (
     <div className="marquee-container">
       <h1>Our Sponsors</h1>
