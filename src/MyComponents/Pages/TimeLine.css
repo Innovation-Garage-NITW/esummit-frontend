@@ -27,20 +27,24 @@
 }
 
 .timeline-container h1{
-    text-shadow: 0 0 20px #fff
+    text-shadow: 0 0 20px #fff;
+	text-align : center;
+	padding-bottom:5%;
 }
 
 .btn-container{
     display: flex;
     justify-content: center;
     gap:10%;
+	padding-bottom: 5%;
 }
 
 .timeLine-btn{
     background-color: black;
-    font-size: 30px;
+    font-size: 50px;
     padding-left: 3%;
     padding-right:3%;
+	text-shadow: 0 0 5px #fff;
 }
 
 .active-btn{
@@ -57,7 +61,7 @@
     }
 
     to {
-        text-shadow: 0 0 20px #fff
+        text-shadow: 0 0 7px #fff,0 0 4px #ffffff
     }
 }
 
@@ -218,4 +222,12 @@ body {
 		--fg: hsl(var(--hue),10%,90%);
 		--primary: hsl(var(--hue),90%,70%);
 	}
+}
+
+@media (max-height:900px){
+	.timeLine-btn{
+		font-size: 30px;
+	}
+
+	
 }

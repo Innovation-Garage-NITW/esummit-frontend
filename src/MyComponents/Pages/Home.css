@@ -280,7 +280,7 @@
 /* Speaker Section  */
 
 .speakerSection {
-    /* padding-top: 7%; */
+    padding-top: 7%;
     z-index: 20;
     position: relative;
     height: 500px;
@@ -290,8 +290,6 @@
 
 .speakerHeading {
     text-align: center;
-    margin-bottom: 7%;
-    padding-bottom: 5%;
 }
 
 .speakerHeading h1 {
@@ -348,10 +346,10 @@
     }
 }
 
-@media (max-width:725px) {
+@media (max-width:900px) {
     .speakerSection {
-        padding-top: 0px;
-        height: 350px;
+        padding-top: 20%;
+        height: fit-content;
     }
 
     .speakerHeading h1 {
@@ -362,6 +360,14 @@
     .speaker-slider-scroller {
         height: 250px;
     }
+
+    .tree{
+        display: none;
+    }
+
+    .tree1{
+        display: none;
+    }
 }
 
 
@@ -370,7 +376,7 @@
 
 
 .EventSection {
-    /* padding-top: 7%; */
+    padding-top: 7%;
     z-index: 20;
     position: relative;
     height: 500px;
@@ -380,8 +386,6 @@
 
 .EventHeading {
     text-align: center;
-    margin-bottom: 7%;
-    padding-bottom: 2%;
 }
 
 .EventHeading h1 {
@@ -398,7 +402,7 @@
     height: 370px;
     padding-bottom: 2%;
     overflow: hidden;
-    margin-top: 7rem;
+    /* margin-top: 7rem; */
 }
 
 
@@ -440,9 +444,9 @@
     }
 }
 
-@media (max-width:725px) {
+@media (max-width:900px) {
     .EventSection {
-        padding-top: 0px;
+        /* padding-top: 10%; */
     }
 
     .EventHeading h1 {
@@ -466,4 +470,13 @@
         height: 180%;
     }
 
+    .speaker-slider-container{
+        height: 300px;
+    }
+
+    .EventSection{
+        padding-top:0%;
+    }
+
 }
+

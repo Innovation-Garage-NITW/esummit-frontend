@@ -28,7 +28,7 @@ export const Teams = () => {
 	return (
 
 		<div className="teams-container">
-			<h1>Teams</h1>
+			<h1 className="page-heading">Teams</h1>
 			{/* Render list of teams */}
 			<div className="team-selection-container">
 				<div className="team-selection">
