@@ -22,9 +22,16 @@ import { useNavigate } from "react-router-dom";
 function CreateEvents() {
   const [formData, setFormData] = useState({
     name: "",
+    shortDescription: "",
     description: "",
-    photo: "",
-    date: "",
+    priority: "",
+    day: "",
+    venue: "",
+    time: "",
+    cateogry: "",
+    imageUrl: "",
+    unstopLink: "",
+    prizes: "",
   });
   const handleFormChange = (e) => {
     const { name, value } = e.target;
@@ -39,8 +46,22 @@ function CreateEvents() {
     console.log(formData);
     // Here you can handle form submission logic
   };
+  // {
+  //   name: body.name,
+  //   shortDescription: body.shortDescription,
+  //   description: body.description,
+  //   priority: body.priority,
+  //   day: body.day,
+  //   venue: body.venue,
+  //   time: body.time,
+  //   cateogry: body.category,
+  //   imageUrl: body.imageUrl,
+  //   unstopLink: body.unstopLink,
+  //   prizes: body.prizes,
+  //   users: [],
+  // };
   return (
-    <Box>
+    <Box style={{ maxHeight: "90vh" }}>
       <Typography variant="h5">Create Events</Typography>
       <form onSubmit={handleSubmit}>
         <TextField
@@ -80,6 +101,61 @@ function CreateEvents() {
           onChange={handleFormChange}
           sx={{ mb: 2 }}
         />
+        <TextField
+          label="Time"
+          variant="outlined"
+          fullWidth
+          name="time"
+          type="time"
+          value={formData.time}
+          onChange={handleFormChange}
+          sx={{ mb: 2 }}
+        />
+        <TextField
+          label="Venue"
+          variant="outlined"
+          fullWidth
+          name="venue"
+          value={formData.venue}
+          onChange={handleFormChange}
+          sx={{ mb: 2 }}
+        />
+        <TextField
+          label="Category"
+          variant="outlined"
+          fullWidth
+          name="category"
+          value={formData.category}
+          onChange={handleFormChange}
+          sx={{ mb: 2 }}
+        />
+        <TextField
+          label="Priority"
+          variant="outlined"
+          fullWidth
+          name="priority"
+          value={formData.priority}
+          onChange={handleFormChange}
+          sx={{ mb: 2 }}
+        />
+        <TextField
+          label="UnStop Link"
+          variant="outlined"
+          fullWidth
+          name="unstopLink"
+          value={formData.unstopLink}
+          onChange={handleFormChange}
+          sx={{ mb: 2 }}
+        />
+        <TextField
+          label="Prizes"
+          variant="outlined"
+          fullWidth
+          name="prizes"
+          value={formData.prizes}
+          onChange={handleFormChange}
+          sx={{ mb: 2 }}
+        />
         <Button type="submit" variant="contained" color="primary">
           Submit
         </Button>
@@ -110,7 +186,7 @@ function ManageEvents() {
       )
         .then((x) => x.json())
         .then((x) => x.events);
-      setEvents(response);
+      setEvents(response || []);
       console.log({ response });
     })();
   }, [user]);
@@ -186,7 +262,7 @@ export const Admin = () => {
       <TabContext value={value}>
         <AppBar
           position="fixed"
-          style={{ height: "13vh", backgroundColor: "#fff" }}
+          style={{ height: "calc(70px + 4vw)", backgroundColor: "#fff" }}
         >
           <Toolbar>
             <Typography
@@ -225,7 +301,10 @@ export const Admin = () => {
             flexGrow: 1,
             bgcolor: "background.default",
             p: 3,
-            marginTop: "12vh",
+            marginTop: "8vh",
+            maxHeight: "90vh",
+            overflow: "auto",
+            marginRight: "2vw",
           }}
         >
           <Toolbar />
