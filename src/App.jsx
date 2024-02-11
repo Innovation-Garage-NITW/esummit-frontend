@@ -23,29 +23,29 @@ const menuItemsData = [
 ];
 
 function App() {
-  
+
   return (
     <ScrollContainer>
-    <div className="App" >
-      <Header />
+      <div className="App" >
+        <Header />
 
-      <UserAuthContextProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
+        <UserAuthContextProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
 
-          {/*mapping all the routes*/}
-          {menuItemsData.map((menuItem) => (
-            <Route
-              key={menuItem.link}
-              path={menuItem.link}
-              element={menuItem.component}
-            />
-          ))}
-        </Routes>
-      </UserAuthContextProvider>
+            {/*mapping all the routes*/}
+            {menuItemsData.map((menuItem) => (
+              <Route
+                key={menuItem.link}
+                path={menuItem.link}
+                element={menuItem.component}
+              />
+            ))}
+          </Routes>
+        </UserAuthContextProvider>
 
-      {/* <Footer /> */}
-    </div>
+        {/* <Footer /> */}
+      </div>
     </ScrollContainer>
   );
 }

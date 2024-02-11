@@ -12,8 +12,31 @@ const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
     const [user, setUser] = useState({});
+    const [events, setEvents] = useState([]);
+    // const [spons, setSpons] = useState([]);
     function logOut() {
         return signOut(auth);
+    }
+
+    async function getEvents() {
+        if (events.length !== 0) return events;
+        try {
+            const fetched_events = [];
+            const response = await fetch(
+                "https://us-central1-esummit-ig.cloudfunctions.net/getEvents"
+            );
+            const data = await response.json();
+            for (const event of data['events']) {
+                // console.log(event);
+                fetched_events.push(event);
+            }
+            setEvents(fetched_events);
+            // setEventFetched(true);
+            // console.log(fetched_events);
+            return fetched_events;
+        } catch (error) {
+            console.log("Error getting events:", error);
+        }
     }
 
     function setUpRecaptha(number) {
@@ -24,14 +47,14 @@ export function UserAuthContextProvider({ children }) {
             }
 
         );
-        console.log(recaptchaVerifier);
+        // console.log(recaptchaVerifier);
         recaptchaVerifier.render();
         return signInWithPhoneNumber(auth, number, recaptchaVerifier);
     }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-            console.log("Auth", currentuser);
+            // console.log("Auth", currentuser);
             setUser(currentuser);
         });
 
@@ -46,6 +69,7 @@ export function UserAuthContextProvider({ children }) {
                 user,
                 logOut,
                 setUpRecaptha,
+                getEvents,
             }}
         >
             {children}

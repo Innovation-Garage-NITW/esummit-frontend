@@ -3,12 +3,10 @@ import { db } from "./firebase"
 
 export async function getEvents() {
     try {
-        const querySnapshot = await getDocs(collection(db, "events"));
-        const list = [];
-        querySnapshot.forEach(doc => {
-            list.push(doc.data());
-        })
-        return list;
+        const response = await fetch('https://us-central1-esummit-ig.cloudfunctions.net/getEvents');
+        const data = await response.json();
+        console.log(data);
+        return data['events'];
     } catch (error) {
         console.log("Error getting events:", error);
     }
@@ -35,7 +33,7 @@ export async function getSponsors() {
         querySnapshot.forEach(doc => {
             list.push(doc.data());
         })
-        console.log(list);
+        // console.log(list);
         return list;
     } catch (error) {
         console.log("Error getting sponsors:", error);
