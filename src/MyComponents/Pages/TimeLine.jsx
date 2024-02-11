@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import './TimeLine.css';
 import { Chrono } from 'react-chrono';
 
-// import {Chrono} from ''
 
 function TimeLine() {
 
@@ -21,8 +20,8 @@ function TimeLine() {
             time: "16th March 2024 , 5:00 PM",
             category: 'Competition',
             imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo',
-            unstopLink:"",
-            prizes:"",
+            unstopLink: "",
+            prizes: "",
         },
         {
             title: "Title 1-Not imp",
@@ -156,28 +155,28 @@ function TimeLine() {
                     <button className={`timeLine-btn ${(day == 1) ? 'active-btn' : ''} `} onClick={() => { setDay(1) }}>DAY 1</button>
                     <button className={`timeLine-btn ${(day == 2) ? 'active-btn' : ''} `} onClick={() => { setDay(2) }}>DAY 2</button>
                 </div>
-                <div style={{width:'100%',height:'fit-content'}}>
-                <Chrono items={timeLineData} mode="VERTICAL_ALTERNATING" 
-                allowDynamicUpdate={true} 
-                focusActiveItemOnLoad={true}
-                hideControls={true} 
-                itemWidth={150} 
-                mediaHeight={100}
-                theme={
-                    {
-                        primary:'white',
-                        secondary:'black',
-                        titleColor:'gray',
-                        titleColorActive:'white'
-                    }
-                }
-                slideShow
-                slideItemDuration={4500}
-                slideShowType="reveal" 
-                className={{
-                    title:'title_glow',
-                }}             
-                />
+                <div style={{ width: '100%', height: 'fit-content' }}>
+                    <Chrono items={timeLineData} mode="VERTICAL_ALTERNATING"
+                        allowDynamicUpdate={true}
+                        focusActiveItemOnLoad={true}
+                        hideControls={true}
+                        itemWidth={150}
+                        mediaHeight={100}
+                        theme={
+                            {
+                                primary: 'white',
+                                secondary: 'black',
+                                titleColor: 'gray',
+                                titleColorActive: 'white'
+                            }
+                        }
+                        slideShow
+                        slideItemDuration={4500}
+                        slideShowType="reveal"
+                        className={{
+                            title: 'title_glow',
+                        }}
+                    />
                 </div>
             </div>
         </>
