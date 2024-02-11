@@ -31,7 +31,7 @@
     z-index: 21;
     bottom: 0px;
     /* margin-top: 1150px; */
-    margin-left: -113rem;
+    margin-left: -130rem;
     animation: moveLeftToRight 9s linear infinite;
     background-repeat: repeat-x;
 }
@@ -50,7 +50,7 @@
     position: absolute;
     z-index: 22;
     bottom: 0px;
-
+    left: 50%;
     /* Adjust the starting position based on the first animation */
     animation: moveLeftToRight2 9s linear infinite;
 }
@@ -70,14 +70,14 @@
 .mountain-5-right {
     position: absolute;
     z-index: 15;
-    top: calc(75% + 2.776%);
+    top: calc(67% + 2.776%);
     left: calc(-4% - 0px);
     scale: 100%;
 }
 
 .mountain-7-left {
     position: absolute;
-    top: calc(70% + 7.188%);
+    top: calc(60% + 7.188%);
     scale: 100%;
     left: calc(-13% - 0px);
     z-index: 14;
@@ -280,7 +280,7 @@
 /* Speaker Section  */
 
 .speakerSection {
-    /* padding-top: 7%; */
+    padding-top: 7%;
     z-index: 20;
     position: relative;
     height: 500px;
@@ -290,8 +290,6 @@
 
 .speakerHeading {
     text-align: center;
-    margin-bottom: 7%;
-    padding-bottom: 5%;
 }
 
 .speakerHeading h1 {
@@ -305,31 +303,36 @@
 
 .speaker-slider-container {
     position: relative;
-    height: 300px;
-    padding-top: 4%;
-    /* padding-bottom: 2%; */
+    height: 370px;
+    padding-bottom: 2%;
     overflow: hidden;
     /* margin-top: 8rem; */
 }
 
 .speaker-slider-scroller {
-    position: relative;
-    height: 300px;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    position: absolute;
+    top:10%;
+    left: 0px;
+    overflow: hidden;
     display: flex;
-    gap: 80px;
-    width: calc(250px*14);
-    animation: scroll 40s linear infinite;
+    gap:80px;
+    white-space: nowrap;
+    animation: scroll3 90s linear infinite;
 }
 
-@keyframes scroll {
+.speaker-slider-scroller:hover{
+    animation-play-state : paused;
+}
+
+
+@keyframes scroll3 {
+
     0% {
         transform: translateX(0);
     }
 
     100% {
-        transform: translateX(calc(-250px * 6));
+        transform: translateX(-51.2%);
     }
 }
 
@@ -343,10 +346,10 @@
     }
 }
 
-@media (max-width:725px) {
+@media (max-width:900px) {
     .speakerSection {
-        padding-top: 0px;
-        height: 350px;
+        padding-top: 20%;
+        height: fit-content;
     }
 
     .speakerHeading h1 {
@@ -357,6 +360,14 @@
     .speaker-slider-scroller {
         height: 250px;
     }
+
+    .tree{
+        display: none;
+    }
+
+    .tree1{
+        display: none;
+    }
 }
 
 
@@ -365,7 +376,7 @@
 
 
 .EventSection {
-    /* padding-top: 7%; */
+    padding-top: 7%;
     z-index: 20;
     position: relative;
     height: 500px;
@@ -375,8 +386,6 @@
 
 .EventHeading {
     text-align: center;
-    margin-bottom: 7%;
-    padding-bottom: 2%;
 }
 
 .EventHeading h1 {
@@ -391,23 +400,29 @@
 .Event-slider-container {
     position: relative;
     height: 370px;
-    padding-top: 2%;
     padding-bottom: 2%;
     overflow: hidden;
-    margin-top: 7rem;
+    /* margin-top: 7rem; */
 }
+
 
 .Event-slider-scroller {
     position: absolute;
-    height: 370px;
-    /* padding-top: 2%; */
-    padding-bottom: 2%;
-    display: flex;
-    gap: 80px;
-    width: calc(250px*11);
-    animation: scroll2 40s linear infinite;
     right: 0px;
+    overflow: hidden;
+    display: flex;
+    gap:80px;
+    white-space: nowrap;
+    animation: scroll2 50s linear infinite;
 }
+
+
+
+.Event-slider-scroller:hover{
+    animation-play-state : paused;
+}
+
+
 
 @keyframes scroll2 {
     0% {
@@ -415,7 +430,7 @@
     }
 
     100% {
-        transform: translateX(calc(250px * 6));
+        transform: translateX(51.2%);
     }
 }
 
@@ -429,9 +444,9 @@
     }
 }
 
-@media (max-width:725px) {
+@media (max-width:900px) {
     .EventSection {
-        padding-top: 0px;
+        /* padding-top: 10%; */
     }
 
     .EventHeading h1 {
@@ -441,7 +456,6 @@
 
     .Event-slider-scroller {
         height: 300px;
-        width: calc(250px*9);
     }
 
     .ovstardiv {
@@ -456,4 +470,13 @@
         height: 180%;
     }
 
+    .speaker-slider-container{
+        height: 300px;
+    }
+
+    .EventSection{
+        padding-top:0%;
+    }
+
 }
+

@@ -7,6 +7,7 @@ import ECell from "../../assets/ecell_logo.png";
 import IG_logo from "../../assets/IG logo.png";
 
 const menuItemsData = [
+	{ label: "TimeLine", link: "/TimeLine" },
 	{ label: "Events", link: "/Events" },
 	{ label: "Sponsors", link: "/Sponsors" },
 	{ label: "Speakers", link: "/Speakers" },

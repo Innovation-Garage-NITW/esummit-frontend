@@ -89,7 +89,7 @@ export const EventsData = [
     {
       image: posterUrl,
       title: "Innovate Sphere",
-      details: "lot of details",
+      details: "The Pitching Tank event offers entrepreneurs a platform to pitch their innovative ideas to a panel of judges or investors, akin to popular TV shows like Shark Tank. Participants showcase their business concepts in concise presentations, aiming to impress with market potential, unique value proposition, and growth strategy. This event not only provides exposure and potential funding opportunities but also fosters learning and collaboration within the entrepreneurial community.",
     },
     {
       image: posterUrl,

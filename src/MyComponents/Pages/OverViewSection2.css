@@ -53,7 +53,7 @@
 
 .overpara {
     color: rgb(205, 199, 249);
-    font-size: 1.4em;
+    font-size: 1.15em;
     width: 50%;
 }
 
@@ -280,7 +280,7 @@ p {
     }
 }
 
-@media (max-width: 725px) {
+@media (max-width: 900px) {
     .overpara {
         font-size: 15px;
     }
@@ -303,7 +303,8 @@ p {
     .statscontainer {
         height: 50%;
         justify-content: center;
-        transform: translate(14%);
+        /* transform: translate(3.5rem,3.5rem); */
+        transform: translateX(3.5rem);
     }
 
     .countcontainer {
@@ -314,5 +315,13 @@ p {
     .countfoot {
         height: 100px;
         font-size: 40px;
+    }
+
+    .overviewtext{
+        padding:0px;
+    }
+
+    .overview-body{
+        margin-top: 400px;
     }
 }

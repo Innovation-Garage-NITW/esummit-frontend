@@ -24,8 +24,13 @@ import ImageCard from "./EventsComp/ImageCard";
 
 
 export const Home = () => {
-
+	const speakerData = eccTeamMembers.concat(eccTeamMembers);
+	const eventData = EventsData.concat(EventsData); 
 	let flag = 0;
+	let flag2 = false;
+	setTimeout(() => {
+		flag2 = true;
+	}, 4000);
 	useEffect(() => {
 		const parallax_el = document.querySelectorAll(".parallax")
 		let xValue = 0, yValue = 0;
@@ -84,7 +89,7 @@ export const Home = () => {
 		bgAnimationFunction();
 
 		window.addEventListener("mousemove", (e) => {
-			if (document.timeline.currentTime < 4000) return;
+			if (!flag2) return;
 			xValue = e.clientX - window.innerWidth / 2;
 			yValue = e.clientY - window.innerWidth / 2;
 
@@ -138,9 +143,9 @@ export const Home = () => {
 					</div>
 					<div className="speaker-slider-container">
 						<div className="speaker-slider-scroller">
-							{eccTeamMembers.map((speaker, index) => {
+							{speakerData.map((speaker, index) => {
 								return (
-									<SpeakerCard members={speaker} key={index} imgUrl={speaker.imgUrl} sizing={(window.innerWidth > 725) ? (200) : (175)} />
+									<SpeakerCard members={speaker} key={index} imgUrl={speaker.imgUrl} sizing={(window.innerWidth > 900) ? (300) : (250)} />
 								)
 							})
 							}
@@ -154,7 +159,7 @@ export const Home = () => {
 					</div>
 					<div className="Event-slider-container">
 						<div className="Event-slider-scroller">
-							{EventsData.map((event, index) => {
+							{eventData.map((event, index) => {
 								return (
 									<ImageCard image={event.image} key={index} title={event.title} details={event.details} sizing={(window.innerWidth > 725) ? (300) : (250)} />
 								)

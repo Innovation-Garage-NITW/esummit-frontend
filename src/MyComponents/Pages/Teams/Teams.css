@@ -3,7 +3,7 @@ body {
 	background-color: #000;
 }
 
-h1 {
+.page-heading {
 	color: white;
 	margin-top: 10%;
 	font-weight: 700;

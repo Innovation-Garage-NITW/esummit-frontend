@@ -14,6 +14,7 @@ import {
 	Admin,
 } from "./MyComponents/Pages";
 import { UserAuthContextProvider } from "./context/userAuthContext";
+import TimeLine from "./MyComponents/Pages/TimeLine";
 
 const menuItemsData = [
 
@@ -24,6 +25,7 @@ const menuItemsData = [
 	{ label: "RegisterLogin", link: "/Register-Login", component: <RegisterLogin />, },
 	{ label: "admin", link: "/admin", component: <Admin />, },
 
+	{label:"TimeLine" , link:'/TimeLine',component:<TimeLine/>}
 ];
 
 function App() {
