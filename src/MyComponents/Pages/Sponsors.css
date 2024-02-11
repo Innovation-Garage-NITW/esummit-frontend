@@ -1,0 +1,17 @@
+h1{
+    position: absolute;
+    margin-bottom: 30%;
+}
+.marquee-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0;
+    background-color: rgb(19, 19, 19);
+    height: 100vh; /* Adjust as needed */
+  }
+
+  .marquee-container > div {
+    color: white; /* Optional: Change text color */
+  }
+    

@@ -3,9 +3,12 @@ import Banner from './Banner'
 import ImageCard from './EventsComp/ImageCard'
 // import posterUrl from "../../assets/poster_innovate_sphere.jpeg";
 import { Container } from 'react-bootstrap';
-// import { EventsData } from '../../../data';
+import './Events.css'
+
 import { useEffect, useState } from 'react';
 import { useUserAuth } from '../../context/userAuthContext';
+
+
 
 export const Events = () => {
 
@@ -23,9 +26,10 @@ export const Events = () => {
 	}, [])
 
 	return (
-		<>
+		<div className="Events">
+
 			<Banner heading="EVENTS" imgUrl={imgUrl} />
-			<div className="Content" style={{}}>
+			<div className="Content">
 				<Container style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: '5%' }}>
 					{
 						eventsData.map((event, index) => (
@@ -40,6 +44,6 @@ export const Events = () => {
 					}
 				</Container>
 			</div>
-		</>
+		</div>
 	)
 }
