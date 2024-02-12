@@ -17,8 +17,12 @@ export const Events = () => {
 	useEffect(() => {
 		// setEventsData(EventsData);
 		async function fetchData() {
-			const data = await getEvents();
-			setEventsData(data);
+			try {
+				const data = await getEvents();
+				setEventsData(data);
+			} catch (error) {
+				console.error('Error fetching events:', error);
+			}
 		}
 		fetchData();
 	}, [])
