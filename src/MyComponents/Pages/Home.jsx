@@ -21,11 +21,12 @@ import ovstar from '../Images/s.png'
 import { eccTeamMembers, EventsData } from "../../../data";
 import SpeakerCard from "./SpeakerComp/SpeakerCard";
 import ImageCard from "./EventsComp/ImageCard";
+import { FaRocket } from "react-icons/fa";
 
 
 export const Home = () => {
 	const speakerData = eccTeamMembers.concat(eccTeamMembers);
-	const eventData = EventsData.concat(EventsData); 
+	const eventData = EventsData.concat(EventsData);
 	let flag = 0;
 	let flag2 = false;
 	setTimeout(() => {
@@ -136,6 +137,56 @@ export const Home = () => {
 				</div>
 
 				<OverViewSection2 />
+
+				<div className="topicsSection">
+					<h1>HOT TOPICS</h1>
+					<div className="topicsdiv">
+						<div className="topic">
+							<div className="topicTitle">STARTUPS</div>
+							<div className="topicdesbox">
+								<FaRocket className="topic-icon" />
+								
+								<div className="topicdes">
+									<p className="topicdesp">Sessions focused on funding, scaling, and success stories</p>
+									<p className="topicdesp">Opportunities to pitch ideas to investors and accelerators.</p>
+								</div>
+							</div>
+						</div>
+						<div className="topic">
+							<div className="topicTitle">STARTUPS</div>
+							<div className="topicdesbox">
+								<FaRocket className="topic-icon" />
+								
+								<div className="topicdes">
+									<p className="topicdesp">Sessions focused on funding, scaling, and success stories</p>
+									<p className="topicdesp">Opportunities to pitch ideas to investors and accelerators.</p>
+								</div>
+							</div>
+						</div>
+						<div className="topic">
+							<div className="topicTitle">STARTUPS</div>
+							<div className="topicdesbox">
+								<FaRocket className="topic-icon" />
+								
+								<div className="topicdes">
+									<p className="topicdesp">Sessions focused on funding, scaling, and success stories</p>
+									<p className="topicdesp">Opportunities to pitch ideas to investors and accelerators.</p>
+								</div>
+							</div>
+						</div>
+						<div className="topic">
+							<div className="topicTitle">STARTUPS</div>
+							<div className="topicdesbox">
+								<FaRocket className="topic-icon" />
+								
+								<div className="topicdes">
+									<p className="topicdesp">Sessions focused on funding, scaling, and success stories</p>
+									<p className="topicdesp">Opportunities to pitch ideas to investors and accelerators.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 				<div className="speakerSection">
 					<div className="speakerHeading ">
