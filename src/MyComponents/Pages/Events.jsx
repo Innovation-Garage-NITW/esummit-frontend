@@ -7,13 +7,13 @@ import './Events.css'
 
 import { useEffect, useState } from 'react';
 import { useUserAuth } from '../../context/userAuthContext';
+import { getEvents } from '../../../backend_functions';
 
 
 
 export const Events = () => {
 
 	const [eventsData, setEventsData] = useState([]);
-	const { getEvents } = useUserAuth();
 
 	useEffect(() => {
 		// setEventsData(EventsData);

@@ -15,7 +15,7 @@ export const Sponsors = () => {
     async function fetchData() {
       let data = await getSponsors();
       data = data.concat(data);
-      // console.log(data);
+      console.log(data);
       setSponsorsData(data);
     }
     fetchData();

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import LaunchIcon from "@mui/icons-material/Launch";
 import './Teams.css'
-import { eccTeamMembers } from "../../../../data.js";
+// import { eccTeamMembers } from "../../../../data.js";
 import "animate.css";
 import SpeakerCard from "./SpeakerCard";
 import { getSpeakers } from "../../../../backend_functions.js";
@@ -38,7 +38,7 @@ export const Teams = () => {
 											gap: 30,
 										}}
 									>
-										{eccTeamMembers.map((members, index) => {
+										{speakersData.map((members, index) => {
 											return (
 												<SpeakerCard members={members} imgUrl={members.imgUrl} sizing={330} key={index} />
 											);

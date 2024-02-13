@@ -22,7 +22,7 @@ import { eccTeamMembers, EventsData } from "../../../data";
 import SpeakerCard from "./SpeakerComp/SpeakerCard";
 import ImageCard from "./EventsComp/ImageCard";
 import { useUserAuth } from "../../context/userAuthContext";
-import { getSpeakers } from "../../../backend_functions";
+import { getEvents, getSpeakers } from "../../../backend_functions";
 
 
 export const Home = () => {
@@ -111,7 +111,6 @@ export const Home = () => {
     // for events
 
     const [eventsData, setEventsData] = useState([]);
-    const { getEvents } = useUserAuth();
 
     useEffect(() => {
         // setEventsData(EventsData);
@@ -130,7 +129,8 @@ export const Home = () => {
         async function fetchData() {
             let data = await getSpeakers();
             data = data.concat(data);
-            // console.log(data);
+            data = data.concat(data);
+            console.log(data);
             setSpeakersData(data);
         }
         fetchData();

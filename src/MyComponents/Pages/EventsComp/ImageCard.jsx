@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import { eventRegister } from '../../../../backend_functions';
 
 const ImageCard = ({ image, title, details, sizing }) => {
 	// console.log(sizing);
@@ -8,6 +9,12 @@ const ImageCard = ({ image, title, details, sizing }) => {
 	function toggleHover() {
 		setHover(!hover);
 	}
+
+	// async function handleClick() {
+	// 	await eventRegister(user, event_id);
+
+	// }
+
 	return (
 		<motion.div
 			whileHover={{ scale: 1.05 }}
@@ -63,11 +70,7 @@ const ImageCard = ({ image, title, details, sizing }) => {
 };
 
 ImageCard.defualtProps = {
-<<<<<<< HEAD
 	sizing: '350px',
-=======
-	sizing: '350px',
->>>>>>> 5d99e0affd7820872d5ae6af260c662be92c0552
 }
 
 export default ImageCard;
