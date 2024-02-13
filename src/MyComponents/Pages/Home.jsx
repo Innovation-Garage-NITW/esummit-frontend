@@ -18,14 +18,20 @@ import mountain5Right from "../Images/ovmountainr.png"
 import mountain7Left from "../Images/ovmountainl.png"
 import OverViewSection2 from "./OverViewSection2";
 import ovstar from '../Images/s.png'
-import { eccTeamMembers, EventsData } from "../../../data";
+import { eccTeamMembers, EventsData, HotTopics } from "../../../data";
 import SpeakerCard from "./SpeakerComp/SpeakerCard";
 import ImageCard from "./EventsComp/ImageCard";
+import { FaRocket } from "react-icons/fa";
+import { BiSolidBusiness } from "react-icons/bi";
+import { RiGovernmentFill } from "react-icons/ri";
+import { GiIndianPalace } from "react-icons/gi";
+import Whyus from "./Whyus.jsx"
 
+const iconList = [<FaRocket className="topic-icon"/>,<RiGovernmentFill className="topic-icon"/>,<BiSolidBusiness className="topic-icon"/>,<GiIndianPalace className="topic-icon"/>]
 
 export const Home = () => {
 	const speakerData = eccTeamMembers.concat(eccTeamMembers);
-	const eventData = EventsData.concat(EventsData); 
+	const eventData = EventsData.concat(EventsData);
 	let flag = 0;
 	let flag2 = false;
 	setTimeout(() => {
@@ -137,6 +143,34 @@ export const Home = () => {
 
 				<OverViewSection2 />
 
+				<div className="topicsSection">
+					<h1>HOT TOPICS</h1>
+					<div className="topicsdiv">
+						{HotTopics.map((topic, index) => (
+							< div className="topic" key={index}>
+								<div className="topicTitle">{topic.title}</div>
+								<div className="topicdesbox">
+									{iconList[index]}
+
+									<div className="topicdes">
+										{
+											topic.description.map((des, index) => (
+												<p className="topicdesp" key={index}>{des}</p>
+											))
+										}
+									</div>
+								</div>
+							</div>
+						))
+						}
+					</div>
+				</div>
+
+				{/* <div className="whyUsSection">
+				<Whyus/>
+				</div>
+				 */}
+
 				<div className="speakerSection">
 					<div className="speakerHeading ">
 						<h1>SPEAKERS</h1>
@@ -171,7 +205,7 @@ export const Home = () => {
 
 
 				{/* <OverviewSection/> */}
-			</div>
+			</div >
 		</>
 	);
 };

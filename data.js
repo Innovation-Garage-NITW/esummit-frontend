@@ -117,3 +117,35 @@ export const EventsData = [
 		details: "lot of details",
 	},
 ]
+
+
+export const HotTopics = [
+	{
+		title:"STARTUPS",
+		description:[
+			"Sessions focused on funding, scaling, and success stories.",
+			"Opportunities to pitch ideas to investors and accelerators."
+		]
+	},
+	{
+		title:"Government in Entrepreneurship",
+		description:[
+			"Discussions on government policies and funding opportunities.",
+"Dialogues with policymakers on supporting entrepreneurship."
+		]
+	},
+	{
+		title:"Leadership",
+		description:[
+			"Workshops on leadership skills development and team building.",
+"Panel discussions on different leadership styles and strategies."
+		]
+	},
+	{
+		title:"The Indian Landscape",
+		description:[
+			"Insights into Indian startup ecosystem trends and opportunities.",
+			"Discussions on socio-economic factors impacting entrepreneurship."
+		]
+	}
+]
