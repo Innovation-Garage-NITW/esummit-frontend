@@ -18,7 +18,7 @@ import mountain5Right from "../Images/ovmountainr.png"
 import mountain7Left from "../Images/ovmountainl.png"
 import OverViewSection2 from "./OverViewSection2";
 import ovstar from '../Images/s.png'
-import { eccTeamMembers, EventsData, HotTopics } from "../../../data";
+import { eccTeamMembers, EventsData, HotTopics,dummyData } from "../../../data";
 import SpeakerCard from "./SpeakerComp/SpeakerCard";
 import ImageCard from "./EventsComp/ImageCard";
 import { FaRocket } from "react-icons/fa";
@@ -26,12 +26,13 @@ import { BiSolidBusiness } from "react-icons/bi";
 import { RiGovernmentFill } from "react-icons/ri";
 import { GiIndianPalace } from "react-icons/gi";
 import Whyus from "./Whyus.jsx"
+import eventposter from '../../assets/poster_innovate_sphere.jpeg'
 
 const iconList = [<FaRocket className="topic-icon"/>,<RiGovernmentFill className="topic-icon"/>,<BiSolidBusiness className="topic-icon"/>,<GiIndianPalace className="topic-icon"/>]
 
-export const Home = () => {
+export const Home = ({setEventsOverLay, setCurrEventsData}) => {
 	const speakerData = eccTeamMembers.concat(eccTeamMembers);
-	const eventData = EventsData.concat(EventsData);
+	const eventData = dummyData.concat(dummyData);
 	let flag = 0;
 	let flag2 = false;
 	setTimeout(() => {
@@ -195,7 +196,7 @@ export const Home = () => {
 						<div className="Event-slider-scroller">
 							{eventData.map((event, index) => {
 								return (
-									<ImageCard image={event.image} key={index} title={event.title} details={event.details} sizing={(window.innerWidth > 725) ? (300) : (250)} />
+									<ImageCard setEventsOverLay={setEventsOverLay} setCurrEventsData={setCurrEventsData} data={eventData[index]} image={eventposter} key={index} title={event.title} details={event.shortdes} sizing={(window.innerWidth > 725) ? (300) : (250)} />
 								)
 							})
 							}

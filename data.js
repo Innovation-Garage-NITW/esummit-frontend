@@ -149,3 +149,118 @@ export const HotTopics = [
 		]
 	}
 ]
+
+export const dummyData = [
+	{
+		title: "Title 1",
+		priority: 1,
+		shortdes: "something",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis orci sed nisi hendrerit condimentum. Fusce ultricies velit ut ultrices auctor. Donec dictum ante nec neque blandit, et maximus massa tempus. Mauris eros velit, scelerisque nec tortor id, faucibus posuere lorem. Cras vel urna a magna euismod vulputate a ac eros. Morbi rutrum faucibus justo, suscipit aliquam dui commodo in. Mauris ut magna ac risus scelerisque vulputate sit amet nec orci.",
+		day: 1,
+		venue: "ALC",
+		time: "16th March 2024 , 5:00 PM",
+		category: 'Competition',
+		imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo',
+		unstopLink: "",
+		prizes: "",
+	},
+	{
+		title: "Title 1-Not imp",
+		priority: 2,
+		shortdes: "something",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis orci sed nisi hendrerit condimentum. Fusce ultricies velit ut ultrices auctor. Donec dictum ante nec neque blandit, et maximus massa tempus. Mauris eros velit, scelerisque nec tortor id, faucibus posuere lorem. Cras vel urna a magna euismod vulputate a ac eros. Morbi rutrum faucibus justo, suscipit aliquam dui commodo in. Mauris ut magna ac risus scelerisque vulputate sit amet nec orci.",
+		day: 1,
+		venue: "ALC",
+		time: "5:00 PM",
+		category: 'Competition',
+		imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo'
+	},
+	{
+		title: "Title 2",
+		priority: 1,
+		shortdes: "something",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis orci sed nisi hendrerit condimentum. Fusce ultricies velit ut ultrices auctor. Donec dictum ante nec neque blandit, et maximus massa tempus. Mauris eros velit, scelerisque nec tortor id, faucibus posuere lorem. Cras vel urna a magna euismod vulputate a ac eros. Morbi rutrum faucibus justo, suscipit aliquam dui commodo in. Mauris ut magna ac risus scelerisque vulputate sit amet nec orci.",
+		day: 2,
+		venue: "ALC",
+		time: "5:00 PM",
+		category: 'Competition',
+		imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo'
+	},
+	{
+		title: "Title 1",
+		priority: 1,
+		shortdes: "something",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis orci sed nisi hendrerit condimentum. Fusce ultricies velit ut ultrices auctor. Donec dictum ante nec neque blandit, et maximus massa tempus. Mauris eros velit, scelerisque nec tortor id, faucibus posuere lorem. Cras vel urna a magna euismod vulputate a ac eros. Morbi rutrum faucibus justo, suscipit aliquam dui commodo in. Mauris ut magna ac risus scelerisque vulputate sit amet nec orci.",
+		day: 2,
+		venue: "ALC",
+		time: "5:00 PM",
+		category: 'Competition',
+		imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo'
+	},
+	{
+		title: "Title 1",
+		priority: 1,
+		shortdes: "something",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis orci sed nisi hendrerit condimentum. Fusce ultricies velit ut ultrices auctor. Donec dictum ante nec neque blandit, et maximus massa tempus. Mauris eros velit, scelerisque nec tortor id, faucibus posuere lorem. Cras vel urna a magna euismod vulputate a ac eros. Morbi rutrum faucibus justo, suscipit aliquam dui commodo in. Mauris ut magna ac risus scelerisque vulputate sit amet nec orci.",
+		day: 1,
+		venue: "ALC",
+		time: "5:00 PM",
+		category: 'Competition',
+		imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo'
+	},
+	{
+		title: "Title 1",
+		priority: 1,
+		shortdes: "something",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis orci sed nisi hendrerit condimentum. Fusce ultricies velit ut ultrices auctor. Donec dictum ante nec neque blandit, et maximus massa tempus. Mauris eros velit, scelerisque nec tortor id, faucibus posuere lorem. Cras vel urna a magna euismod vulputate a ac eros. Morbi rutrum faucibus justo, suscipit aliquam dui commodo in. Mauris ut magna ac risus scelerisque vulputate sit amet nec orci.",
+		day: 1,
+		venue: "ALC",
+		time: "5:00 PM",
+		category: 'Competition',
+		imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo'
+	},
+	{
+		title: "Title 1",
+		priority: 1,
+		shortdes: "something",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis orci sed nisi hendrerit condimentum. Fusce ultricies velit ut ultrices auctor. Donec dictum ante nec neque blandit, et maximus massa tempus. Mauris eros velit, scelerisque nec tortor id, faucibus posuere lorem. Cras vel urna a magna euismod vulputate a ac eros. Morbi rutrum faucibus justo, suscipit aliquam dui commodo in. Mauris ut magna ac risus scelerisque vulputate sit amet nec orci.",
+		day: 2,
+		venue: "ALC",
+		time: "5:00 PM",
+		category: 'Competition',
+		imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo'
+	},
+	{
+		title: "Title 1",
+		priority: 1,
+		shortdes: "something",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis orci sed nisi hendrerit condimentum. Fusce ultricies velit ut ultrices auctor. Donec dictum ante nec neque blandit, et maximus massa tempus. Mauris eros velit, scelerisque nec tortor id, faucibus posuere lorem. Cras vel urna a magna euismod vulputate a ac eros. Morbi rutrum faucibus justo, suscipit aliquam dui commodo in. Mauris ut magna ac risus scelerisque vulputate sit amet nec orci.",
+		day: 1,
+		venue: "ALC",
+		time: "5:00 PM",
+		category: 'Competition',
+		imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo'
+	},
+	{
+		title: "Title 1",
+		priority: 1,
+		shortdes: "something",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis orci sed nisi hendrerit condimentum. Fusce ultricies velit ut ultrices auctor. Donec dictum ante nec neque blandit, et maximus massa tempus. Mauris eros velit, scelerisque nec tortor id, faucibus posuere lorem. Cras vel urna a magna euismod vulputate a ac eros. Morbi rutrum faucibus justo, suscipit aliquam dui commodo in. Mauris ut magna ac risus scelerisque vulputate sit amet nec orci.",
+		day: 2,
+		venue: "ALC",
+		time: "5:00 PM",
+		category: 'Competition',
+		imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo'
+	},
+	{
+		title: "Title 1",
+		priority: 1,
+		shortdes: "something",
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis orci sed nisi hendrerit condimentum. Fusce ultricies velit ut ultrices auctor. Donec dictum ante nec neque blandit, et maximus massa tempus. Mauris eros velit, scelerisque nec tortor id, faucibus posuere lorem. Cras vel urna a magna euismod vulputate a ac eros. Morbi rutrum faucibus justo, suscipit aliquam dui commodo in. Mauris ut magna ac risus scelerisque vulputate sit amet nec orci.",
+		day: 1,
+		venue: "ALC",
+		time: "5:00 PM",
+		category: 'Competition',
+		imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo'
+	},
+]

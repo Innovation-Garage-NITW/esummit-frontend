@@ -15,6 +15,9 @@
     height: 80%;
     background-color: black;
     display: flex;
+    border-radius: 20px;
+    box-shadow:0 0 7px #fff, 0 0 10px #ffffff;
+
 }
 
 .CrossIcon{
@@ -72,6 +75,8 @@
     background-color: rgb(68, 64, 64);
     padding: 1% 10%;
     border-radius: 5px;
+    font-size: 20px;
+    box-shadow:0 0 7px #fff, 0 0 10px #ffffff;
 }
 
 .eventregisterbtn:hover{

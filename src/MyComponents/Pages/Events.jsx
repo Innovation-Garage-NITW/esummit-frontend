@@ -10,7 +10,7 @@ import { getEvents } from '../../../backend_functions';
 
 
 
-export const Events = () => {
+export const Events = ({setEventsOverLay, setCurrEventsData}) => {
 
 	const [eventsData, setEventsData] = useState([]);
 
@@ -41,6 +41,9 @@ export const Events = () => {
 								title={event['name']}
 								details={event['description']}
 								sizing={350}
+								setCurrEventsData={setCurrEventsData}
+								setEventsOverLay={setEventsData}
+								data={eventsData[index]}
 							/>
 						))
 					}
