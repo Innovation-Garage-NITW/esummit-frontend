@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./header.css";
 
 import { NavLink, Link } from "react-router-dom";
@@ -12,15 +12,34 @@ const menuItemsData = [
 	{ label: "Sponsors", link: "/Sponsors" },
 	{ label: "Speakers", link: "/Speakers" },
 	{ label: "Teams", link: "/Contact-Us" },
-	{ label: "Register/Login", link: "/Register-Login" },
+	{ label: "Register/Login", link: "/Register-Login" },			//index = 5
 ];
 
 const Header = () => {
-	const [menuOpen, setMenuOpen] = useState(false);
+	const [menuOpen, setMenuOpen] = useState(false);				//for hamburger menu
+	const [isLoggedIn, setIsLoggedIn] = useState(false);				//for login/logout
+	// const { user, isLoggedIn, setIsLoggedIn } = useContext(UserContext);		//for backend integration
+
 
 	const listItems = menuItemsData.map((menuItem, index) => (
 		<li key={index}>
-			<NavLink to={menuItem.link}>{menuItem.label}</NavLink>
+			{index === 5 ? ( 						// Check if the index is 5 for login/logout
+				isLoggedIn ? (
+					<button
+						onClick={() => {
+							//  API call
+							setIsLoggedIn(false);
+						}}
+					>
+						Log Out
+					</button>
+				) : (
+					<NavLink to="/Register-Login">Register/Login</NavLink>
+				)
+			) : (
+				// Render regular NavLink for other menu items
+				<NavLink to={menuItem.link}>{menuItem.label}</NavLink>
+			)}
 		</li>
 	));
 

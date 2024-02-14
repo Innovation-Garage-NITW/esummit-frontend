@@ -12,6 +12,7 @@ const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
     const [user, setUser] = useState({});
+
     function logOut() {
         return signOut(auth);
     }
@@ -24,7 +25,7 @@ export function UserAuthContextProvider({ children }) {
             }
 
         );
-        console.log(recaptchaVerifier);
+        // console.log(recaptchaVerifier);
         recaptchaVerifier.render();
         return signInWithPhoneNumber(auth, number, recaptchaVerifier);
     }
@@ -45,7 +46,7 @@ export function UserAuthContextProvider({ children }) {
             value={{
                 user,
                 logOut,
-                setUpRecaptha,
+                setUpRecaptha
             }}
         >
             {children}

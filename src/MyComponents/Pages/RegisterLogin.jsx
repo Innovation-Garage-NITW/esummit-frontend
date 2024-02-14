@@ -9,8 +9,10 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { Route, Routes } from "react-router-dom";
 import "./RegisterLogin.css";
+import { registerUser } from "../../../backend_functions";
 //import "./SignIn";
 export const RegisterLogin = () => {
+
   const [error, setError] = useState("");
   const [number, setNumber] = useState("");
   const [Username, setUsername] = useState("");
@@ -22,7 +24,7 @@ export const RegisterLogin = () => {
   const [otp, setOtp] = useState("");
   const [otp2, setOtp2] = useState("");
   const [result, setResult] = useState("");
-  const { setUpRecaptha } = useUserAuth();
+  const { setUpRecaptha, user, logOut } = useUserAuth();
   const [number2, setNumber2] = useState("");
   const [open, setOpen] = React.useState(false);
   const [showLoginForm, setShowLoginForm] = useState(true);
@@ -35,7 +37,7 @@ export const RegisterLogin = () => {
     setShowLoginForm(!showLoginForm);
   };
 
- 
+
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
@@ -75,13 +77,16 @@ export const RegisterLogin = () => {
       setError(err.message);
     }
   };
-   
+
   const verifyOtp = async (e) => {
     e.preventDefault();
     setError("");
     if (otp === "" || otp === null) return;
     try {
-      await result.confirm(otp);
+      result.confirm(otp).then((result) => {
+        const user = result.user;
+        registerUser(user, Username, mail, college);
+      })
       setShowVerified(true);
       setOpen(true)
     } catch (err) {
@@ -100,6 +105,20 @@ export const RegisterLogin = () => {
       setError(err.message);
     }
   };
+
+  async function handleLogOut() {
+    await logOut();
+  }
+
+  if (user) {
+    return (
+      <div className="p-4_box">
+        <Link to="/">
+          <Button variant="secondary" onClick={handleLogOut}>LogOut</Button>
+        </Link>
+      </div>
+    )
+  }
 
   return (
     <>{showLoginForm && <div className="newbody">
@@ -177,10 +196,10 @@ export const RegisterLogin = () => {
           </div>
         </Form>
         <div className='Register-Link'>
-  <p>Already registered ?
-    <Link onClick={handleRegisterLinkClick}>       Sign In</Link>
-  </p>
-</div>
+          <p>Already registered ?
+            <Link onClick={handleRegisterLinkClick}>       Sign In</Link>
+          </p>
+        </div>
       </div>
     </div>}
       {!showLoginForm &&
@@ -212,7 +231,7 @@ export const RegisterLogin = () => {
                 &nbsp;
               </div>
             </Form>
-            
+
             <Form onSubmit={verifyOtp2} style={{ display: flag2 ? "block" : "none" }}>
               <Form.Group className="mb-3" controlId="formBasicOtp">
                 <Form.Control className="otp_box2"
@@ -244,4 +263,5 @@ export const RegisterLogin = () => {
         </div>}
     </>
   );
+
 };

@@ -4,7 +4,7 @@
 
 
 .active {
-    background-color: #ffffff;
+    background-color: #ffffffff;
     color: #000000;
 }
 
@@ -52,6 +52,18 @@ nav ul li a {
     border-radius: 0.5rem;
     white-space: nowrap;
     /* prevents from overflowing into two lines */
+}
+
+/* Log out button */
+nav ul li button {
+    display: block;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    background-color: #0051ff;
 }
 
 nav img {

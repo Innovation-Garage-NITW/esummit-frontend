@@ -266,7 +266,7 @@
     position: absolute;
     z-index: 19;
     width: 100%;
-    top: 150%;
+    top: 200%;
     height: 2000px;
     overflow: hidden;
 }
@@ -479,4 +479,93 @@
     }
 }
   
+
+
+}
+
+
+/* Topics section  */
+
+.topicsSection {
+    padding: 7% 7% 0%;
+    color: white;
+    z-index: 20;
+    height: fit-content;
+    position: relative;
+}
+
+.topicsSection h1 {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 900;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.topicdesbox {
+    display: flex;
+    align-items: center;
+}
+
+.topicTitle {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 25px;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.topicsdiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.topic {
+    width: 450px;
+    flex-shrink: 0;
+    border: #fff;
+    border-width: 2px;
+    border-style: solid;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.topic-icon {
+    flex-shrink: 0;
+    width: 4em;
+    height: 4em;
+    /* animation: glow 1s ease-in-out infinite alternate; */
+    padding: 0.5em;
+}
+
+.topicdes {
+    padding: 2%;
+}
+
+.topicdesp {
+    margin-bottom: 0;
+}
+
+
+@media (max-width:900px) {
+    .topicsSection {
+        padding-top: 20%;
+    }
+
+    .topic{
+        width: 350px;
+    }
+}
+
+
+/* WHY US SECTION  */
+.whyUsSection {
+    position: relative;
+    z-index: 20;
+    height: fit-content;
+    padding: 7% 4% 0%;
+}
 
