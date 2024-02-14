@@ -122,22 +122,25 @@ export const RegisterLogin = () => {
 
   return (
     <>{showLoginForm && <div className="newbody">
+      <div className="image">
+        <img src="src\MyComponents\Images\logo1.png"></img>
+      </div>
       <div className="p-4_box">
         <h2 className="mb-3">Register</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <div className='input-box'>
           <input type='text' value={Username} onChange={(e) => setUsername(e.target.value)} placeholder='Username' required />
-          <img className="icon" width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/person-male.png" alt="person-male" />
+          
         </div>
 
         <div className='input-box'>
           <input type='text' value={college} onChange={(e) => setcollege(e.target.value)} placeholder='College' required />
-          <img className='icon' width="30" height="30" src="https://img.icons8.com/ios-filled/50/university.png" alt="university" />
+          
         </div>
 
         <div className='input-box'>
           <input type='email' value={mail} onChange={(e) => setmail(e.target.value)} placeholder='Mail' required />
-          <img className='icon' width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/new-post.png" alt="new-post" />
+          
 
         </div>
         <Form onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
@@ -167,6 +170,7 @@ export const RegisterLogin = () => {
               type="otp"
               placeholder="Enter OTP"
               onChange={(e) => setOtp(e.target.value)}
+              
             />{
 
             }
@@ -200,6 +204,9 @@ export const RegisterLogin = () => {
     </div>}
       {!showLoginForm &&
         <div className='newbody'>
+          <div className="image">
+        <img src="src\MyComponents\Images\logo1.png"></img>
+      </div>
           <div className='p5-box'>
             {error && <Alert variant="danger">{error}</Alert>}
             <h2 className="mb-3">Login</h2>
@@ -231,6 +238,7 @@ export const RegisterLogin = () => {
                   type="otp"
                   placeholder="Enter OTP"
                   onChange={(e) => setOtp2(e.target.value)}
+                  
                 />
               </Form.Group>
               <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
@@ -246,9 +254,9 @@ export const RegisterLogin = () => {
               </div>
 
             </Form>
-            <div className='Register-Link'>
+            <div className='RegisterLink'>
               <p>Don't have an account ?
-                <Link onClick={handleRegisterLinkClick}>Register</Link>
+                <Link onClick={handleRegisterLinkClick} >Register</Link>
               </p>
             </div>
           </div>
