@@ -1,10 +1,9 @@
 import React, { useState, useContext } from "react";
 import "./header.css";
-
 import { NavLink, Link } from "react-router-dom";
-
-import ECell from "../../assets/ecell_logo.png";
 import IG_logo from "../../assets/IG logo.png";
+
+// import { UserContext } from "../../context/userContext";
 
 const menuItemsData = [
 	{ label: "TimeLine", link: "/TimeLine" },
@@ -17,9 +16,13 @@ const menuItemsData = [
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);				//for hamburger menu
-	const [isLoggedIn, setIsLoggedIn] = useState(false);				//for login/logout
-	// const { user, isLoggedIn, setIsLoggedIn } = useContext(UserContext);		//for backend integration
+	const [isLoggedIn, setIsLoggedIn] = useState(true);
+	// const { user, logOut } = useContext(UserContext);			//for backend integration
 
+	async function handleLogOut() {
+		// await logOut();
+		setIsLoggedIn(false);
+	}
 
 	const listItems = menuItemsData.map((menuItem, index) => (
 		<li key={index}>
@@ -27,8 +30,7 @@ const Header = () => {
 				isLoggedIn ? (
 					<button
 						onClick={() => {
-							//  API call
-							setIsLoggedIn(false);
+							handleLogOut();
 						}}
 					>
 						Log Out

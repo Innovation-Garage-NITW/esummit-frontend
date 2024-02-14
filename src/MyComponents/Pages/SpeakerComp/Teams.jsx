@@ -36,6 +36,7 @@ export const Teams = () => {
 											justifyContent: "center",
 											flexWrap: "wrap",
 											gap: 30,
+											marginBottom: "37%",
 										}}
 									>
 										{speakersData.map((members, index) => {
@@ -49,7 +50,7 @@ export const Teams = () => {
 						</Col>
 					</Row>
 				</Container>
-			</section>
+			</section >
 		</>
 	);
 };

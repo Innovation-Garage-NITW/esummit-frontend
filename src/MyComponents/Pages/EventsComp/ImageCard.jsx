@@ -7,7 +7,7 @@ import { eventRegister } from '../../../../backend_functions';
 const ImageCard = ({ image, title, details, sizing }) => {
 	// console.log(sizing);
 
-//const ImageCard = ({ setEventsOverLay, setCurrEventsData, data, image, title, details, sizing }) => {
+	//const ImageCard = ({ setEventsOverLay, setCurrEventsData, data, image, title, details, sizing }) => {
 
 	const [hover, setHover] = React.useState(false);
 	function toggleHover() {
@@ -16,17 +16,17 @@ const ImageCard = ({ image, title, details, sizing }) => {
 	}
 
 
-	// async function handleClick() {
-	// 	await eventRegister(user, event_id);
+	async function handleClick() {
+		await eventRegister(user, event_id);
 
-	// }
+	}
 
-// 	const handleEvents = () => {
-// 		setCurrEventsData(data);
-// 		setEventsOverLay(true);
-// 		console.log("clicked");
+	const handleEvents = () => {
+		setCurrEventsData(data);
+		setEventsOverLay(true);
+		console.log("clicked");
 
-// 	}
+	}
 
 
 	return (
