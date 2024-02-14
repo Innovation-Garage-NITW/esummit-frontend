@@ -2,14 +2,21 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 
-const ImageCard = ({ image, title, details, sizing }) => {
-	console.log(sizing);
+const ImageCard = ({setEventsOverLay,setCurrEventsData, data ,image, title, details, sizing }) => {
 	const [hover, setHover] = React.useState(false);
 	function toggleHover() {
 		setHover(!hover);
 	}
+
+	const handleEvents = ()=>{
+		setCurrEventsData(data);
+		setEventsOverLay(true);
+		console.log("clicked");
+	}
+
 	return (
 		<motion.div
+			onClick={handleEvents}
 			whileHover={{ scale: 1.05 }}
 			onMouseEnter={toggleHover}
 			onMouseLeave={toggleHover}
