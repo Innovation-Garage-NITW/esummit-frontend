@@ -2,6 +2,7 @@ import posterUrl from "./src/assets/poster_innovate_sphere.jpeg";
 
 
 export const eccTeamMembers = [
+
   {
     title: "Samrat Gupta",
     description: "Member",
@@ -58,6 +59,7 @@ export const eccTeamMembers = [
     email: "sg21csb0f07@student.nitw.ac.in",
     linkedin: "https://www.linkedin.com/in/samrat-gupta-1b1227232/",
   },
+
 ];
 
 
@@ -93,3 +95,4 @@ export const EventsData = [
     details: "lot of details",
   },
 ]
+

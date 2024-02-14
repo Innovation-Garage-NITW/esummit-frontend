@@ -18,9 +18,10 @@ import mountain5Right from "../Images/ovmountainr.png"
 import mountain7Left from "../Images/ovmountainl.png"
 import OverViewSection2 from "./OverViewSection2";
 import ovstar from '../Images/s.png'
-import { eccTeamMembers, EventsData } from "../../../data";
+import { eccTeamMembers, EventsData, HotTopics,dummyData } from "../../../data";
 import SpeakerCard from "./SpeakerComp/SpeakerCard";
 import ImageCard from "./EventsComp/ImageCard";
+
 import { useUserAuth } from "../../context/userAuthContext";
 import { getEvents, getSpeakers } from "../../../backend_functions";
 
@@ -213,4 +214,5 @@ export const Home = () => {
             </div>
         </>
     );
+
 };

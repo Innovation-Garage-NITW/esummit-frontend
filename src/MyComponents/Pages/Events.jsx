@@ -11,16 +11,21 @@ import { getEvents } from '../../../backend_functions';
 
 
 
-export const Events = () => {
+export const Events = ({setEventsOverLay, setCurrEventsData}) => {
 
 	const [eventsData, setEventsData] = useState([]);
 
 	useEffect(() => {
 		// setEventsData(EventsData);
 		async function fetchData() {
-			const data = await getEvents();
-			// console.log(data)
-			setEventsData(data);
+
+			try {
+				const data = await getEvents();
+				setEventsData(data);
+			} catch (error) {
+				console.error('Error fetching events:', error);
+			}
+
 		}
 		fetchData();
 	}, [])
@@ -39,6 +44,9 @@ export const Events = () => {
 								title={event['name']}
 								details={event['description']}
 								sizing={350}
+								setCurrEventsData={setCurrEventsData}
+								setEventsOverLay={setEventsData}
+								data={eventsData[index]}
 							/>
 						))
 					}

@@ -3,20 +3,35 @@ import { Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { eventRegister } from '../../../../backend_functions';
 
+
 const ImageCard = ({ image, title, details, sizing }) => {
 	// console.log(sizing);
+
+//const ImageCard = ({ setEventsOverLay, setCurrEventsData, data, image, title, details, sizing }) => {
+
 	const [hover, setHover] = React.useState(false);
 	function toggleHover() {
 		setHover(!hover);
+		document.body.style.cursor = hover ? 'default' : 'pointer';					//cursor change functionality
 	}
+
 
 	// async function handleClick() {
 	// 	await eventRegister(user, event_id);
 
 	// }
 
+// 	const handleEvents = () => {
+// 		setCurrEventsData(data);
+// 		setEventsOverLay(true);
+// 		console.log("clicked");
+
+// 	}
+
+
 	return (
 		<motion.div
+			onClick={handleEvents}
 			whileHover={{ scale: 1.05 }}
 			onMouseEnter={toggleHover}
 			onMouseLeave={toggleHover}

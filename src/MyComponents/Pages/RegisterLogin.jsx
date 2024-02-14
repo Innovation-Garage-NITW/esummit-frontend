@@ -12,6 +12,7 @@ import "./RegisterLogin.css";
 import { registerUser } from "../../../backend_functions";
 //import "./SignIn";
 export const RegisterLogin = () => {
+
   const [error, setError] = useState("");
   const [number, setNumber] = useState("");
   const [Username, setUsername] = useState("");
@@ -254,4 +255,5 @@ export const RegisterLogin = () => {
         </div>}
     </>
   );
+
 };

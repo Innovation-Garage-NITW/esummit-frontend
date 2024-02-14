@@ -13,29 +13,43 @@ import {
 	Teams,
 	Admin,
 } from "./MyComponents/Pages";
+
+import TimeLine from "./MyComponents/Pages/TimeLine";
+import Overlay from "./MyComponents/Pages/Overlay";
+import { useState } from "react";
 import { UserAuthContextProvider } from "./context/userAuthContext";
 
-const menuItemsData = [
-
-	{ label: "Events", link: "/Events", component: <Events /> },
-	{ label: "Sponsors", link: "/Sponsors", component: <Sponsors /> },
-	{ label: "Speakers", link: "/Speakers", component: <Speakers /> },
-	{ label: "Teams", link: "/Contact-Us", component: <Teams /> },
-	{ label: "RegisterLogin", link: "/Register-Login", component: <RegisterLogin />, },
-	{ label: "admin", link: "/admin", component: <Admin />, },
-
-];
 
 function App() {
+	const [EventsOverLay,setEventsOverLay] = useState(false); 
+    const [currEventsData,setCurrEventsData] = useState({
+		title:"innovateSphere",
+		description:"Showcase your groundbreaking technical project at Technozion '23's Shark Tank InnovateSphere, hosted by ECE Society in collaboration with Innovation Garage NITW. Whether it's cutting-edge software, hardware, or a unique tech integration, we want your ideas!,Present your project at our college-wide event during Technozion, where industry experts and peers will decide which projects stand out. The most promising ones will have the opportunity to pitch directly to THUB for potential development and investment.",
+		venue:'ALC',
+		time:"16th March 2024, 5:00PM",
+		category:"Competition",
+		prizes:"20,000$"
+	});
 
+	const menuItemsData = [
+
+		{ label: "Events", link: "/Events", component: <Events EventsOverLay={EventsOverLay} setEventsOverLay={setEventsOverLay} currEventsData={currEventsData} setCurrEventsData={setCurrEventsData}/> },
+		{ label: "Sponsors", link: "/Sponsors", component: <Sponsors /> },
+		{ label: "Speakers", link: "/Speakers", component: <Speakers /> },
+		{ label: "Teams", link: "/Contact-Us", component: <Teams /> },
+		{ label: "RegisterLogin", link: "/Register-Login", component: <RegisterLogin />, },
+		{ label: "admin", link: "/admin", component: <Admin />, },
+		{ label: "TimeLine", link: '/TimeLine', component: <TimeLine /> }
+	];
+	
 	return (
 		<ScrollContainer>
-			<div className="App" >
-				<Header />
-
-				<UserAuthContextProvider>
+			<UserAuthContextProvider>
+				{EventsOverLay && <Overlay setEventsOverLay={setEventsOverLay} currEventsData={currEventsData}></Overlay>}
+				<div className="App" >
+					<Header />
 					<Routes>
-						<Route path="/" element={<Home />} />
+						<Route path="/" element={<Home EventsOverLay={EventsOverLay} setEventsOverLay={setEventsOverLay} currEventsData={currEventsData} setCurrEventsData={setCurrEventsData}/>} />
 
 						{/*mapping all the routes*/}
 						{menuItemsData.map((menuItem) => (
@@ -46,10 +60,10 @@ function App() {
 							/>
 						))}
 					</Routes>
-				</UserAuthContextProvider>
 
-				<Footer />
-			</div>
+					<Footer />
+				</div>
+			</UserAuthContextProvider>
 		</ScrollContainer>
 	);
 }
