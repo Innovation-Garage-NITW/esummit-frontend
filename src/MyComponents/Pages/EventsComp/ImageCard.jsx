@@ -2,16 +2,18 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 
-const ImageCard = ({setEventsOverLay,setCurrEventsData, data ,image, title, details, sizing }) => {
+const ImageCard = ({ setEventsOverLay, setCurrEventsData, data, image, title, details, sizing }) => {
 	const [hover, setHover] = React.useState(false);
 	function toggleHover() {
 		setHover(!hover);
+		document.body.style.cursor = hover ? 'default' : 'pointer';					//cursor change functionality
 	}
 
-	const handleEvents = ()=>{
+	const handleEvents = () => {
 		setCurrEventsData(data);
 		setEventsOverLay(true);
 		console.log("clicked");
+
 	}
 
 	return (
@@ -46,7 +48,7 @@ const ImageCard = ({setEventsOverLay,setCurrEventsData, data ,image, title, deta
 							<Card.Title>{title}</Card.Title>
 							<Card.Text>{details}</Card.Text>
 							<button className="register" style={{
-								color:'#fff',
+								color: '#fff',
 								background: 'transparent',
 								padding: '8px 20px',
 								borderRadius: '8px',
@@ -56,10 +58,10 @@ const ImageCard = ({setEventsOverLay,setCurrEventsData, data ,image, title, deta
 								alignItems: 'center',
 								cursor: 'pointer'
 							}}>
-									<a href='#' style={{
-										color:'white'
-									}}>Register</a>
-								 </button>
+								<a href='#' style={{
+									color: 'white'
+								}}>Register</a>
+							</button>
 						</motion.div>
 					}
 				</Card.ImgOverlay>

@@ -27,8 +27,8 @@ function Overlay({ setEventsOverLay, currEventsData }) {
                         <div><span>TIME : </span> {currEventsData.time}</div>
                         <div><span>CATEGORY : </span> {currEventsData.category}</div>
                         <div><span>PRICE POOL : </span> {currEventsData.prizes}</div>
-                        <div style={{textAlign:'center',marginTop:'5%'}}><button className='eventregisterbtn' onClick={()=>{
-
+                        <div style={{ textAlign: 'center', marginTop: '5%' }}><button className='eventregisterbtn' onClick={() => {
+                            console.log('Register button clicked');
                         }}>Register</button></div>
                     </div>
                 </div>
