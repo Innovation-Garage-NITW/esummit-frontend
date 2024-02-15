@@ -299,7 +299,6 @@
     font-size: 50px;
     font-weight: 900;
     text-shadow: 0 0 20px #fff
-
 }
 
 .speaker-slider-container {
@@ -318,7 +317,7 @@
     display: flex;
     gap: 80px;
     white-space: nowrap;
-    animation: scroll3 90s linear infinite;
+    animation: scroll3 50s linear infinite;
 }
 
 .speaker-slider-scroller:hover {
@@ -446,9 +445,6 @@
 }
 
 @media (max-width:900px) {
-    .EventSection {
-        /* padding-top: 10%; */
-    }
 
     .EventHeading h1 {
         font-size: 30px;
@@ -553,7 +549,7 @@
         padding-top: 20%;
     }
 
-    .topic{
+    .topic {
         width: 350px;
     }
 }
