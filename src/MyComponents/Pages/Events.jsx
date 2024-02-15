@@ -11,7 +11,7 @@ import { getEvents } from '../../../backend_functions';
 
 
 
-export const Events = ({ setEventsOverLay, setCurrEventsData }) => {
+export const Events = ({setEventsOverLay, setCurrEventsData}) => {
 
 	const [eventsData, setEventsData] = useState([]);
 
@@ -40,7 +40,6 @@ export const Events = ({ setEventsOverLay, setCurrEventsData }) => {
 						eventsData.map((event, index) => (
 							<ImageCard
 								key={index}
-								id={event['id']}
 								image={event['photo']}
 								title={event['name']}
 								details={event['description']}

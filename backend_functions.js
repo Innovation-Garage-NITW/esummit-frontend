@@ -80,7 +80,7 @@ export async function registerUser(user, name, email, college) {
             })
         });
         const data = await response.json();
-        // console.log(data['success']);
+        console.log(data);
         return data;
     } catch (error) {
         console.log("Error registering user:", error);

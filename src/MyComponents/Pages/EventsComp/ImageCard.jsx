@@ -2,14 +2,12 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { eventRegister } from '../../../../backend_functions';
-import { useUserAuth } from '../../../context/userAuthContext';
 
 
-const ImageCard = ({ image, title, details, sizing, id }) => {
+const ImageCard = ({ image, title, details, sizing }) => {
 	// console.log(sizing);
 
 	//const ImageCard = ({ setEventsOverLay, setCurrEventsData, data, image, title, details, sizing }) => {
-	const { user } = useUserAuth();
 
 	const [hover, setHover] = React.useState(false);
 	function toggleHover() {
@@ -19,25 +17,21 @@ const ImageCard = ({ image, title, details, sizing, id }) => {
 
 
 	async function handleClick() {
-		// console.log(user);
-		if (user && user.phoneNumber) {
-			const res = await eventRegister(user, id);
-			console.log(res);
-			if (res) {
-				alert("Registered Successfully");
-			} else {
-				alert("Already Registered");
-			}
-		} else {
-			alert("Please Login to Register");
-		}
+		await eventRegister(user, event_id);
+
+	}
+
+	const handleEvents = () => {
+		setCurrEventsData(data);
+		setEventsOverLay(true);
+		console.log("clicked");
 
 	}
 
 
 	return (
 		<motion.div
-			// onClick={() => handleClick}
+			onClick={handleEvents}
 			whileHover={{ scale: 1.05 }}
 			onMouseEnter={toggleHover}
 			onMouseLeave={toggleHover}
@@ -66,21 +60,17 @@ const ImageCard = ({ image, title, details, sizing, id }) => {
 
 							<Card.Title>{title}</Card.Title>
 							<Card.Text>{details}</Card.Text>
-							<button
-								className="register"
-								style={{
-									color: '#fff',
-									background: 'transparent',
-									padding: '8px 20px',
-									borderRadius: '8px',
-									border: '1px solid #1c75d5',
-									display: 'flex',
-									justifyContent: 'center',
-									alignItems: 'center',
-									cursor: 'pointer'
-								}}
-								onClick={handleClick}
-							>
+							<button className="register" style={{
+								color: '#fff',
+								background: 'transparent',
+								padding: '8px 20px',
+								borderRadius: '8px',
+								border: '1px solid #1c75d5',
+								display: 'flex',
+								justifyContent: 'center',
+								alignItems: 'center',
+								cursor: 'pointer'
+							}}>
 								<a href='#' style={{
 									color: 'white'
 								}}>Register</a>
