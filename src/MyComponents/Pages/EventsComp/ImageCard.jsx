@@ -1,15 +1,43 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import { eventRegister } from '../../../../backend_functions';
+import { useUserAuth } from '../../../context/userAuthContext';
 
-const ImageCard = ({ image, title, details, sizing }) => {
-	console.log(sizing);
+
+const ImageCard = ({ image, title, details, sizing, id }) => {
+	// console.log(sizing);
+
+	//const ImageCard = ({ setEventsOverLay, setCurrEventsData, data, image, title, details, sizing }) => {
+	const { user } = useUserAuth();
+
 	const [hover, setHover] = React.useState(false);
 	function toggleHover() {
 		setHover(!hover);
+		document.body.style.cursor = hover ? 'default' : 'pointer';					//cursor change functionality
 	}
+
+
+	async function handleClick() {
+		// console.log(user);
+		if (user && user.phoneNumber) {
+			const res = await eventRegister(user, id);
+			console.log(res);
+			if (res) {
+				alert("Registered Successfully");
+			} else {
+				alert("Already Registered");
+			}
+		} else {
+			alert("Please Login to Register");
+		}
+
+	}
+
+
 	return (
 		<motion.div
+			// onClick={() => handleClick}
 			whileHover={{ scale: 1.05 }}
 			onMouseEnter={toggleHover}
 			onMouseLeave={toggleHover}
@@ -38,21 +66,25 @@ const ImageCard = ({ image, title, details, sizing }) => {
 
 							<Card.Title>{title}</Card.Title>
 							<Card.Text>{details}</Card.Text>
-							<button className="register" style={{
-								color:'#fff',
-								background: 'transparent',
-								padding: '8px 20px',
-								borderRadius: '8px',
-								border: '1px solid #1c75d5',
-								display: 'flex',
-								justifyContent: 'center',
-								alignItems: 'center',
-								cursor: 'pointer'
-							}}>
-									<a href='#' style={{
-										color:'white'
-									}}>Register</a>
-								 </button>
+							<button
+								className="register"
+								style={{
+									color: '#fff',
+									background: 'transparent',
+									padding: '8px 20px',
+									borderRadius: '8px',
+									border: '1px solid #1c75d5',
+									display: 'flex',
+									justifyContent: 'center',
+									alignItems: 'center',
+									cursor: 'pointer'
+								}}
+								onClick={handleClick}
+							>
+								<a href='#' style={{
+									color: 'white'
+								}}>Register</a>
+							</button>
 						</motion.div>
 					}
 				</Card.ImgOverlay>

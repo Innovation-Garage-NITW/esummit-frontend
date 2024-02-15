@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Banner from './Banner.jsx'
 import imgUrl from '../Images/sp.jpg'
 
@@ -7,9 +7,17 @@ import { getSpeakers } from '../../../backend_functions.js'
 
 export const Speakers = () => {
 
+	// for speakers
+	const [speakersData, setSpeakersData] = useState([]);
 	useEffect(() => {
-		getSpeakers();
-	})
+		async function fetchData() {
+			let data = await getSpeakers();
+			data = data.concat(data);
+			// console.log(data);
+			setSpeakersData(data);
+		}
+		fetchData();
+	}, [])
 
 	return (
 		<div>

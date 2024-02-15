@@ -18,23 +18,20 @@ import mountain5Right from "../Images/ovmountainr.png"
 import mountain7Left from "../Images/ovmountainl.png"
 import OverViewSection2 from "./OverViewSection2";
 import ovstar from '../Images/s.png'
-import { eccTeamMembers, EventsData } from "../../../data";
+import { eccTeamMembers, EventsData, HotTopics, dummyData } from "../../../data";
 import SpeakerCard from "./SpeakerComp/SpeakerCard";
 import ImageCard from "./EventsComp/ImageCard";
 
+import { useUserAuth } from "../../context/userAuthContext";
+import { getEvents, getSpeakers } from "../../../backend_functions";
+
 
 export const Home = () => {
+
 	const speakerData = eccTeamMembers.concat(eccTeamMembers);
 	const eventData = EventsData.concat(EventsData);
-	{/* ------------------------------------------------------------------------------------------------why us section */ }
 
-	
-	{/* ------------------------------------------------------------------------------------------------why us section */ }
 	let flag = 0;
-	let flag2 = false;
-	setTimeout(() => {
-		flag2 = true;
-	}, 4000);
 	useEffect(() => {
 		const parallax_el = document.querySelectorAll(".parallax")
 		let xValue = 0, yValue = 0;
@@ -93,7 +90,7 @@ export const Home = () => {
 		bgAnimationFunction();
 
 		window.addEventListener("mousemove", (e) => {
-			if (!flag2) return;
+			if (document.timeline.currentTime < 4000) return;
 			xValue = e.clientX - window.innerWidth / 2;
 			yValue = e.clientY - window.innerWidth / 2;
 
@@ -107,12 +104,40 @@ export const Home = () => {
 
 				el.style.transform = `translateX(calc(-50% + ${-xValue * speedx}px)) translateY(calc(-50% + ${yValue * speedy}px)) perspective(2300px) translateZ(calc(${zValue * speedz}px))`;
 			});
-			document.getElementsByClassName('ovstar')[0].style.transform = `translateX(${-xValue * 0.1}px) translateY(${yValue * 0.1}px) perspective(2300px)`;
+			// document.getElementsByClassName('ovstar').style.transform = `translateX(${-xValue * 0.1}px) translateY(${yValue * 0.1}px) perspective(2300px)`;
 		});
 
 		return () => {
 
 		}
+	}, [])
+
+	// for events
+
+	const [eventsData, setEventsData] = useState([]);
+
+	useEffect(() => {
+		// setEventsData(EventsData);
+		async function fetchData() {
+			let data = await getEvents();
+			// console.log(data)
+			data = data.concat(data);
+			setEventsData(data);
+		}
+		fetchData();
+	}, [])
+
+	// for speakers
+	const [speakersData, setSpeakersData] = useState([]);
+	useEffect(() => {
+		async function fetchData() {
+			let data = await getSpeakers();
+			data = data.concat(data);
+			data = data.concat(data);
+			console.log(data);
+			setSpeakersData(data);
+		}
+		fetchData();
 	}, [])
 
 	return (
@@ -131,10 +156,10 @@ export const Home = () => {
 				<img src={mountain5Left} alt="" data-speedx="0.01" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-5-left" />
 				<img src={mountain6Left} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="parallax mountain-6-left" />
 				{/* <img src={overview} alt="" className="overview"/> */}
-				<img src={mountain5Right} alr="" className="mountain-5-right" />
-				<img src={mountain7Left} alr="" className="mountain-7-left" />
-				<div className="ovstardiv">
-					<img src={ovstar} alr="" className="ovstar" />
+				<img src={mountain5Right} alt="" className="mountain-5-right" />
+				<img src={mountain7Left} alt="" className="mountain-7-left" />
+				<div className="ovstar div">
+					<img src={ovstar} alt="" className="ovstar" />
 					<img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree" />
 					<img src={tree} alt="" data-speedx="0.02" data-speedy="0.05" data-speedz="0.2" data-distance="800" className="tree1" />
 				</div>
@@ -147,9 +172,14 @@ export const Home = () => {
 					</div>
 					<div className="speaker-slider-container">
 						<div className="speaker-slider-scroller">
-							{speakerData.map((speaker, index) => {
+							{speakersData.map((speaker, index) => {
 								return (
-									<SpeakerCard members={speaker} key={index} imgUrl={speaker.imgUrl} sizing={(window.innerWidth > 900) ? (300) : (250)} />
+									<SpeakerCard
+										key={index}
+										members={speaker}
+										imgUrl={speaker.imgUrl}
+										sizing={(window.innerWidth > 725) ? (200) : (175)}
+									/>
 								)
 							})
 							}
@@ -163,9 +193,15 @@ export const Home = () => {
 					</div>
 					<div className="Event-slider-container">
 						<div className="Event-slider-scroller">
-							{eventData.map((event, index) => {
+							{eventsData.map((event, index) => {
 								return (
-									<ImageCard image={event.image} key={index} title={event.title} details={event.details} sizing={(window.innerWidth > 725) ? (300) : (250)} />
+									<ImageCard
+										key={index}
+										image={event['photo']}
+										title={event['name']}
+										details={event['description']}
+										sizing={(window.innerWidth > 725) ? (300) : (250)}
+									/>
 								)
 							})
 							}
@@ -173,9 +209,8 @@ export const Home = () => {
 					</div>
 				</div>
 
-				{/* ------------------------------------------------------------------------------------------------why us section */}
 
-				
+				{/* Trees  */}
 
 
 
@@ -185,4 +220,6 @@ export const Home = () => {
 			</div>
 		</>
 	);
+
+
 };

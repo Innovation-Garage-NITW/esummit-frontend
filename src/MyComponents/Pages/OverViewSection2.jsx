@@ -20,7 +20,7 @@ const data = [
 
 function OverViewSection2() {
 
-  
+
   useEffect(() => {
     let words = document.querySelectorAll(".count");
     words.forEach(word => {
@@ -72,7 +72,7 @@ function OverViewSection2() {
       });
       currentWordIndex =
         currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
-  }
+    }
 
     const rotateCountWord = () => {
       let currentWord = word2[currentWordIndex2];
@@ -92,7 +92,7 @@ function OverViewSection2() {
       });
       currentWordIndex2 =
         currentWordIndex2 === maxWordIndex2 ? 0 : currentWordIndex2 + 1;
-  }
+    }
     rotateText();
     rotateCountWord();
     setInterval(rotateText, 4000);
@@ -116,7 +116,7 @@ function OverViewSection2() {
             sequence={[
               "NITW E-SUMMIT Presenting ...",
               () => {
-                console.log('Sequence completed');
+                // console.log('Sequence completed');
               },
             ]}
             wrapper="h1"

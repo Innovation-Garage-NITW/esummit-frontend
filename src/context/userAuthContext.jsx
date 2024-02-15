@@ -12,6 +12,7 @@ const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
     const [user, setUser] = useState({});
+
     function logOut() {
         return signOut(auth);
     }
@@ -24,9 +25,18 @@ export function UserAuthContextProvider({ children }) {
             }
 
         );
-        console.log(recaptchaVerifier);
+        // console.log(recaptchaVerifier);
         recaptchaVerifier.render();
         return signInWithPhoneNumber(auth, number, recaptchaVerifier);
+    }
+
+    function updateUser({ name, email, college }) {
+        let temp = { ...user };
+        temp.displayName = name;
+        temp.email = email;
+        temp.college = college ?? "NIT W";
+        setUser(temp);
+        console.log(user);
     }
 
     useEffect(() => {
@@ -46,6 +56,7 @@ export function UserAuthContextProvider({ children }) {
                 user,
                 logOut,
                 setUpRecaptha,
+                updateUser
             }}
         >
             {children}

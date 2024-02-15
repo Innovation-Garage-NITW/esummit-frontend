@@ -1,5 +1,4 @@
-
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { getSponsors } from '../../../backend_functions'
 
 import React from 'react';
@@ -10,9 +9,17 @@ import bigTechSVG from './big_tech.svg';
 
 export const Sponsors = () => {
 
+  // for sponsors
+  const [sponsorsData, setSponsorsData] = useState([]);
   useEffect(() => {
-    getSponsors();
-  })
+    async function fetchData() {
+      let data = await getSponsors();
+      data = data.concat(data);
+      console.log(data);
+      setSponsorsData(data);
+    }
+    fetchData();
+  }, [])
 
   return (
     <div className="marquee-container">
