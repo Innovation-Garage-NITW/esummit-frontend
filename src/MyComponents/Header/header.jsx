@@ -1,7 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./header.css";
 import { NavLink, Link } from "react-router-dom";
 import IG_logo from "../../assets/IG logo.png";
+import { useUserAuth } from "../../context/userAuthContext";
 
 // import { UserContext } from "../../context/userContext";
 
@@ -15,14 +16,23 @@ const menuItemsData = [
 ];
 
 const Header = () => {
-	const [menuOpen, setMenuOpen] = useState(false);				//for hamburger menu
-	const [isLoggedIn, setIsLoggedIn] = useState(true);
-	// const { user, logOut } = useContext(UserContext);			//for backend integration
+	const [menuOpen, setMenuOpen] = useState(false);
+	const { user, logOut } = useUserAuth();
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 	async function handleLogOut() {
 		// await logOut();
+		await logOut();
 		setIsLoggedIn(false);
 	}
+
+	useEffect(() => {
+		// Check if the user is logged in
+		if (user && user.phoneNumber) {
+			// console.log(user);
+			setIsLoggedIn(true);
+		}
+	}, [user]);
 
 	const listItems = menuItemsData.map((menuItem, index) => (
 		<li key={index}>
