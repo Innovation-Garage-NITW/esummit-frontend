@@ -24,7 +24,7 @@ export const RegisterLogin = () => {
 	const [otp, setOtp] = useState("");
 	const [otp2, setOtp2] = useState("");
 	const [result, setResult] = useState("");
-	const { setUpRecaptha, user, logOut } = useUserAuth();
+	const { setUpRecaptha, user, logOut, updateUser } = useUserAuth();
 	const [number2, setNumber2] = useState("");
 	const [open, setOpen] = React.useState(false);
 	const [showLoginForm, setShowLoginForm] = useState(true);
@@ -86,6 +86,7 @@ export const RegisterLogin = () => {
 			result.confirm(otp).then((result) => {
 				const user = result.user;
 				registerUser(user, Username, mail, college);
+				updateUser({ name: Username, email: mail, college: college });
 			})
 			setShowVerified(true);
 			setOpen(true)
