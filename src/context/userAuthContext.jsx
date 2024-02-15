@@ -30,15 +30,6 @@ export function UserAuthContextProvider({ children }) {
         return signInWithPhoneNumber(auth, number, recaptchaVerifier);
     }
 
-    function updateUser({ name, email, college }) {
-        let temp = { ...user };
-        temp.displayName = name;
-        temp.email = email;
-        temp.college = college ?? "NIT W";
-        setUser(temp);
-        console.log(user);
-    }
-
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
             console.log("Auth", currentuser);
@@ -55,8 +46,7 @@ export function UserAuthContextProvider({ children }) {
             value={{
                 user,
                 logOut,
-                setUpRecaptha,
-                updateUser
+                setUpRecaptha
             }}
         >
             {children}
