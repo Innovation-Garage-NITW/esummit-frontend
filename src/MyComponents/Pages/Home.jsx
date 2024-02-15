@@ -29,7 +29,45 @@ import Whyus from "./Whyus.jsx"
 import eventposter from '../../assets/poster_innovate_sphere.jpeg'
 import { getEvents, getSpeakers } from "../../../backend_functions.js"
 
+
 const iconList = [<FaRocket className="topic-icon" />, <RiGovernmentFill className="topic-icon" />, <BiSolidBusiness className="topic-icon" />, <GiIndianPalace className="topic-icon" />]
+
+import { useUserAuth } from "../../context/userAuthContext";
+import { getEvents, getSpeakers } from "../../../backend_functions";
+
+
+export const Home = () => {
+
+	const speakerData = eccTeamMembers.concat(eccTeamMembers);
+	const eventData = EventsData.concat(EventsData);
+
+	let flag = 0;
+	useEffect(() => {
+		const parallax_el = document.querySelectorAll(".parallax")
+		let xValue = 0, yValue = 0;
+		const main = document.querySelector(".main");
+
+		if (window.innerWidth >= 725) {
+			main.style.maxHeight = `${window.innerWidth * 0.6}px`;
+		} else {
+			main.style.maxHeight = `${window.innerWidth * 1.6}px`;
+		}
+
+		function logoAnimationFunction() {
+			let timeline = gsap.timeline();
+
+			timeline.from(".logo",
+				{
+					y: window.innerHeight - document.querySelector(".logo").getBoundingClientRect().top - 300,
+					opacity: 0,
+					duration: 3,
+				}
+			);
+		}
+
+		function moonAnimationFunction() {
+			let timeline = gsap.timeline();
+
 
 export const Home = ({ setEventsOverLay, setCurrEventsData }) => {
 
@@ -50,6 +88,7 @@ export const Home = ({ setEventsOverLay, setCurrEventsData }) => {
 			}
 
 		}
+
 
         async function fetchSData(){
             try{
@@ -243,3 +282,4 @@ export const Home = ({ setEventsOverLay, setCurrEventsData }) => {
         </>
     );
 };
+
