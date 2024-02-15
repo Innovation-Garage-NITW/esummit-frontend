@@ -19,8 +19,7 @@ function Overlay({ setEventsOverLay, currEventsData }) {
                     </div>
                     <div className="eventcontent">
                         <div className="descontentdiv">
-                            <p>Showcase your groundbreaking technical project at Technozion '23's Shark Tank InnovateSphere, hosted by ECE Society in collaboration with Innovation Garage NITW. Whether it's cutting-edge software, hardware, or a unique tech integration, we want your ideas!
-                                Present your project at our college-wide event during Technozion, where industry experts and peers will decide which projects stand out. The most promising ones will have the opportunity to pitch directly to THUB for potential development and investment.
+                            <p>{currEventsData.description}
                             </p>
                         </div>
                         <div><span>VENUE : </span> {currEventsData.venue}</div>

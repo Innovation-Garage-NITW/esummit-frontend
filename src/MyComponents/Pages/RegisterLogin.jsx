@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Form, Alert } from "react-bootstrap";
+import { Form} from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useUserAuth } from "../../context/userAuthContext";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import { Route, Routes } from "react-router-dom";
 import "./RegisterLogin.css";
 import { registerUser } from "../../../backend_functions";
+import {useNavigate} from "react-router-dom";
 //import "./SignIn";
 export const RegisterLogin = () => {
-
+	const navigate = useNavigate();
 	const [error, setError] = useState("");
 	const [number, setNumber] = useState("");
 	const [Username, setUsername] = useState("");
@@ -89,6 +89,7 @@ export const RegisterLogin = () => {
 			})
 			setShowVerified(true);
 			setOpen(true)
+			navigate("/");
 		} catch (err) {
 			setError(err.message);
 		}
@@ -110,16 +111,7 @@ export const RegisterLogin = () => {
 		await logOut();
 	}
 
-	if (user) {
-		return (
-			<div className="p-4_box">
-				<Link to="/">
-					<Button variant="secondary" onClick={handleLogOut}>LogOut</Button>
-				</Link>
-			</div>
-		)
-	}
-
+	
 	return (
 		<>{showLoginForm && <div className="newbody">
 			<div className="image">

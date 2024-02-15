@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import './TimeLine.css';
 import { Chrono } from 'react-chrono';
+import { getEvents } from '../../../backend_functions';
 
 
 function TimeLine() {
 
-    const [day, setDay] = useState(1);
+    const [day, setDay] = useState(0);
     const [timeLineData, setTimeLineData] = useState([]);
 
 
-    const dummyData = [
+    const [dummyData,setDummyData] = useState([
         {
             title: "Title 1",
             priority: 1,
@@ -122,9 +123,20 @@ function TimeLine() {
             category: 'Competition',
             imagUrl: 'https://unsplash.com/photos/man-in-black-crew-neck-t-shirt-using-black-laptop-computer-b9-odQi5oDo'
         },
-    ]
+    ]);
+
 
     useEffect(() => {
+        async function fetchData(){
+            try{
+                const data = await getEvents();
+                setDummyData(data);
+            }
+            catch(error){
+                console.log("Error fetching the timeline events ",error);
+            }
+        }
+        fetchData();
         let temp = [];
         for (var i = 0; i < dummyData.length; i++) {
             if (dummyData[i].priority === 1 && dummyData[i].day === day) {
@@ -144,7 +156,39 @@ function TimeLine() {
             }
         }
         setTimeLineData(temp);
-    }, [day]);
+    },[]);
+
+    useEffect(() => {
+        async function fetchData(){
+            try{
+                const data = await getEvents();
+                setDummyData(data);
+            }
+            catch(error){
+                console.log("Error fetching the timeline events ",error);
+            }
+        }
+        fetchData();
+        let temp = [];
+        for (var i = 0; i < dummyData.length; i++) {
+            if (dummyData[i].priority === 1 && dummyData[i].day === day) {
+                var t = {
+                    title: dummyData[i].time,
+                    cardTitle: dummyData[i].title,
+                    cardSubtitle: dummyData[i].shortdes,
+                    cardDetailedText: dummyData[i].description,
+                    media: {
+                        type: "IMAGE",
+                        source: {
+                            url: dummyData[i].imagUrl,
+                        }
+                    }
+                }
+                temp.push(t);
+            }
+        }
+        setTimeLineData(temp);
+    },[day]);
 
 
     return (
@@ -160,11 +204,12 @@ function TimeLine() {
                         allowDynamicUpdate={true}
                         focusActiveItemOnLoad={true}
                         hideControls={true}
-                        itemWidth={150}
-                        mediaHeight={100}
+                        itemWidth={300}
+                        mediaHeight={300}
+                        useReadMore
                         theme={
                             {
-                                primary: 'white',
+                                primary: 'gray',
                                 secondary: 'black',
                                 titleColor: 'gray',
                                 titleColorActive: 'white'

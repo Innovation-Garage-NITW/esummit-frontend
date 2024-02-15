@@ -298,7 +298,8 @@
     font-family: 'Work Sans', sans-serif;
     font-size: 50px;
     font-weight: 900;
-    animation: glow 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 20px #fff
+
 }
 
 .speaker-slider-container {
@@ -394,7 +395,7 @@
     font-family: 'Work Sans', sans-serif;
     font-size: 50px;
     font-weight: 900;
-    animation: glow 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 20px #fff
 }
 
 .Event-slider-container {
@@ -477,9 +478,6 @@
     .EventSection {
         padding-top: 0%;
     }
-}
-  
-
 
 }
 
@@ -500,7 +498,7 @@
     color: white;
     font-family: 'Work Sans', sans-serif;
     font-weight: 900;
-    animation: glow 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px #fff
 }
 
 .topicdesbox {
@@ -512,7 +510,7 @@
     text-transform: uppercase;
     text-align: center;
     font-size: 25px;
-    animation: glow 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px #fff;
 }
 
 .topicsdiv {
@@ -568,4 +566,3 @@
     height: fit-content;
     padding: 7% 4% 0%;
 }
-

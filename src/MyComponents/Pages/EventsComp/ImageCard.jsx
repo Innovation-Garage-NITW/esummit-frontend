@@ -4,11 +4,7 @@ import { motion } from 'framer-motion';
 import { eventRegister } from '../../../../backend_functions';
 
 
-const ImageCard = ({ image, title, details, sizing }) => {
-	// console.log(sizing);
-
-	//const ImageCard = ({ setEventsOverLay, setCurrEventsData, data, image, title, details, sizing }) => {
-
+const ImageCard = ({ image, title, details, sizing,setCurrEventsData,setEventsOverLay,data}) => {
 	const [hover, setHover] = React.useState(false);
 	function toggleHover() {
 		setHover(!hover);
