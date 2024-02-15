@@ -49,7 +49,7 @@ function App() {
 				<div className="App" >
 					<Header />
 					<Routes>
-						<Route path="/" element={<Home EventsOverLay={EventsOverLay} setEventsOverLay={setEventsOverLay} currEventsData={currEventsData} setCurrEventsData={setCurrEventsData}/>} />
+						<Route exact path="/" element={<Home EventsOverLay={EventsOverLay} setEventsOverLay={setEventsOverLay} currEventsData={currEventsData} setCurrEventsData={setCurrEventsData}/>} />
 
 						{/*mapping all the routes*/}
 						{menuItemsData.map((menuItem) => (

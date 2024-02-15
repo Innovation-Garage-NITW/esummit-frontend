@@ -14,8 +14,6 @@ export const Teams = () => {
 	useEffect(() => {
 		async function fetchData() {
 			let data = await getSpeakers();
-			data = data.concat(data);
-			// console.log(data);
 			setSpeakersData(data);
 		}
 		fetchData();

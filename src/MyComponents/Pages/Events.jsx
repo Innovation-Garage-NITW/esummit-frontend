@@ -6,7 +6,6 @@ import { Container } from 'react-bootstrap';
 import './Events.css'
 
 import { useEffect, useState } from 'react';
-import { useUserAuth } from '../../context/userAuthContext';
 import { getEvents } from '../../../backend_functions';
 
 
@@ -46,7 +45,7 @@ export const Events = ({ setEventsOverLay, setCurrEventsData }) => {
 								details={event['description']}
 								sizing={350}
 								setCurrEventsData={setCurrEventsData}
-								setEventsOverLay={setEventsData}
+								setEventsOverLay={setEventsOverLay}
 								data={eventsData[index]}
 							/>
 						))

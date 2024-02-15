@@ -102,10 +102,6 @@ function OverViewSection2() {
   return (
     <div className="overview-body">
       <div className='overexplain'>
-        <div className="overviewimagebox">
-          <img src={overviewtext} alt="" className="overviewtext" />
-          <img src={overviewbox} alt="" className="overviewbox" />
-        </div>
         <div className='overpara'>
           <p>Crafted for the seekers of inspiration: ESummit beckons. Dive into a realm where sparks of innovation meet the whispers of  change. Join us in shaping a future beyond boundaries at NITW premeier event. ESummit--where creativity takes flight in the uncharted</p>
         </div>

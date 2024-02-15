@@ -2,41 +2,40 @@ import React, { useState, useContext, useEffect } from "react";
 import "./header.css";
 import { NavLink, Link } from "react-router-dom";
 import IG_logo from "../../assets/IG logo.png";
-import { useUserAuth } from "../../context/userAuthContext";
 
-// import { UserContext } from "../../context/userContext";
+import { useUserAuth } from "../../context/userAuthContext";
 
 const menuItemsData = [
 	{ label: "TimeLine", link: "/TimeLine" },
 	{ label: "Events", link: "/Events" },
-	{ label: "Sponsors", link: "/Sponsors" },
+	// { label: "Sponsors", link: "/Sponsors" },
 	{ label: "Speakers", link: "/Speakers" },
 	{ label: "Teams", link: "/Contact-Us" },
 	{ label: "Register/Login", link: "/Register-Login" },			//index = 5
 ];
 
 const Header = () => {
-	const [menuOpen, setMenuOpen] = useState(false);
-	const { user, logOut } = useUserAuth();
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+	const [menuOpen, setMenuOpen] = useState(false);				//for hamburger menu
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const { user, logOut } = useUserAuth();	//for backend integration
+
+	useEffect(()=>{
+		if(user) {
+			setIsLoggedIn(true);
+		} else {
+			setIsLoggedIn(false);
+		}
+	},[user])
+	
 	async function handleLogOut() {
-		// await logOut();
 		await logOut();
 		setIsLoggedIn(false);
 	}
 
-	useEffect(() => {
-		// Check if the user is logged in
-		if (user && user.phoneNumber) {
-			// console.log(user);
-			setIsLoggedIn(true);
-		}
-	}, [user]);
-
 	const listItems = menuItemsData.map((menuItem, index) => (
 		<li key={index}>
-			{index === 5 ? ( 						// Check if the index is 5 for login/logout
+			{index === (menuItemsData.length-1) ? ( 						// Check if the index is 5 for login/logout
 				isLoggedIn ? (
 					<button
 						onClick={() => {
