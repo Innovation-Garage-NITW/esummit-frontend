@@ -109,6 +109,8 @@ export const RegisterLogin = () => {
       <div className="p-4_box">
         <h2 className="mb-3">Register</h2>
         {error && <Alert variant="danger">{error}</Alert>}
+        <Form onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
         <div className='input-box'>
           <input type='text' value={Username} onChange={(e) => setUsername(e.target.value)} placeholder='Username' required />
           
@@ -124,8 +126,6 @@ export const RegisterLogin = () => {
           
 
         </div>
-        <Form onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
 
             <PhoneInput
               className="input-box"
