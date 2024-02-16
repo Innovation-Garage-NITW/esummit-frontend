@@ -10,7 +10,7 @@ function TimeLine() {
     const [timeLineData, setTimeLineData] = useState([]);
 
 
-    const [dummyData,setDummyData] = useState([
+    const [dummyData, setDummyData] = useState([
         {
             title: "Title 1",
             priority: 1,
@@ -127,13 +127,13 @@ function TimeLine() {
 
 
     useEffect(() => {
-        async function fetchData(){
-            try{
+        async function fetchData() {
+            try {
                 const data = await getEvents();
                 setDummyData(data);
             }
-            catch(error){
-                console.log("Error fetching the timeline events ",error);
+            catch (error) {
+                console.log("Error fetching the timeline events ", error);
             }
         }
         fetchData();
@@ -156,16 +156,16 @@ function TimeLine() {
             }
         }
         setTimeLineData(temp);
-    },[]);
+    }, []);
 
     useEffect(() => {
-        async function fetchData(){
-            try{
+        async function fetchData() {
+            try {
                 const data = await getEvents();
                 setDummyData(data);
             }
-            catch(error){
-                console.log("Error fetching the timeline events ",error);
+            catch (error) {
+                console.log("Error fetching the timeline events ", error);
             }
         }
         fetchData();
@@ -188,7 +188,7 @@ function TimeLine() {
             }
         }
         setTimeLineData(temp);
-    },[day]);
+    }, [day]);
 
 
     return (

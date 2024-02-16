@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { eventRegister } from '../../../../backend_functions';
 
 
-const ImageCard = ({ image, title, details, sizing,setCurrEventsData,setEventsOverLay,data}) => {
+const ImageCard = ({ image, title, details, sizing, setCurrEventsData, setEventsOverLay, data }) => {
 	const [hover, setHover] = React.useState(false);
 	function toggleHover() {
 		setHover(!hover);
@@ -12,15 +12,15 @@ const ImageCard = ({ image, title, details, sizing,setCurrEventsData,setEventsOv
 	}
 
 
-	async function handleClick() {
-		await eventRegister(user, event_id);
+	// async function handleClick() {
+	// 	await eventRegister(user, event_id);
 
-	}
+	// }
 
 	const handleEvents = () => {
 		setCurrEventsData(data);
 		setEventsOverLay(true);
-		console.log("clicked");
+		// console.log("clicked");
 
 	}
 

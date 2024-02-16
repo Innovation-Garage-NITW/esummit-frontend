@@ -21,6 +21,7 @@ export const Events = ({ setEventsOverLay, setCurrEventsData }) => {
 			try {
 				const data = await getEvents();
 				setEventsData(data);
+				// console.log(data)
 			} catch (error) {
 				console.error('Error fetching events:', error);
 			}
@@ -40,9 +41,9 @@ export const Events = ({ setEventsOverLay, setCurrEventsData }) => {
 							<ImageCard
 								key={index}
 								id={event['id']}
-								image={event['photo']}
-								title={event['name']}
-								details={event['description']}
+								image={event['imageUrl']}
+								title={event['title']}
+								details={event['shortdes']}
 								sizing={350}
 								setCurrEventsData={setCurrEventsData}
 								setEventsOverLay={setEventsOverLay}

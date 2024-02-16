@@ -190,7 +190,16 @@ export const Home = ({ setEventsOverLay, setCurrEventsData }) => {
                         <div className="Event-slider-scroller">
                             {eventData.map((event, index) => {
                                 return (
-                                    <ImageCard setEventsOverLay={setEventsOverLay} setCurrEventsData={setCurrEventsData} data={eventData[index]} image={eventposter} key={index} title={event.title} details={event.shortdes} sizing={(window.innerWidth > 725) ? (300) : (250)} />
+                                    <ImageCard
+                                        setEventsOverLay={setEventsOverLay}
+                                        setCurrEventsData={setCurrEventsData}
+                                        data={eventData[index]}
+                                        image={event.imageUrl}
+                                        key={index}
+                                        title={event.title}
+                                        details={event.shortdes}
+                                        sizing={(window.innerWidth > 725) ? (300) : (250)}
+                                    />
                                 )
                             })
                             }
