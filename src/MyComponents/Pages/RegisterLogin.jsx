@@ -23,10 +23,11 @@ export const RegisterLogin = () => {
 	const [otp, setOtp] = useState("");
 	const [otp2, setOtp2] = useState("");
 	const [result, setResult] = useState("");
-	const { setUpRecaptha } = useUserAuth();
+	const { setUpRecaptha, logOut } = useUserAuth();
 	const [number2, setNumber2] = useState("");
 	const [open, setOpen] = React.useState(false);
 	const [showLoginForm, setShowLoginForm] = useState(true);
+	const navigate = useNavigate();
 	const Alert = React.forwardRef(function Alert(props, ref) {
 		return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 	});
@@ -56,7 +57,6 @@ export const RegisterLogin = () => {
 			const response = await setUpRecaptha(number);
 			setResult(response);
 			setFlag(true);
-			setFlag2(true);
 		} catch (err) {
 			setError(err.message);
 		}
@@ -70,7 +70,6 @@ export const RegisterLogin = () => {
 		try {
 			const response = await setUpRecaptha(number2);
 			setResult(response);
-			setFlag(true);
 			setFlag2(true);
 		} catch (err) {
 			setError(err.message);
@@ -85,11 +84,11 @@ export const RegisterLogin = () => {
 		try {
 			await result.confirm(otp).then(async (result) => {
 				const user = result.user;
-				const checkLogin = await loginUser(user);
-				console.log(checkLogin);
+				await registerUser(user);
 			})
 			setShowVerified(true);
 			setOpen(true)
+			navigate('/')
 		} catch (err) {
 			setError(err.message);
 		}
@@ -105,14 +104,14 @@ export const RegisterLogin = () => {
 				const user = result.user;
 				const checkLogin = await loginUser(user);
 				if (checkLogin.success) {
-					// navigate to home
+					setShowVerified(true);
+					setOpen(true)
+					navigate('/')
 				} else {
-					// set user to null 
-					// alert not registered
+					alert("User not registered");
+					logOut();
 				}
 			})
-			setShowVerified(true);
-			setOpen(true)
 		} catch (err) {
 			setError(err.message);
 		}
