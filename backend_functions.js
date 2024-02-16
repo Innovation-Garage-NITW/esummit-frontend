@@ -80,10 +80,32 @@ export async function registerUser(user, name, email, college) {
             })
         });
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         return data;
     } catch (error) {
         console.log("Error registering user:", error);
+    }
+}
+
+export async function loginUser(user) {
+    try {
+        const idToken = await getIdToken(user);
+        const response = await fetch('https://us-central1-esummit-ig.cloudfunctions.net/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                id: user.uid,
+                phone: user.phoneNumber,
+            })
+        });
+        const data = await response.json();
+        console.log(data);
+        return data;
+    } catch (error) {
+        console.log("Error logging in user:", error);
     }
 }
 

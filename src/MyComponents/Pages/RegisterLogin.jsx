@@ -8,7 +8,7 @@ import { useUserAuth } from "../../context/userAuthContext";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import "./RegisterLogin.css";
-import { registerUser } from "../../../backend_functions";
+import { loginUser, registerUser } from "../../../backend_functions";
 import { useNavigate } from "react-router-dom";
 //import "./SignIn";
 export const RegisterLogin = () => {
@@ -78,11 +78,16 @@ export const RegisterLogin = () => {
 	};
 
 	const verifyOtp = async (e) => {
+		// console.log("otp", otp);
 		e.preventDefault();
 		setError("");
 		if (otp === "" || otp === null) return;
 		try {
-			await result.confirm(otp);
+			await result.confirm(otp).then(async (result) => {
+				const user = result.user;
+				const checkLogin = await loginUser(user);
+				console.log(checkLogin);
+			})
 			setShowVerified(true);
 			setOpen(true)
 		} catch (err) {
@@ -90,11 +95,22 @@ export const RegisterLogin = () => {
 		}
 	};
 	const verifyOtp2 = async (e) => {
+		console.log("otp", otp2);
 		e.preventDefault();
 		setError("");
-		if (otp === "" || otp === null) return;
+		if (otp2 === "" || otp2 === null) return;
 		try {
-			await result.confirm(otp);
+			await result.confirm(otp2).then(async (result) => {
+				console.log('result', result);
+				const user = result.user;
+				const checkLogin = await loginUser(user);
+				if (checkLogin.success) {
+					// navigate to home
+				} else {
+					// set user to null 
+					// alert not registered
+				}
+			})
 			setShowVerified(true);
 			setOpen(true)
 		} catch (err) {
