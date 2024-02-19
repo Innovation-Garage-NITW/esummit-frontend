@@ -18,7 +18,7 @@ body {
 }
 
 .team-selection-container {
-	background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+	background: rgb(18, 40, 91);
 	width: 35%;
 	padding: 20px;
 	/* Adjust padding as needed */

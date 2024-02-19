@@ -1,70 +1,50 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import MemberCard from "./MemberCard";
 import "./Teams.css";
+import { getTeams } from "../../../../backend_functions";
 
 export const Teams = () => {
 
-	//Previous commit!!!  
-	// 	const [selectedTeam, setSelectedTeam] = useState(null);
-
-	// 	// Define teams data
-	// 	const teamsData = [
-	// 		{ name: "Design Team", members: ["John Doe", "Jane Smith", "Alex Johnson"] },
-	// 		{ name: "Decor Team", members: ["Emily Brown", "Michael Davis", "Sophia Wilson"] },
-	// 		{ name: "Tech Team", members: ["David Lee", "Emma Garcia", "James Martinez", "Mubashir", "Jitesh", "Manav"] },
-	// 		{ name: "Media Team", members: ["Olivia Taylor", "William Anderson", "Ella Thomas"] },
-	// 	];
-
-
-	// 	const handleTeamClick = (teamName) => {
-	// 		setSelectedTeam(teamName);
-	// 	};
-
-	// 	return (
-
-	// 		<div className="teams-container">
-	// 			<h1 className="page-heading">Teams</h1>
-	// 			{/* Render list of teams */}
-	// 			<div className="team-selection-container">
-	// 				<div className="team-selection">
-	// 					{teamsData.map((team, index) => (
-	// 						<div
-	// 							key={index}
-	// 							onClick={() => handleTeamClick(team.name)}
-	// 							className={`team-item ${selectedTeam === team.name ? 'selected' : ''}`}
-	// 						>
-	// 							{team.name}
-	// 						</div>
-	// 					))}
-	// 				</div>
-	// 			</div>
-
-	// 			{/* Render team members if a team is selected */}
-	// 			{selectedTeam && (
-	// 				<div className="selected-team">
-	// 					<h2>{selectedTeam}</h2>
-	// 					<div className="team-members-container">
-	// 						{/* Render team members */}
-	// 						{teamsData.find((team) => team.name === selectedTeam).members.map((member, index) => (
-	// 							<MemberCard key={index} name={member} />
-	// 						))}
-	// 					</div>
-	// 				</div>
-	// 			)}
-	// 		</div>
-	// 	);
-	// =======
-
-	const initialSelectedTeam = "Design Team";
+	const initialSelectedTeam = "CII HOD";
 
 	const [selectedTeam, setSelectedTeam] = useState(initialSelectedTeam);
+	const [teamsData, setTeamsData] = useState([]);
+	const [team, setTeam] = useState([]);
 
-	const teamsData = [
-		{ name: "Design Team", members: ["John Doe", "Jane Smith", "Alex Johnson"] },
-		{ name: "Decor Team", members: ["Emily Brown", "Michael Davis", "Sophia Wilson"] },
-		{ name: "Tech Team", members: ["David Lee", "Emma Garcia", "James Martinez", "Mubashir", "Jitesh", "Manav"] },
-		{ name: "Media Team", members: ["Olivia Taylor", "William Anderson", "Ella Thomas"] },
-	];
+	const updateMembers = () => {
+		const selectedTeamObject = teamsData.find(team => team.name === selectedTeam);
+
+		// Check if the selected team exists and has a 'members' property
+		if (selectedTeamObject && selectedTeamObject.members) {
+			// If 'members' property exists, update the state
+			setTeam(selectedTeamObject.members);
+		}
+	}
+
+	useEffect(() => {
+		const selectedTeamObject = teamsData.find(team => team.name === selectedTeam);
+
+		// Check if the selected team exists and has a 'members' property
+		if (selectedTeamObject && selectedTeamObject.members) {
+			// If 'members' property exists, update the state
+			setTeam(selectedTeamObject.members);
+		}
+	}, [selectedTeam, teamsData])
+
+	useEffect(() => {
+		async function fetchData() {
+			try {
+				const data = await getTeams();
+				setTeamsData(data);
+				setTeam(data[0].members)
+				updateMembers();
+			}
+			catch (error) {
+				console.log("Error fetching the timeline events ", error);
+			}
+		}
+		fetchData();
+	}, [])
 
 	const handleTeamClick = (teamName) => {
 		setSelectedTeam(teamName);
@@ -90,9 +70,9 @@ export const Teams = () => {
 			<div className="selected-team">
 				<h2>{selectedTeam}</h2>
 				<div className="team-members-container">
-					{teamsData.find((team) => team.name === selectedTeam).members.map((member, index) => (
-						<MemberCard key={index} name={member} />
-					))}
+					{
+						team && team.length > 0 && team.map((member) => <MemberCard name={member.name} key={member.name} imgUrl={member.photo} />)
+					}
 				</div>
 			</div>
 		</div>

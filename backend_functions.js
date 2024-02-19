@@ -8,7 +8,6 @@ export async function getEvents() {
         );
         const data = await response.json();
         for (const event of data['events']) {
-            // console.log(event);
             fetched_events.push(event);
         }
         // console.log(fetched_events);
@@ -58,6 +57,27 @@ export async function getSponsors() {
         return fetched_sponsors;
     } catch (error) {
         console.log("Error getting sponsors:", error);
+    }
+}
+
+export async function getTeams() {
+    try {
+        const fetched_teams = [];
+        const response = await fetch(
+            "https://us-central1-esummit-ig.cloudfunctions.net/getTeams"
+        );
+        const data = (await response.json())['teams'];
+        // console.log(data);
+        for (const team in data) {
+            fetched_teams.push({
+                name: team,
+                members: data[team]
+            });
+        }
+        // console.log(fetched_teams);
+        return fetched_teams;
+    } catch (error) {
+        console.log("Error getting teams:", error);
     }
 }
 
