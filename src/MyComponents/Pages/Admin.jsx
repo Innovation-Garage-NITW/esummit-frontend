@@ -17,6 +17,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { useEffect } from "react";
 import { useUserAuth } from "../../context/userAuthContext";
 import { useNavigate } from "react-router-dom";
+import DOMPurify from "dompurify";
 
 // Custom Components
 function CreateEvents() {
@@ -43,23 +44,8 @@ function CreateEvents() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// console.log(formData);
-		// Here you can handle form submission logic
 	};
-	// {
-	//   name: body.name,
-	//   shortDescription: body.shortDescription,
-	//   description: body.description,
-	//   priority: body.priority,
-	//   day: body.day,
-	//   venue: body.venue,
-	//   time: body.time,
-	//   cateogry: body.category,
-	//   imageUrl: body.imageUrl,
-	//   unstopLink: body.unstopLink,
-	//   prizes: body.prizes,
-	//   users: [],
-	// };
+
 	return (
 		<Box style={{ maxHeight: "90vh" }}>
 			<Typography variant="h5">Create Events</Typography>
@@ -185,7 +171,7 @@ function ManageEvents() {
 				}
 			)
 				.then((x) => x.json())
-				.then((x) => x.events);
+				.then((x) => x.events).catch(reason => alert(reason));
 			setEvents(response || []);
 			// console.log({ response });
 		})();
@@ -198,7 +184,8 @@ function ManageEvents() {
 					<ListItem key={event.id}>
 						<ListItemText primary={event.name} secondary={event.date} />
 						<img
-							src={event.photo}
+							// src={event.photo}
+							src={DOMPurify.sanitize(event.photo)}
 							alt={event.name}
 							style={{ width: 100, height: 100, marginRight: 16 }}
 						/>
@@ -217,7 +204,7 @@ function ManageEvents() {
 											Authorization: "Bearer " + idToken,
 										},
 									}
-								).then((x) => x.json());
+								).then((x) => x.json()).catch(reason => alert(reason));
 								// console.log({ response });
 							}}
 						>

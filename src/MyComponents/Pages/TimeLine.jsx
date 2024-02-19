@@ -27,7 +27,7 @@ function TimeLine() {
         fetchData().then(() => {
             setGotData(true);
         }
-        )
+        ).catch(reason => alert(reason))
 
     }, []);
 
