@@ -122,7 +122,7 @@ export async function loginUser(user) {
             })
         });
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         return data;
     } catch (error) {
         console.log("Error logging in user:", error);
@@ -144,7 +144,7 @@ export async function eventRegister(user, event_id) {
             })
         });
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         return data;
     } catch (error) {
         console.log("Error registering user:", error);

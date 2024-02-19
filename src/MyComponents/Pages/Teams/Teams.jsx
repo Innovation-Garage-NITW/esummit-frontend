@@ -40,7 +40,7 @@ export const Teams = () => {
 				updateMembers();
 			}
 			catch (error) {
-				console.log("Error fetching the timeline events ", error);
+				// console.log("Error fetching the timeline events ", error);
 			}
 		}
 		fetchData();

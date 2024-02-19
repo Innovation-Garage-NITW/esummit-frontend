@@ -43,7 +43,7 @@ function CreateEvents() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(formData);
+		// console.log(formData);
 		// Here you can handle form submission logic
 	};
 	// {
@@ -169,11 +169,11 @@ function ManageEvents() {
 	const { user } = useUserAuth();
 
 	useEffect(() => {
-		console.log("admin", { user });
+		// console.log("admin", { user });
 		(async () => {
 			// const idToken = await user.getIdToken()
 			const idToken = localStorage.getItem("token");
-			console.log({ idToken });
+			// console.log({ idToken });
 			const response = await fetch(
 				"http://127.0.0.1:5001/esummit-ig/us-central1/admin-getEvents",
 				{
@@ -187,7 +187,7 @@ function ManageEvents() {
 				.then((x) => x.json())
 				.then((x) => x.events);
 			setEvents(response || []);
-			console.log({ response });
+			// console.log({ response });
 		})();
 	}, [user]);
 	return (
@@ -218,7 +218,7 @@ function ManageEvents() {
 										},
 									}
 								).then((x) => x.json());
-								console.log({ response });
+								// console.log({ response });
 							}}
 						>
 							Notify

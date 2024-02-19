@@ -28,7 +28,7 @@ function Overlay({ setEventsOverLay, currEventsData }) {
                         <div><span>PRICE POOL : </span> {currEventsData.prizes}</div>
                         <a href={currEventsData.redirect_url} target="_blank" rel="noreferrer">
                             <div style={{ textAlign: 'center', marginTop: '5%' }}><button className='eventregisterbtn' onClick={() => {
-                                console.log('Register button clicked');
+                                // console.log('Register button clicked');
                             }}>Register</button></div></a>
                     </div>
                 </div>

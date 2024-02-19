@@ -43,7 +43,7 @@ export const Home = ({ setEventsOverLay, setCurrEventsData }) => {
             try {
                 const data = await getEvents();
                 const temp = data.concat(data);
-                console.log("Number of events : ", temp.length);
+                // console.log("Number of events : ", temp.length);
                 setEventData(data);
             } catch (error) {
                 console.error('Error fetching events:', error);
@@ -55,11 +55,11 @@ export const Home = ({ setEventsOverLay, setCurrEventsData }) => {
             try {
                 const data = await getSpeakers();
                 const temp = data.concat(data);
-                console.log("Number of speaker : ", temp.length);
+                // console.log("Number of speaker : ", temp.length);
                 setSpeakersData(temp);
             }
             catch (error) {
-                console.log('Error fetching speakers ', error);
+                // console.log('Error fetching speakers ', error);
             }
         }
 

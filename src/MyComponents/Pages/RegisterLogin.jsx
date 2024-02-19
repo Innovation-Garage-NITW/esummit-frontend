@@ -49,7 +49,7 @@ export const RegisterLogin = () => {
 
 	const getOtp = async (e) => {
 		e.preventDefault();
-		console.log(number);
+		// console.log(number);
 		setError("");
 		if (number === "" || number === undefined)
 			return setError("Please enter a valid phone number!");
@@ -63,7 +63,7 @@ export const RegisterLogin = () => {
 	};
 	const getOtp2 = async (e) => {
 		e.preventDefault();
-		console.log(number2);
+		// console.log(number2);
 		setError("");
 		if (number2 === "" || number2 === undefined)
 			return setError("Please enter a valid phone number!");
@@ -94,13 +94,13 @@ export const RegisterLogin = () => {
 		}
 	};
 	const verifyOtp2 = async (e) => {
-		console.log("otp", otp2);
+		// console.log("otp", otp2);
 		e.preventDefault();
 		setError("");
 		if (otp2 === "" || otp2 === null) return;
 		try {
 			await result.confirm(otp2).then(async (result) => {
-				console.log('result', result);
+				// console.log('result', result);
 				const user = result.user;
 				const checkLogin = await loginUser(user);
 				if (checkLogin.success) {
