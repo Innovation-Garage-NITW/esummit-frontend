@@ -48,23 +48,13 @@
 }
 
 .active-btn{
-    animation: glow 3s ease-in-out infinite alternate;
+	text-shadow: 0 0 7px #fff, 0 0 4px #ffffff;
 }
 
 .title_glow{
-    animation: glow 3s ease-in-out infinite alternate;
+    /* animation: glow 3s ease-in-out infinite alternate; */
+	text-shadow: 0 0 7px #fff, 0 0 4px #ffffff;
 }
-
-@-webkit-keyframes glow {
-    from {
-        text-shadow: 0 0 7px #fff, 0 0 10px #ffffff;
-    }
-
-    to {
-        text-shadow: 0 0 7px #fff,0 0 4px #ffffff
-    }
-}
-
 
 
 

@@ -103,7 +103,7 @@ function OverViewSection2() {
     <div className="overview-body">
       <div className='overexplain'>
         <div className='overpara'>
-          <p>Crafted for the seekers of inspiration: ESummit beckons. Dive into a realm where sparks of innovation meet the whispers of  change. Join us in shaping a future beyond boundaries at NITW premeier event. ESummit--where creativity takes flight in the uncharted</p>
+          <p>Crafted for the seekers of inspiration: E-Summit beckons. Dive into a realm where sparks of innovation meet the whispers of change. Join us in shaping a future beyond boundaries at NITW premier event. ESummit where creativity takes flight</p>
         </div>
       </div>
       <div className='overview-container'>

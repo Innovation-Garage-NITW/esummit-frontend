@@ -44,7 +44,7 @@ export const Home = ({ setEventsOverLay, setCurrEventsData }) => {
                 const data = await getEvents();
                 const temp = data.concat(data);
                 // console.log("Number of events : ", temp.length);
-                setEventData(data);
+                setEventData(temp);
             } catch (error) {
                 console.error('Error fetching events:', error);
             }
