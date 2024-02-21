@@ -36,7 +36,7 @@ function App() {
 		{ label: "Events", link: "/Events", component: <Events EventsOverLay={EventsOverLay} setEventsOverLay={setEventsOverLay} currEventsData={currEventsData} setCurrEventsData={setCurrEventsData}/> },
 		{ label: "Sponsors", link: "/Sponsors", component: <Sponsors /> },
 		{ label: "Speakers", link: "/Speakers", component: <Speakers /> },
-		{ label: "Teams", link: "/Contact-Us", component: <Teams /> },
+		{ label: "Teams", link: "/Teams", component: <Teams /> },
 		{ label: "RegisterLogin", link: "/Register-Login", component: <RegisterLogin />, },
 		{ label: "admin", link: "/admin", component: <Admin />, },
 		{ label: "TimeLine", link: '/TimeLine', component: <TimeLine /> }

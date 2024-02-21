@@ -33,28 +33,30 @@ const ImageCard = ({ image, title, details, sizing, setCurrEventsData, setEvents
 			onMouseLeave={toggleHover}
 			style={{ display: 'inline-block', margin: 16, }}
 		>
-			<Card style={{ width: `${sizing}px`, borderRadius: '1em' }}>
+			<Card style={{ width: `${sizing}px`, borderRadius: '1em',border:'0px' }}>
 				<Card.Img variant="bottom" src={image} alt={title} width={`${sizing}px`} style={{
 					// filter: hover ? 'blur(2px)' : '',
+					borderRadius:'1em'
 				}} />
 				<Card.ImgOverlay style={{ padding: 0 }}>
 					{hover &&
 						<motion.div
 							initial={{ height: 0, overflow: 'hidden', opacity: 0 }}
-							animate={{ height: `${sizing}px`, opacity: 1 }}
+							animate={{ height: "100%", opacity: 1 }}
 							transition={{ duration: 0.3 }}
 							style={{
 								backgroundColor: 'rgba(0,0,0,0.9)',
-								height: `${sizing}px`,
+								height: "100%",
 								width: '100%',
 								display: 'flex',
 								flexDirection: 'column',
 								justifyContent: 'center',
-								alignItems: 'center'
+								alignItems: 'center',
+								fontSize:"18px",
 							}}
 						>
 
-							<Card.Title>{title}</Card.Title>
+							<Card.Title style={{color:"white"}}>{title}</Card.Title>
 							<Card.Text>{details}</Card.Text>
 							<button className="register" style={{
 								color: '#fff',

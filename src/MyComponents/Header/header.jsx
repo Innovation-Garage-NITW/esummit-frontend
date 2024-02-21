@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./header.css";
 import { NavLink, Link } from "react-router-dom";
 import IG_logo from "../../assets/IG logo.png";
@@ -6,11 +6,11 @@ import IG_logo from "../../assets/IG logo.png";
 import { useUserAuth } from "../../context/userAuthContext";
 
 const menuItemsData = [
-	{ label: "TimeLine", link: "/TimeLine" },
+	{ label: "Timeline", link: "/Timeline" },
 	{ label: "Events", link: "/Events" },
 	// { label: "Sponsors", link: "/Sponsors" },
 	{ label: "Speakers", link: "/Speakers" },
-	{ label: "Teams", link: "/Contact-Us" },
+	{ label: "Teams", link: "/Teams" },
 	{ label: "Register/Login", link: "/Register-Login" },			//index = 5
 ];
 

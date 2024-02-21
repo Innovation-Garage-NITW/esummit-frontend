@@ -121,7 +121,7 @@ export const HotTopics = [
 	{
 		title: "The Indian Landscape",
 		description: [
-			"Insights into Indian startup ecosystem trends and opportunities.",
+			"Insights into Indian startup ecosystem, trends and opportunities.",
 			"Discussions on socio-economic factors impacting entrepreneurship."
 		]
 	}

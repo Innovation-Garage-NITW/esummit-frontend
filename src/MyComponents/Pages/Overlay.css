@@ -55,7 +55,7 @@
     text-align: center;
     height: fit-content;
     font-size: 50px;
-    text-shadow: 0 0 20px #fff;
+    text-shadow: 0 0 5px #fff;
     text-transform: capitalize;
 }
 
