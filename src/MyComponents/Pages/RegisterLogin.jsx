@@ -10,6 +10,7 @@ import MuiAlert from '@mui/material/Alert';
 import "./RegisterLogin.css";
 import { loginUser, registerUser } from "../../../backend_functions";
 import { useNavigate } from "react-router-dom";
+import esummitlogo from '../Images/logo1.png';
 //import "./SignIn";
 export const RegisterLogin = () => {
 	const [error, setError] = useState("");
@@ -120,7 +121,7 @@ export const RegisterLogin = () => {
 	return (
 		<>{showLoginForm && <div className="newbody">
 			<div className="image">
-				<img src="src\MyComponents\Images\logo1.png"></img>
+				<img src={esummitlogo}></img>
 			</div>
 			<div className="p-4_box">
 				<h2 className="mb-3">Register</h2>
