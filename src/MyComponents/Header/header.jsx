@@ -6,7 +6,7 @@ import IG_logo from "../../assets/IG logo.png";
 import { useUserAuth } from "../../context/userAuthContext";
 
 const menuItemsData = [
-	{ label: "Timeline", link: "/Timeline" },
+	// { label: "Timeline", link: "/Timeline" },
 	{ label: "Events", link: "/Events" },
 	// { label: "Sponsors", link: "/Sponsors" },
 	{ label: "Speakers", link: "/Speakers" },
