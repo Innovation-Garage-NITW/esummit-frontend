@@ -76,7 +76,7 @@ export async function getTeams() {
             });
         }
         fetched_teams.sort((a, b) => a.order - b.order);
-        console.log(fetched_teams);
+        // console.log(fetched_teams);
         return fetched_teams;
     } catch (error) {
         console.log("Error getting teams:", error);
