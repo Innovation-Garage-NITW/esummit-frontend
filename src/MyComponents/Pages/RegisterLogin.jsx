@@ -203,7 +203,7 @@ export const RegisterLogin = () => {
 			{!showLoginForm &&
 				<div className='newbody'>
 					<div className="image">
-						<img src="src\MyComponents\Images\logo1.png"></img>
+						<img src={esummitlogo}></img>
 					</div>
 					<div className='p5-box'>
 						{error && <Alert variant="danger">{error}</Alert>}
