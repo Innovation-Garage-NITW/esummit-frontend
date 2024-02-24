@@ -3,29 +3,31 @@
 a {
 	text-decoration: none;
 }
-.image{
+
+.image {
 
 	display: inline block;
-    width: 60%;
-	
+	width: 60%;
+
 
 }
-.image img{
+
+.image img {
 	max-width: 100%;
-    
-    
+
+
 	display: flex;
-    background-size: cover;
-	
+	background-size: cover;
+
 	/* border-top: 2px solid #ff4e01;
 	border-bottom: 2px solid #ff4e01; */
 	align-items: center;
 	justify-content: center;
-   
+
 }
 
 .newbody {
-    display: inline;
+	display: inline;
 	font-family: -'Poppins';
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -33,15 +35,15 @@ a {
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-    background-color: #020023;
-    width: 100%;
+	background-color: #020023;
+	width: 100%;
 
 }
 
 .p-4_box {
 	width: 40%;
 	margin-top: 6rem;
-    margin-left: 5%;
+	margin-left: 5%;
 	padding: 10px 60px 30px 100px;
 	margin-right: 30px;
 	border-left: 2px solid #ff4e01;
@@ -49,8 +51,8 @@ a {
 }
 
 .p-4_box .input-box {
-	
-	
+
+
 	position: relative;
 	width: 100%;
 	height: 50px;
@@ -63,7 +65,7 @@ a {
 	background: #020023;
 	border: none;
 	outline: none;
-	border: 2px solid rgba(77,160,196,255);
+	border: 2px solid rgba(77, 160, 196, 255);
 	border-radius: 10px;
 	font-size: 16px;
 	/* color: grey; */
@@ -125,10 +127,12 @@ a {
 	/* Light gray color for the placeholder text */
 
 }
-.otp_box::placeholder{
+
+.otp_box::placeholder {
 	color: #a3a3a3;
 }
-.otp_box2::placeholder{
+
+.otp_box2::placeholder {
 	color: #a3a3a3;
 }
 
@@ -181,9 +185,9 @@ a {
 	text-align: center;
 	font-weight: 400;
 	font-size: 16px;
-	background:   #020023  ;
-	border: 2px solid rgba(77,160,196,255);
-	color: #4da0c4  ;
+	background: #020023;
+	border: 2px solid rgba(77, 160, 196, 255);
+	color: #4da0c4;
 }
 
 .p {
@@ -193,7 +197,7 @@ a {
 .p5-box {
 	width: 40%;
 	margin-top: 6rem;
-    margin-left: 5%;
+	margin-left: 5%;
 	padding: 10px 60px 30px 100px;
 	margin-right: 30px;
 	border-left: 2px solid #ff4e01;
@@ -221,8 +225,8 @@ a {
 	text-align: center;
 	font-weight: 400;
 	font-size: 16px;
-	background:  transparent;
-	border: 2px solid rgba(77,160,196,255);
+	background: transparent;
+	border: 2px solid rgba(77, 160, 196, 255);
 	color: whitesmoke;
 }
 
@@ -232,22 +236,30 @@ a {
 	align-items: center;
 	justify-content: center;
 }
-.RegisterLink Link{
- color: #baf7f9;
+
+.RegisterLink Link {
+	color: #baf7f9;
 }
+
 @media only screen and (max-width: 768px) {
-    .image {
-        display: none; /* Hide the image */
-    }
+	.image {
+		display: none;
+		/* Hide the image */
+	}
 
-    .newbody {
-        align-items: flex-start; 
-    }
+	.newbody {
+		align-items: flex-start;
 
-    .p-4_box,
-    .p5-box {
-        width: 100%; 
-        border-left: none;
-        padding: 10px; 
-}
+	}
+
+	.p-4_box,
+	.p5-box {
+		width: 100%;
+		border-left: none;
+		padding: 10px;
+	}
+
+	.p5-box {
+		transform: translateY(50%);
+	}
 }

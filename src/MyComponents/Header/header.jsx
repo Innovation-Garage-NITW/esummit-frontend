@@ -20,22 +20,26 @@ const Header = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const { user, logOut } = useUserAuth();	//for backend integration
 
-	useEffect(()=>{
-		if(user) {
+	useEffect(() => {
+		if (user) {
 			setIsLoggedIn(true);
 		} else {
 			setIsLoggedIn(false);
 		}
-	},[user])
-	
+	}, [user])
+
 	async function handleLogOut() {
 		await logOut();
 		setIsLoggedIn(false);
 	}
 
+	const closeMenu = () => {
+		setMenuOpen(false);
+	};
+
 	const listItems = menuItemsData.map((menuItem, index) => (
 		<li key={index}>
-			{index === (menuItemsData.length-1) ? ( 						// Check if the index is 5 for login/logout
+			{index === (menuItemsData.length - 1) ? ( 						// Check if the index is 5 for login/logout
 				isLoggedIn ? (
 					<button
 						onClick={() => {
@@ -45,11 +49,11 @@ const Header = () => {
 						Log Out
 					</button>
 				) : (
-					<NavLink to="/Register-Login">Register/Login</NavLink>
+					<NavLink to="/Register-Login" onClick={closeMenu}>Register/Login</NavLink>
 				)
 			) : (
 				// Render regular NavLink for other menu items
-				<NavLink to={menuItem.link}>{menuItem.label}</NavLink>
+				<NavLink to={menuItem.link} onClick={closeMenu}>{menuItem.label}</NavLink>
 			)}
 		</li>
 	));
@@ -58,7 +62,7 @@ const Header = () => {
 		<>
 			<nav>
 				<div className="title">
-					<Link to="./">
+					<Link to="./" onClick={closeMenu}>
 						<img src={IG_logo} alt="logo1" />
 					</Link>
 				</div>
@@ -69,9 +73,9 @@ const Header = () => {
 						setMenuOpen(!menuOpen);
 					}}
 				>
-					<span></span>
-					<span></span>
-					<span></span>
+					<span className={menuOpen ? 'cross' : ''}></span>
+					<span className={menuOpen ? 'cross' : ''}></span>
+					<span className={menuOpen ? 'cross' : ''}></span>
 				</div>
 				<ul className={menuOpen ? "open" : ""}>{listItems}</ul>
 			</nav>
