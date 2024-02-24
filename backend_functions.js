@@ -27,7 +27,7 @@ export async function getSpeakers() {
         for (const speaker of data['speakers']) {
             // console.log(speaker);
             fetched_speakers.push({
-                title: speaker['name'],
+                name: speaker['name'],
                 description: speaker['description'],
                 imgUrl: speaker['photo'],
                 id: speaker['id'],
@@ -64,16 +64,18 @@ export async function getTeams() {
     try {
         const fetched_teams = [];
         const response = await fetch(
-            "https://us-central1-esummit-ig.cloudfunctions.net/getTeams"
+            "https://us-central1-esummit-ig.cloudfunctions.net/getTeam"
         );
         const data = (await response.json())['teams'];
         // console.log(data);
         for (const team in data) {
             fetched_teams.push({
                 name: team,
-                members: data[team]
+                members: data[team]['members'],
+                order: data[team]['order'],
             });
         }
+        fetched_teams.sort((a, b) => a.order - b.order);
         // console.log(fetched_teams);
         return fetched_teams;
     } catch (error) {
