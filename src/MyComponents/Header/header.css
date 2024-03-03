@@ -89,7 +89,15 @@ nav .menu {
     height: 2rem;
 }
 
-nav .menu span {
+.cross{
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    height: 2rem;
+    width: 2rem;
+}
+
+.ham {
     height: 0.4rem;
     width: 100%;
     background-color: white;

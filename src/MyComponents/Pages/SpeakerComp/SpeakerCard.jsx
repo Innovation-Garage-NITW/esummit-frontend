@@ -15,7 +15,7 @@ function SpeakerCard({ members, imgUrl, sizing }) {
                 alt=""
             />
             <div className="proj-txtx">
-                <h4>{members.name}</h4>
+                <h4>{members.title}</h4>
                 <span>{members.description}</span>
                 <div
                     style={{

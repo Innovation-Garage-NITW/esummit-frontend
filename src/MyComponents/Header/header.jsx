@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./header.css";
 import { NavLink, Link } from "react-router-dom";
 import IG_logo from "../../assets/IG logo.png";
-
+import { ImCross } from "react-icons/im";
 import { useUserAuth } from "../../context/userAuthContext";
 
 const menuItemsData = [
@@ -73,9 +73,16 @@ const Header = () => {
 						setMenuOpen(!menuOpen);
 					}}
 				>
-					<span className={menuOpen ? 'cross' : ''}></span>
-					<span className={menuOpen ? 'cross' : ''}></span>
-					<span className={menuOpen ? 'cross' : ''}></span>
+					{
+						(menuOpen)?(
+							<ImCross className='cross' />
+						):
+					<>
+					<span className={menuOpen ? '' : 'ham'}></span>
+					<span className={menuOpen ? '' : 'ham'}></span>
+					<span className={menuOpen ? '' : 'ham'}></span>
+					</>
+}
 				</div>
 				<ul className={menuOpen ? "open" : ""}>{listItems}</ul>
 			</nav>
