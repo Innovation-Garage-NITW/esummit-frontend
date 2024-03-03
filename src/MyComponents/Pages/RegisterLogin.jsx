@@ -86,7 +86,9 @@ export const RegisterLogin = () => {
 			await result.confirm(otp).then(async (result) => {
 				const user = result.user;
 				await registerUser(user);
-			})
+			}).catch((err) => {
+				setError(err.message);
+			});
 			setShowVerified(true);
 			setOpen(true)
 			navigate('/')
@@ -112,7 +114,9 @@ export const RegisterLogin = () => {
 					alert("User not registered");
 					logOut();
 				}
-			})
+			}).catch((err) => {
+				setError(err.message);
+			});
 		} catch (err) {
 			setError(err.message);
 		}
