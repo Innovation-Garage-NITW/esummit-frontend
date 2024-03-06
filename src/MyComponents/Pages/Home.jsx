@@ -161,7 +161,7 @@ export const Home = ({ setEventsOverLay, setCurrEventsData }) => {
                 <img src={bgImg} alt="" data-speedx="0.3" data-speedy="0.3" data-speedz="0" data-distance="-200" className="parallax img-bg" />
                 <img src={stars} alt="" data-speedx="0.27" data-speedy="0.27" data-speedz="0" data-distance="-200" className="parallax stars" />
                 <img src={sun} alt="" data-speedx="0.01" data-speedy="0.01" data-speedz="0" data-distance="-200" className="parallax sun" />
-                <img src={logo} alt="" data-speedx="0.01" data-speedy="0.01" data-speedz="0.3" data-distance="-200" className="parallax logo" />
+                <img src={logo} alt="" data-speedx="0.01" data-speedy="0.01" data-speedz="0.3" data-distance="-200" className="parallax logo" style={{transform:"translate(-50%, -50%) translate(0px, -0.1px)"}} />
                 <img src={waveLeft} alt="" data-speedx="0.01" data-speedy="0.01" data-speedz="0" data-distance="200" className="parallax wave-left" />
                 <img src={mountain0Right} alt="" data-speedx="0.05" data-speedy="0.05" data-speedz="0" data-distance="800" className="parallax mountain-0-right" />
                 <img src={mountain1Left} alt="" data-speedx="0.05" data-speedy="0.05" data-speedz="0" data-distance="800" className="parallax mountain-1-left" />
@@ -227,7 +227,7 @@ export const Home = ({ setEventsOverLay, setCurrEventsData }) => {
                     <h1>HOT TOPICS</h1>
                     <div className="topicsdiv">
                         {HotTopics.map((topic, index) => (
-                            < div className="topic" key={index}>
+                            <div className="topic" key={index}>
                                 <div className="topicTitle">{topic.title}</div>
                                 <div className="topicdesbox">
                                     {iconList[index]}
