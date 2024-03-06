@@ -2,19 +2,38 @@ import React from 'react'
 import "animate.css";
 import LaunchIcon from "@mui/icons-material/Launch";
 
-function SpeakerCard({ members, imgUrl, sizing }) {
+function SpeakerCard({ members, imgUrl, sizing, n, customKey }) {
     return (
         <div
             className="proj-imgbx animate__animated animate__zoomInUp animate__delay-1s"
-            style={{ width: `${sizing}px`,/* borderRadius: "20%" ,*/ borderRadius: '0px', flexShrink: '0' }}
+            style={{
+                width: `${sizing}px`,/* borderRadius: "20%" ,*/ borderRadius: '0px',
+                flexShrink: '0'
+            }}
         >
             <img
                 src={imgUrl}
-                style={{ width: "100%" }}
-                // height: "100%",
+                className={customKey === n - 1 ? "last-image" : ""}
+                style={{ width: '100%' }}
                 alt=""
             />
-            <div className="proj-txtx">
+            <style>
+                {`
+                     @media (max-width: 767px) {
+                        .last-image {
+                            margin-bottom: 70%;
+                        }
+                    }
+
+                    @media (max-width: 425px) {
+                        .last-image {
+                            margin-bottom: 90%;
+                        }
+                    }
+                `}
+            </style>
+
+            <div className="proj-txtx" style={{ marginTop: customKey === n - 1 ? '-30%' : '0%', }}>
                 <h4>{members.title}</h4>
                 <span>{members.description}</span>
                 <div

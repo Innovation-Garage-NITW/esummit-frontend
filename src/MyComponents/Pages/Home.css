@@ -212,6 +212,8 @@
     .logo {
         width: initial;
         height: 35%;
+        /* left: 20%; */
+
     }
 
     .sun {
@@ -357,7 +359,7 @@
         padding-bottom: 20px;
     }
 
-    .speaker-slider-container{
+    .speaker-slider-container {
         overflow: scroll;
     }
 
@@ -460,10 +462,11 @@
         height: 300px;
     }
 
-    .Event-slider-container{
+    .Event-slider-container {
         overflow: scroll;
     }
-    .Event-slider-scroller{
+
+    .Event-slider-scroller {
         animation-duration: 100s;
     }
 
@@ -565,7 +568,7 @@
         width: 350px;
     }
 
-    .EventSection{
+    .EventSection {
         height: 350px;
     }
 }
