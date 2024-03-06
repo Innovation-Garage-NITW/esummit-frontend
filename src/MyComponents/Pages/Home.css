@@ -117,9 +117,10 @@
     width: 38.462%;
     top: calc(50% - 7.813%);
     left: calc(50% - 0px);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) !important;
     z-index: 4;
 }
+
 
 .wave-left {
     position: absolute;
