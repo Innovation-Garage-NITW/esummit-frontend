@@ -27,7 +27,7 @@ export async function getSpeakers() {
         for (const speaker of data['speakers']) {
             // console.log(speaker);
             fetched_speakers.push({
-                name: speaker['name'],
+                title: speaker['name'],
                 description: speaker['description'],
                 imgUrl: speaker['photo'],
                 id: speaker['id'],

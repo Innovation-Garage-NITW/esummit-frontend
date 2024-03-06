@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MemberCard from "./MemberCard";
 import "./Teams.css";
 import { getTeams } from "../../../../backend_functions";
+import Spinner from "../../Spinner";
 
 export const Teams = () => {
 
@@ -10,6 +11,7 @@ export const Teams = () => {
 	const [selectedTeam, setSelectedTeam] = useState(initialSelectedTeam);
 	const [teamsData, setTeamsData] = useState([]);
 	const [team, setTeam] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const updateMembers = () => {
 		const selectedTeamObject = teamsData.find(team => team.name === selectedTeam);
@@ -32,6 +34,7 @@ export const Teams = () => {
 	}, [selectedTeam, teamsData])
 
 	useEffect(() => {
+		setIsLoading(true);
 		async function fetchData() {
 			try {
 				const data = await getTeams();
@@ -41,7 +44,9 @@ export const Teams = () => {
 			}
 			catch (error) {
 				// console.log("Error fetching the timeline events ", error);
+				setIsLoading(false);
 			}
+			setIsLoading(false);
 		}
 		fetchData();
 	}, [])
@@ -51,9 +56,10 @@ export const Teams = () => {
 	};
 
 	return (
+
 		<div className="teams-container">
 			<div className="team-selection-container">
-				<div className="team-selection">
+				{isLoading ? < Spinner /> : <div className="team-selection">
 					{teamsData.map((team, index) => (
 						<div
 							key={index}
@@ -63,18 +69,18 @@ export const Teams = () => {
 							{team.name}
 						</div>
 					))}
-				</div>
+				</div>}
 			</div>
 
 
-			<div className="selected-team">
+			{!isLoading && <div className="selected-team">
 				<h2>{selectedTeam}</h2>
 				<div className="team-members-container">
 					{
 						team && team.length > 0 && team.map((member) => <MemberCard name={member.name} key={member.name} imgUrl={member.photo} />)
 					}
 				</div>
-			</div>
+			</div>}
 		</div>
 	);
 };

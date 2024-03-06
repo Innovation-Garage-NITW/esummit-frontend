@@ -11,8 +11,8 @@
 		"preview": "vite preview"
 	},
 	"optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.6.1"
-  },
+		"@rollup/rollup-linux-x64-gnu": "4.6.1"
+	},
 	"dependencies": {
 		"@emotion/react": "^11.11.3",
 		"@emotion/styled": "^11.0.0",
@@ -34,7 +34,8 @@
 		"react-phone-number-input": "^3.3.8",
 		"react-router-dom": "^6.21.1",
 		"react-scroll-motion": "^0.3.3",
-		"react-type-animation": "^3.2.0"
+		"react-type-animation": "^3.2.0",
+		"spinners-react": "^1.0.7"
 	},
 	"devDependencies": {
 		"@types/react": "^18.2.43",
