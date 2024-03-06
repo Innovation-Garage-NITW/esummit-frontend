@@ -21,19 +21,19 @@ function SpeakerCard({ members, imgUrl, sizing, n, customKey }) {
                 {`
                      @media (max-width: 767px) {
                         .last-image {
-                            margin-bottom: 55%;
+                            margin-bottom: 70%;
                         }
                     }
 
                     @media (max-width: 425px) {
                         .last-image {
-                            margin-bottom: 70%;
+                            margin-bottom: 90%;
                         }
                     }
                 `}
             </style>
 
-            <div className="proj-txtx">
+            <div className="proj-txtx" style={{ marginTop: customKey === n - 1 ? '-30%' : '0%', }}>
                 <h4>{members.title}</h4>
                 <span>{members.description}</span>
                 <div
