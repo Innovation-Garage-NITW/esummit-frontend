@@ -124,9 +124,9 @@ function OverViewSection2() {
         <div className='statscontainer'>
           <div className='countcontainer'>
             <p className='countpara'>
-              <span className='count speakc'>30+</span>
-              <span className='count eventc'>10+</span>
-              <span className='count sponserc'>10+</span>
+              <span className='count speakc'>10+</span>
+              <span className='count eventc'> 5+</span>
+              <span className='count sponserc'> 5+</span>
             </p>
           </div>
           <div className='countfoot'>

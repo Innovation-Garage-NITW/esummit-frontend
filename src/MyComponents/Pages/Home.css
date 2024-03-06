@@ -430,7 +430,7 @@
     }
 
     100% {
-        transform: translateX(51.2%);
+        transform: translateX(200%);
     }
 }
 
