@@ -34,12 +34,13 @@ export const Teams = () => {
 											justifyContent: "center",
 											flexWrap: "wrap",
 											gap: 30,
-											marginBottom: "37%",
+											marginBottom: "47%",
 										}}
 									>
 										{speakersData.map((members, index) => {
 											return (
-												<SpeakerCard members={members} imgUrl={members.imgUrl} sizing={330} key={index} />
+												<SpeakerCard members={members} imgUrl={members.imgUrl} sizing={330} n={speakersData.length}
+													customKey={index} key={index} />
 											);
 										})}
 									</Row>

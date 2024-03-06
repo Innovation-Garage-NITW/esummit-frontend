@@ -35,7 +35,7 @@ export const Events = ({ setEventsOverLay, setCurrEventsData }) => {
 
 			<Banner heading="EVENTS" imgUrl={imgUrl} />
 			<div className="Content">
-				<Container style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: '5%' }}>
+				<Container style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: '5%', marginBottom: '5%' }}>
 					{
 						eventsData.map((event, index) => (
 							<ImageCard
