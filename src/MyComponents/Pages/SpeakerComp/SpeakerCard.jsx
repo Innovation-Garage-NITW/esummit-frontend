@@ -1,6 +1,7 @@
 import React from 'react'
 import "animate.css";
 import LaunchIcon from "@mui/icons-material/Launch";
+import './Teams.css'
 
 function SpeakerCard({ members, imgUrl, sizing, n, customKey }) {
     return (
@@ -8,7 +9,7 @@ function SpeakerCard({ members, imgUrl, sizing, n, customKey }) {
             className="proj-imgbx animate__animated animate__zoomInUp animate__delay-1s"
             style={{
                 width: `${sizing}px`,/* borderRadius: "20%" ,*/ borderRadius: '0px',
-                flexShrink: '0'
+                flexShrink: '0',
             }}
         >
             <img
@@ -33,7 +34,9 @@ function SpeakerCard({ members, imgUrl, sizing, n, customKey }) {
                 `}
             </style>
 
-            <div className="proj-txtx" style={{ marginTop: customKey === n - 1 ? '-30%' : '0%', }}>
+            <div
+                className={customKey === n - 1 ? "proj-txtx last-images" : "proj-txtx"}
+             >
                 <h4>{members.title}</h4>
                 <span>{members.description}</span>
                 <div

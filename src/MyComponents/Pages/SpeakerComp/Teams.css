@@ -157,6 +157,14 @@
 	width: 100%;
 }
 
+
+
+@media(max-width:426px){
+	.last-images{
+		margin-top: -30%;
+	}
+}
+
 .proj-imgbx:hover .proj-txtx {
 	top: 50%;
 	opacity: 1;
@@ -168,6 +176,7 @@
 	letter-spacing: 0.8px;
 	line-height: 1.1em;
 }
+
 
 .proj-txtx span {
 	font-style: italic;
