@@ -36,7 +36,7 @@ const Footer = () => {
 				},
 				{
 					label: "Hostel Accommodation",
-					href: "https://docs.google.com/forms/d/e/1FAIpQLSd41NHpFgVpg-QHcmAMAcUTK_49A7bL4i6uc14xUL7_GSfb8w/viewform?usp=sf_link",
+					href: "https://forms.gle/bSUqinBVDNNzHVUP6",
 					target: "_blank",
 					rel: "noopener noreferrer",
 				},
