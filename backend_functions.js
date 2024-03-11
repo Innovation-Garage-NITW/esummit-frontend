@@ -86,6 +86,7 @@ export async function getTeams() {
 export async function registerUser(user, name, email, college) {
     try {
         const idToken = await getIdToken(user);
+        console.log(idToken);
         const response = await fetch('https://us-central1-esummit-ig.cloudfunctions.net/register', {
             method: 'POST',
             headers: {
@@ -102,7 +103,7 @@ export async function registerUser(user, name, email, college) {
             })
         });
         const data = await response.json();
-        // console.log(data);
+        console.log(data);
         return data;
     } catch (error) {
         console.log("Error registering user:", error);
@@ -112,6 +113,7 @@ export async function registerUser(user, name, email, college) {
 export async function loginUser(user) {
     try {
         const idToken = await getIdToken(user);
+        console.log(idToken);
         const response = await fetch('https://us-central1-esummit-ig.cloudfunctions.net/login', {
             method: 'POST',
             headers: {
