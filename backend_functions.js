@@ -53,7 +53,7 @@ export async function getSponsors() {
             // console.log(sponsor);
             fetched_sponsors.push(sponsor);
         }
-        // console.log(fetched_sponsors);
+        console.log(fetched_sponsors);
         return fetched_sponsors;
     } catch (error) {
         console.log("Error getting sponsors:", error);
