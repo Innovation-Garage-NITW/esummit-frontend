@@ -18,47 +18,49 @@ export const Sponsors = () => {
   return (
     <div className="marquee-container">
 
-      <h1 className='page-heading'>Our Sponsors</h1>
+      <h1 className='page-heading-sponsors' >Our Sponsors</h1>
       {/* //       <Marquee> */}
 
       {/* //       <h1>Our Sponsors</h1> */}
+      <div style={{marginTop:"35vh"}}>
       <Marquee className='marquee' speed={120}>
 
         <div className='sponsor-container'>
-          <img src={spons1} alt='spons1' />
+          <img src={spons1} alt='spons1' style={{width:"250px",height:"250px"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons2} alt='spons2' />
+          <img src={spons2} alt='spons2' style={{width:"250px",height:"250px"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons3} alt='spons3' />
+          <img src={spons3} alt='spons3' style={{width:"250px",height:"250px"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons4} alt='spons4' />
+          <img src={spons4} alt='spons4' style={{width:"250px",height:"250px"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons5} alt='spons5' />
+          <img src={spons5} alt='spons5' style={{width:"250px",height:"250px"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons6} alt='spons6' />
+          <img src={spons6} alt='spons6' style={{width:"250px",height:"250px"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons7} alt='spons7' />
+          <img src={spons7} alt='spons7' style={{width:"250px",height:"250px"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons8} alt='spons8' />
+          <img src={spons8} alt='spons8' style={{width:"250px",height:"250px"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons9} alt='spons9' />
+          <img src={spons9} alt='spons9' style={{width:"250px",height:"250px"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons10} alt='spons10' />
+          <img src={spons10} alt='spons10' style={{width:"250px",height:"250px"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons11} alt='spons11' />
+          <img src={spons11} alt='spons11' style={{width:"250px",height:"250px"}} />
         </div>
 
       </Marquee>
+      </div>
 
     </div>
   );

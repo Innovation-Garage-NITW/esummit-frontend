@@ -13,6 +13,14 @@
   color: white;
 }
 
+.page-heading-sponsors {
+  position: absolute;
+  top: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+
 .marquee {
   display: flex;
   justify-content: center;
@@ -28,6 +36,10 @@
   .page-heading {
     font-size: 1.5rem;
     top: 10px;
+  }
+  .page-heading-sponsors {
+    font-size: 1.5rem;
+    top: 30vh;
   }
 
   .marquee {
