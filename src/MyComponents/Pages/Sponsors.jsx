@@ -16,47 +16,47 @@ import spons11 from '../../assets/sponsors/spons11.png';
 export const Sponsors = () => {
 
   return (
-    <div className="marquee-container">
+    <div className="marquee-container" style={{paddingLeft:"0px",paddingRight:"0px"}}>
 
       <h1 className='page-heading-sponsors' >Our Sponsors</h1>
       {/* //       <Marquee> */}
 
       {/* //       <h1>Our Sponsors</h1> */}
       <div style={{marginTop:"35vh"}}>
-      <Marquee className='marquee' speed={120}>
+      <Marquee className='marquee' speed={120} autoFill={true} pauseOnHover={true} >
 
         <div className='sponsor-container'>
-          <img src={spons1} alt='spons1' style={{width:"250px",height:"250px"}} />
+          <img src={spons1} alt='spons1' style={{width:"250px",height:"250px",margin:"20px",objectFit:"contain"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons2} alt='spons2' style={{width:"250px",height:"250px"}} />
+          <img src={spons2} alt='spons2' style={{width:"250px",height:"250px",margin:"20px",objectFit:"contain"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons3} alt='spons3' style={{width:"250px",height:"250px"}} />
+          <img src={spons3} alt='spons3' style={{width:"250px",height:"250px",margin:"20px",objectFit:"contain"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons4} alt='spons4' style={{width:"250px",height:"250px"}} />
+          <img src={spons4} alt='spons4' style={{width:"250px",height:"250px",margin:"20px",objectFit:"contain"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons5} alt='spons5' style={{width:"250px",height:"250px"}} />
+          <img src={spons5} alt='spons5' style={{width:"250px",height:"250px",margin:"20px",objectFit:"contain"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons6} alt='spons6' style={{width:"250px",height:"250px"}} />
+          <img src={spons6} alt='spons6' style={{width:"250px",height:"250px",margin:"20px",objectFit:"contain"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons7} alt='spons7' style={{width:"250px",height:"250px"}} />
+          <img src={spons7} alt='spons7' style={{width:"250px",height:"250px",margin:"20px",objectFit:"contain"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons8} alt='spons8' style={{width:"250px",height:"250px"}} />
+          <img src={spons8} alt='spons8' style={{width:"250px",height:"250px",margin:"20px",objectFit:"contain"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons9} alt='spons9' style={{width:"250px",height:"250px"}} />
+          <img src={spons9} alt='spons9' style={{width:"250px",height:"250px",margin:"20px",objectFit:"contain"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons10} alt='spons10' style={{width:"250px",height:"250px"}} />
+          <img src={spons10} alt='spons10' style={{width:"250px",height:"250px",margin:"20px",objectFit:"contain"}} />
         </div>
         <div className='sponsor-container'>
-          <img src={spons11} alt='spons11' style={{width:"250px",height:"250px"}} />
+          <img src={spons11} alt='spons11' style={{width:"250px",height:"250px",margin:"20px",objectFit:"contain"}} />
         </div>
 
       </Marquee>
