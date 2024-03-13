@@ -11,6 +11,7 @@ import "./RegisterLogin.css";
 import { loginUser, registerUser } from "../../../backend_functions";
 import { useNavigate } from "react-router-dom";
 import esummitlogo from '../Images/logo1.png';
+import Spinner from "../Spinner";
 //import "./SignIn";
 export const RegisterLogin = () => {
 	const [error, setError] = useState("");
@@ -28,6 +29,7 @@ export const RegisterLogin = () => {
 	const [number2, setNumber2] = useState("");
 	const [open, setOpen] = React.useState(false);
 	const [showLoginForm, setShowLoginForm] = useState(true);
+	const [isLoading, setIsLoading] = useState(false);
 	const navigate = useNavigate();
 	const Alert = React.forwardRef(function Alert(props, ref) {
 		return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -81,16 +83,18 @@ export const RegisterLogin = () => {
 		// console.log("otp", otp);
 		e.preventDefault();
 		setError("");
+		setIsLoading(true);
 		if (otp === "" || otp === null) return;
 		try {
 			await result.confirm(otp).then(async (result) => {
 				const user = result.user;
-				await registerUser(user);
+				await registerUser(user, Username, mail, college);
 			}).catch((err) => {
 				setError(err.message);
 			});
 			setShowVerified(true);
 			setOpen(true)
+			setIsLoading(false);
 			navigate('/')
 		} catch (err) {
 			setError(err.message);
@@ -98,6 +102,7 @@ export const RegisterLogin = () => {
 	};
 	const verifyOtp2 = async (e) => {
 		// console.log("otp", otp2);
+		setIsLoading(true);
 		e.preventDefault();
 		setError("");
 		if (otp2 === "" || otp2 === null) return;
@@ -109,15 +114,21 @@ export const RegisterLogin = () => {
 				if (checkLogin.success) {
 					setShowVerified(true);
 					setOpen(true)
+					setIsLoading(false);
 					navigate('/')
 				} else {
+					setIsLoading(false);
 					alert("User not registered");
 					logOut();
 				}
 			}).catch((err) => {
+				setIsLoading(false);
+				alert("Invalid OTP");
 				setError(err.message);
 			});
 		} catch (err) {
+			setIsLoading(false);
+			alert("Something went wrong");
 			setError(err.message);
 		}
 	};
@@ -129,7 +140,6 @@ export const RegisterLogin = () => {
 			</div>
 			<div className="p-4_box">
 				<h2 className="mb-3">Register</h2>
-				{error && <Alert variant="danger">{error}</Alert>}
 				<Form onSubmit={getOtp} style={{ display: !flag ? "block" : "none" }}>
 					<Form.Group className="mb-3" controlId="formBasicEmail">
 						<div className='input-box'>
@@ -192,9 +202,11 @@ export const RegisterLogin = () => {
 							<Button variant="secondary">Cancel</Button>
 						</Link>
 						&nbsp;
-						<Button type="submit" variant="primary">
-							Verify
-						</Button>
+						<div style={{ display: "flex", justifyContent: "center" }}>
+							{isLoading ? <Spinner className="loader" /> : <Button type="submit" variant="primary">
+								Verify
+							</Button>}
+						</div>
 					</div>
 				</Form>
 				<div className='Register-Link'>
@@ -210,7 +222,6 @@ export const RegisterLogin = () => {
 						<img src={esummitlogo}></img>
 					</div>
 					<div className='p5-box'>
-						{error && <Alert variant="danger">{error}</Alert>}
 						<h2 className="mb-3">Login</h2>
 
 						<Form onSubmit={getOtp2} style={{ display: !flag2 ? "block" : "none" }}>
@@ -248,10 +259,10 @@ export const RegisterLogin = () => {
 									You are Signed In
 								</Alert>
 							</Snackbar>
-							<div className="button-right">
-								<Button type="submit" variant="primary">
+							<div className="button-right" style={{ display: "flex", justifyContent: "center" }}>
+								{isLoading ? <Spinner className="loader" /> : <Button type="submit" variant="primary">
 									Login
-								</Button>
+								</Button>}
 								&nbsp;
 							</div>
 
