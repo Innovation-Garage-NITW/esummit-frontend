@@ -39,7 +39,7 @@ function App() {
 		{ label: "Teams", link: "/Teams", component: <Teams /> },
 		{ label: "RegisterLogin", link: "/Register-Login", component: <RegisterLogin />, },
 		{ label: "admin", link: "/admin", component: <Admin />, },
-		{ label: "TimeLine", link: '/TimeLine', component: <TimeLine /> }
+		{ label: "TimeLine", link: '/TimeLine', component: <TimeLine /> },
 	];
 	
 	return (

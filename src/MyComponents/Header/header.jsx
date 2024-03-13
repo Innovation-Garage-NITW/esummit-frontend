@@ -8,7 +8,7 @@ import { useUserAuth } from "../../context/userAuthContext";
 const menuItemsData = [
 	// { label: "Timeline", link: "/Timeline" },
 	{ label: "Events", link: "/Events" },
-	// { label: "Sponsors", link: "/Sponsors" },
+	{ label: "Sponsors", link: "/Sponsors" },
 	{ label: "Speakers", link: "/Speakers" },
 	{ label: "Teams", link: "/Teams" },
 	{ label: "Register/Login", link: "/Register-Login" },			//index = 5
